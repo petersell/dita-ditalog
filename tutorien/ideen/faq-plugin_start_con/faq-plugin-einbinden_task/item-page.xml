@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="faq-plugin-einbinden_task" xml:lang="de-de">
+  <title>FAQ-Plugin einbinden (Teil 1)</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="13.01.2012"/>
+
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <option/>
+
+        <indexterm>FAQs</indexterm>
+
+        <indexterm>faq2html.xsl</indexterm>
+
+        <indexterm>Frage</indexterm>
+
+        <indexterm>Antwort</indexterm>
+
+        <indexterm>Plugin erstellen</indexterm>
+
+        <indexterm>faq.css</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+    <resourceid id="faq-plugin-einbinden_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p>Anleitung: So binden Sie das im Demo-Ordner befindliche
+    FAQ-Plugin für den HTML-Output ein.</p><p>Das Einbinden erfolgt in vier
+    Hauptschritten, die anschließend genauer beschrieben werden:</p><ol>
+        <li>Ein FAQ-XSL-Plugin im Plugin-Ordner anlegen.</li>
+
+        <li>Die <filepath>faq.css</filepath> in die individuelle CSS-Datei
+        importieren.</li>
+
+        <li>Deutsche Bezeichnungen für die englischen Strings in der
+        <filepath>string-de-de.xml</filepath> hinterlegen.</li>
+
+        <li>Die Datei <filepath>ditafaq.xml</filepath> als Vorlagendatei
+        nutzen, um eigene FAQ-Seiten zu erstellen.</li>
+      </ol><p>Die folgenden Handlungsschritte sind nach der Lektüre von Eliot
+    Kimbers Tutorial zur Spezialisierung entstanden. Untenstehend finden Sie
+    den Link.</p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Legen Sie im Plugin-Ordner ein neues Verzeichnis
+        <filepath>org.yourdomain.faq.html</filepath> an. Ersetzen Sie
+        <i>org.yourdomain</i> mit Ihrem Domainnamen.</cmd>
+      </step>
+
+      <step>
+        <cmd>Legen Sie im neu erstellten Ordner eine Datei
+        <filepath>plugin.xml</filepath> mit folgenden Inhalt an:</cmd>
+
+        <stepresult><codeblock>&lt;plugin id="org.yourdomain.faq.html"&gt;
+  &lt;feature extension="dita.xsl.xhtml" value="xsl/faq2html_shell.xsl" type="file"/&gt;
+&lt;/plugin&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Erstellen Sie im Ordner
+        <filepath>org.yourdomain.faq.html</filepath> einen Unterordner
+        <filepath>xsl</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie aus dem Verzeichnis <filepath>demo/faq</filepath>
+        folgende 3 xsl-Dateien in den soeben erstellten Ordner
+        <filepath>plugins/org.yourdomain.faq.html/xsl</filepath>:</cmd>
+
+        <stepresult><ul>
+            <li><filepath>faq2html.xsl</filepath></li>
+
+            <li><filepath>faq2html_shell.xsl</filepath></li>
+
+            <li><filepath>faq2html_shellImpl.xsl</filepath></li>
+          </ul></stepresult>
+      </step>
+
+      <step>
+        <cmd>Im DITA-OT 1.5.3 ist noch ein kleiner Bug. Öffnen Sie die Datei
+        <filepath>faq2html_shell.xsl</filepath> und ändern Sie folgenden
+        Eintrag:</cmd>
+
+        <stepresult><codeblock>&lt;xsl:param name="OUTEXT" select="'hxml'"/&gt;</codeblock><p>bei
+        <codeph>select</codeph> um in:</p><codeblock>&lt;xsl:param name="OUTEXT" select="'html'"/&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei <filepath>faq2html_shellImpl.xsl</filepath>
+        und löschen bzw. kommentieren Sie folgenden Eintrag aus:</cmd>
+
+        <stepresult><codeblock>&lt;!-- &lt;xsl:import href="../../xsl/dita2html.xsl"/&gt; --&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die Datei <filepath>demo/faq/faq.css</filepath> in
+        den Ordner, wo sich Ihre individuelle CSS-Datei befindet.</cmd>
+      </step>
+
+      <step>
+        <cmd>Tragen Sie in Ihre individuelle CSS-Datei folgenden Import-Befehl
+        zuoberst ein:</cmd>
+
+        <stepresult><codeblock>@import url(faq.css);</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie in die Datei
+        <filepath>DITA-OT/xsl/common/string-de-de.xml</filepath> folgende 3
+        Übersetzungen hinzu:</cmd>
+
+        <stepresult><codeblock>&lt;str name="Question"&gt;Frage&lt;/str&gt;
+&lt;str name="Answer"&gt;Antwort&lt;/str&gt;
+&lt;str name="Return to Top"&gt;zum Seitenanfang &lt;/str&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die Datei <filepath>ditafaq.xml</filepath> in Ihr
+        topic-Verzeichnis, benennen Sie sie um und nutzen Sie diese als
+        Vorlage für Ihre individuellen FAQ-Seiten. Binden Sie neue FAQ-Topics
+        in die die ditamap ein. Benutzen Sie dabei das Attribut
+        <codeph>type="faq"</codeph>.</cmd>
+      </step>
+    </steps>
+
+    <result><p>Sie können jetzt neue Fragen-und-Antworten-Seiten nach Ihren
+    CSS-Dateien erstellen und gestalten. Allerdings haben Sie noch nicht die
+    Möglichkeit, Elemente der User Interface Domain wie z.B.
+    <codeph>&lt;uicontrol&gt;</codeph> zu nutzen. Die Einbindung dieser
+    Domains (Software, User Interface und Programming Domain) erfolgt in Teil
+    2.) </p></result>
+
+    <postreq><p outputclass="sectiontitle">Links zum Artikel</p><ul>
+        <li><xref format="html"
+        href="http://www.xiruss.org/tutorials/dita-specialization/"
+        scope="external">DITA Configuration and Specialization Tutorials von
+        Eliot Kimber</xref></li>
+      </ul></postreq>
+  </taskbody>
+</task>

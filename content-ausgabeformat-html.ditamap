@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ausgabeformat-html" scope="local" title="Content Ausgabeformat HTML"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+  <mapref href="tutorien/keydef-ausgabeformate.ditamap"
+          processing-role="resource-only"/>
+
+  <topicref keyref="ausgabeformat-html">
+    <topicref collection-type="sequence" keyref="tools.dita-ot-html.topic">
+      <topicref keyref="plugin-dita-ot-html.task"/>
+
+      <topicref keyref="jekyll-ordner-editieren.task"/>
+
+      <topicref keyref="output-manuell-editieren.task"/>
+    </topicref>
+  </topicref>
+</map>

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN"
+"../../dtd/technicalContent/dtd/generalTask.dtd">
+<task id="d4p-dtds-in-eclipse_task" xml:lang="de-de">
+  <title>Einbinden der DTDs in Eclipse</title>
+
+  <shortdesc>Anleitung: So binden Sie die DTDs für DITA und Dita4Publishers in
+  Eclipse ein, so dass Sie diese lokal validieren und benutzen
+  können.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2012"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="23.11.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <option/>
+
+        <indexterm>Eclipse</indexterm>
+
+        <indexterm>nextcatalog</indexterm>
+
+        <indexterm>catalog-dita.xml</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-dtds-in-eclipse_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p otherprops="bedingung" outputclass="bedingung">Sie müssen das
+    Java JDK und Eclipse installiert haben. Ein Java JRE war in meinem Fall
+    nicht ausreichend.</p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Klicken Sie in Eclipse auf <menucascade>
+            <uicontrol>Window</uicontrol>
+
+            <uicontrol>Preferences.</uicontrol>
+          </menucascade></cmd>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Menüverzeichnisbaum unterhalb
+        <uicontrol>XML</uicontrol> und klicken Sie auf <uicontrol>XML
+        Catalog</uicontrol>.</cmd>
+
+        <stepresult><fig>
+            <title>Next Catalog-Eintrag setzen</title>
+
+            <image alt="nextcatalog" href="nextcatalog-eintrag_189.gif"
+                   placement="break"/>
+          </fig></stepresult>
+      </step>
+
+      <step>
+        <cmd>Klicken Sie im Fenster <wintitle>Preferences</wintitle> auf
+        <uicontrol outputclass="button">Add</uicontrol>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Klicken Sie auf <uicontrol>Next Catalog</uicontrol> und
+        anschließend auf <uicontrol outputclass="button">File
+        System</uicontrol>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Springen Sie im Fenster <wintitle>Öffnen</wintitle> auf die Datei
+        <filepath>catalog-dita.xml</filepath> im Hauptverzeichnis Ihres
+        aktuellen DITA Open Toolkits.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

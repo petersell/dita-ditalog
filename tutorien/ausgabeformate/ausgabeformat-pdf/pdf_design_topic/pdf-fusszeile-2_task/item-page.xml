@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="pdf-fusszeile-2_task" xml:lang="de-de">
+  <title>Fußzeile im Template hinterlegen</title>
+
+  <shortdesc>Anleitung: So geben Sie eine einfache, zentrierte Fußzeile mit
+  Hilfe eines angepaßten xsl-Templates im Customization-Ordner des FO-Plugins
+  aus.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="12.07.2010"/>
+
+      <revised modified="20.08.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Fußzeile im Template hinterlegen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-fusszeile-2_task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Fügen Sie in <indexterm>Fußzeile im PDF</indexterm>der Datei
+        <filepath>DITA-OT\demo\fo\Customization\fo\attr\custom.xsl</filepath>
+        folgende <indexterm>FO Plugin</indexterm>zwei
+        <indexterm>custom.xsl</indexterm>Attribut-Sets
+        <indexterm>attribute-set</indexterm>hinzu:</cmd>
+
+        <stepxmp><codeblock>&lt;xsl:attribute-set name="__body__odd__footer"&gt;
+ &lt;xsl:attribute name="text-align"&gt;center&lt;/xsl:attribute&gt;
+ &lt;xsl:attribute name="margin-bottom"&gt;10pt&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;
+</codeblock><codeblock>&lt;xsl:attribute-set name="__body__even__footer"&gt;
+ &lt;xsl:attribute name="text-align"&gt;center&lt;/xsl:attribute&gt;
+ &lt;xsl:attribute name="margin-bottom"&gt;10pt&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;
+</codeblock></stepxmp>
+      </step>
+
+      <step>
+        <cmd>Stellen Sie sicher, dass Sie im Ordner
+        <filepath>\demo\fo\Customization\fo\xsl</filepath> eine Datei namens
+        <filepath>custom.xsl </filepath>haben.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie folgende zwei Templates -
+        <codeph>insertBodyOddFooter</codeph> und
+        <codeph>insertBodyEvenFooter</codeph> aus der Datei
+        <filepath>\demo\fo\xsl\fo\static-content.xsl</filepath> in oben
+        erwähnte <filepath>custom.xsl</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie in beide
+        <indexterm>insertBodyOddFooter</indexterm>Templates - so Sie für die
+        geraden und ungeraden Fußzeilen einen Eintrag möchten - Ihre
+        xsl-text-Zeile <indexterm>static-content.xsl</indexterm>hinzu:</cmd>
+
+        <stepresult><codeblock>&lt;xsl:template name="insertBodyOddFooter"&gt;
+  &lt;fo:static-content flow-name="odd-body-footer"&gt;
+   &lt;fo:block xsl:use-attribute-sets="__body__odd__footer"&gt;
+   &lt;!-- HIER FUSSZEILENEINTRAG z.B. --&gt;
+   &lt;xsl:text&gt;&amp;#169;&amp;#160;2010&amp;#160;Andreas&amp;#160;Petersell&amp;#160;-&amp;#160;www.ditalog.com&lt;/xsl:text&gt;
+    &lt;xsl:call-template name="insertVariable"&gt;
+     &lt;xsl:with-param name="theVariableID" select="'Body odd footer'"/&gt;
+&lt;!-- hier der Template-Rest --&gt;
+&lt;/xsl:template&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Im Tag <codeph>&lt;xsl:text&gt;</codeph> steht Ihr individueller
+        Fußzeilentext. Wiederholen Sie diesen Eintrag im Template
+        <codeph>insertBodyEvenFooter</codeph>, wenn dieser Text auf geraden
+        Seiten ebenfalls ausgeben werden soll.</cmd>
+
+        <stepresult><p><fig>
+            <title>Ausgabe der Beispiel-Fußzeile</title>
+
+            <image alt="Footer" href="pdf-fusszeile.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

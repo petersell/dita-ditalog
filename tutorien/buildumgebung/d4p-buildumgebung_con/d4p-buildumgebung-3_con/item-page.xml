@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung-3_con" xml:lang="de-de">
+  <title>Projektordner anlegen</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="21.05.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>DITA-Buildumgebung</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-buildumgebung-3_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>In Bens Beispielprojekt heißt der Projektordner mit den
+    DITA-Quelldateien einfach <filepath>Test</filepath>. Der Ordner
+    <filepath>Test</filepath> hat folgenden Inhalt.</p>
+
+    <ul>
+      <li>Ordner <filepath>customization</filepath> - hier können Sie
+      eventuelle Header- und Footerdateien sowie CSS-Dateien hinterlegen.</li>
+
+      <li>Ordner <filepath>images</filepath> - hier kommt Ihre Covergraphik
+      rein.</li>
+
+      <li>Ordner <filepath>out</filepath> - wird angelegt.</li>
+
+      <li>Ordner <filepath>temp</filepath> - zu Beginn leer.</li>
+
+      <li>Ordner <filepath>topics</filepath> - hier liegen Ihre
+      XML-Quelldateien.</li>
+
+      <li>Datei <filepath>build.xml</filepath> - siehe unten.</li>
+
+      <li>Datei <filepath>runbuild.bat</filepath> - muss nach dem Editieren in
+      Ihr DITA-OT-Verzeichnis kopiert werden, siehe unten.</li>
+
+      <li>Datei <filepath>Testbuch.ditamap</filepath> - die Ditamap-Datei zum
+      Testprojekt.</li>
+    </ul>
+  </conbody>
+</concept>

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="feedback-mail_con" xml:lang="de-de">
+  <title>E-Mail-Link für Feedback</title>
+
+  <shortdesc>Durch einen E-Mail-Link auf jeder Seite der Dokumentation wird
+  der Nutzer der Hilfe animiert, ein Feedback zur Dokumentation zu geben bzw.
+  speziell Hilfe zur Seite anzufordern.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="04.09.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>E-Mail-Link</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="feedback-mail_con"/>
+  </prolog>
+
+  <conbody>
+    <section><p><fig>
+        <title>Feedback-Element zur Seite</title>
+
+        <image alt="E-Mail-Link" href="email-link-feedback2.gif"
+               placement="break"/>
+      </fig></p><p>Ein Klick auf den Link öffnet das E-Mailprogramm, in dem
+    der Dateiname der Doku-Seite in der Betreffseite bereits vorgetragen
+    ist.</p><p><fig>
+        <title>Adresse und Betreff schon voreingetragen</title>
+
+        <image href="email-link-feedback-mailprogrogramm.gif"
+               placement="break"/>
+      </fig></p> <p><fig>
+        <title>Link funktioniert auch im PDF-Output</title>
+
+        <image alt="Feedback in PDF"
+               href="email-link-feedback-in-pdf.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Attribute des xref-Elements</title><p>Die Attribute des
+    xref-Elements sind besonders wichtig: <codeph>format="txt"</codeph> und
+    <codeph>scope="external"</codeph> müssen gesetzt sein.</p><p
+    id="abstract"><fig>
+        <title>Abstract-Element</title>
+
+        <image align="" alt="Abstract-Element"
+               href="email-link-feedback1.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Beschränkung auf Content-Seiten</title><p>Dieser Mail-Link
+    sollte sich möglichst auf Content-Seiten beschränken. Auf Seiten, die nur
+    der Navigation dienen, sorgt dies für Unübersichtlichkeit und ist somit
+    überflüssig. Besonders prekär zeigt sich dies im PDF-Output.</p><p><fig>
+        <title>Metaangaben der Navigationsdatei HTML-Format sind
+        überflüssig</title>
+
+        <image alt="Metaangaben in Navigationsseiten"
+               href="email-link-feedback-pdf.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Spam</title><p>Sollte die Hilfe tatsächlich <i>online</i>
+    - also im Internet veröffentlicht werden, ist die Veröffentlichung der
+    E-Mailadresse natürlich eine Überlegung wert.</p></section>
+  </conbody>
+</concept>

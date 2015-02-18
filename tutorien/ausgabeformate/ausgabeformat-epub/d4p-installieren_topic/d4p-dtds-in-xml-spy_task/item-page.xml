@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="d4p-dtds-in-xml-spy_task" xml:lang="de-de">
+  <title>Einbinden der DTDs in XMLSpy</title>
+
+  <shortdesc>Anleitung: So binden Sie die DTDs für DITA und Dita4Publishers in
+  den XML-Editor XMLSpy ein, so dass Sie diese lokal validieren und benutzen
+  können.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="13.09.2011"/>
+
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>XMLSpy</indexterm>
+
+        <indexterm>pubmap.dtd</indexterm>
+
+        <indexterm>article.dtd</indexterm>
+
+        <indexterm>chapter.dtd</indexterm>
+
+        <indexterm>part.dtd</indexterm>
+
+        <indexterm>sidebar.dtd</indexterm>
+
+        <indexterm>subsection.dtd</indexterm>
+
+        <indexterm>catalog-dita.xml</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-dtds-in-xml-spy_task"/>  
+  </prolog>
+
+  <taskbody>
+    <prereq><p>Bekanntlich führen mehrere Wege nach Rom. Nachfolgend zeige ich
+    Ihnen meinen Weg, an dessem Ende Sie die spezifischen Document Type
+    Definitions für pubmap und article usw. im Programm XMLSpy nutzen
+    können.</p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Nennen Sie Ihren Ordner
+        <filepath>altova\common2011\schemas\dita\files</filepath> um in
+        <filepath>\files_original.</filepath></cmd>
+      </step>
+
+      <step>
+        <cmd>Legen Sie einen neuen Ordner <filepath>\files</filepath>
+        an.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie im DITA-OT-Ordner die Ordner
+        <filepath>\dtd\base</filepath> und
+        <filepath>\dtd\technicalContent</filepath> und fügen diese in den
+        soeben neu erstellten Ordner
+        <filepath>\altova\common2011\schemas\dita\files</filepath> ein.</cmd>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei
+        <filepath>\altova\common2011\schemas\dita\catalog.xml</filepath>.
+        Schauen Sie, ob jede <systemoutput>publicId</systemoutput> doppelt
+        vorkommt. Einmal ohne DITA-Versionsnummer und einmal mit DITA
+        1.2-Versionierung.</cmd>
+
+        <stepresult><codeblock>&lt;public publicId="-//OASIS//DTD DITA Concept//EN" uri="files/technicalContent/dtd/concept.dtd"/&gt;
+&lt;public publicId="-//OASIS//DTD DITA 1.2 Concept//EN" uri="files/technicalContent/dtd/concept.dtd"/&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Ändern Sie bei sämtlichen Einträgen den Pfad zu den oben
+        kopierten DTD-Dateien im Attribut <systemoutput>uri</systemoutput> wie
+        oben am Beispiel der <filepath>concept.dtd</filepath> gezeigt.</cmd>
+      </step>
+
+      <step>
+        <cmd>Editieren Sie in Ihrem Ordner <filepath>Dokumente und
+        Einstellungen</filepath> unter Ihren <filepath>Eigenen
+        Dateien</filepath> die Datei
+        <filepath>\Altova\XMLSpy2011\CustomCatalog.xml</filepath>. Fügen Sie
+        vor dem Endtag <codeph>&lt;/catalog&gt;</codeph> folgende Zeile
+        ein.</cmd>
+
+        <stepresult><codeblock>&lt;netxCatalog catalog="C:/DITA-OT1.5.3/catalog-dita.xml"&gt;&lt;/nextCatalog.xml&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Bis Version 0.9.16 müssen Sie eventuell in die Datei
+        <filepath>\plugins\net.sourceforge.dita4publishers.doctypes\doctypes\catalog.xml</filepath>
+        folgenden Eintrag hinzufügen.</cmd>
+
+        <stepresult><codeblock>&lt;nextCatalog catalog="mathml2/catalog.xml"/&gt;</codeblock></stepresult>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph><ul>
+        <li id="xmlspycatalogs">Catalogs in XMLSpy (<xref format="html"
+        href="http://manual.altova.com/XMLSpy/spystandard/index.html?xsdtdandxsd_catalogs.htm"
+        scope="external">zum Link)</xref></li>
+      </ul></postreq>
+  </taskbody>
+</task>

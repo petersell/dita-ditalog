@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="d4p-covergraphic-standarddtd_task" xml:lang="de-de">
+  <title>Covergraphik in Standard-Ditamap</title>
+
+  <shortdesc>Anleitung: So binden Sie in einer ditamap eine Covergraphik
+  ein.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="2011-09-20"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <option/>
+
+        <indexterm>Covergraphik</indexterm>
+
+        <indexterm>Cover</indexterm>
+
+        <indexterm>topicmeta</indexterm>
+
+        <indexterm>data</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-covergraphic-standarddtd_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p otherprops="bedingung" outputclass="bedingung">Sie haben eine
+    Covergraphik-Datei in der Größe 600 x 900px oder 400 x 600px
+    parat.</p><note>In der Datei
+    <filepath>/plugins/net.sourceforge.dita4publishers.epub/build_transtype-epub.xml</filepath>
+    muss der Eintrag ohne Value vorhanden sein: <codeph>&lt;property
+    name="cover.graphic.file"
+    value=""&gt;&lt;/property&gt;</codeph>.</note></prereq>
+
+    <steps>
+      <step>
+        <cmd>Erstellen Sie innerhalb ihrer Topic-XML-Dateien eine Ordner
+        <filepath>\covers\images</filepath> und kopieren Sie die
+        Covergraphik-Datei in diesen Ordner.</cmd>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie Ihrer ditamap-Datei nach dem
+        <filepath>title</filepath>-Tag ein Tag <codeph>topicmeta</codeph> mit
+        einem <codeph>data</codeph>-Element ein. Dies könnte folgendermaßen
+        aussehen:</cmd>
+
+        <stepresult><codeblock>&lt;topicmeta&gt;
+&lt;author&gt;Andreas Petersell&lt;/author&gt;
+...
+&lt;data name="covergraphic"&gt;topics/ddr/covers/images/cover-ddrprotag.jpg&lt;/data&gt;
+&lt;/topicmeta&gt;
+</codeblock></stepresult>
+      </step>
+    </steps>
+
+    <result><p>Sie haben in Ihrer EPUB-Datei ein Coverbild eingefügt, das
+    nicht auf einer normalen Seite mit ausgegeben wird. Es dient in vielen
+    Programmen lediglich als Cover, wie hier im Programm Calibre
+    0.8.7</p><p><fig>
+        <title>Anzeige des Covers in Calibre</title>
+
+        <image href="d4p-cover-standard.gif" placement="break"/>
+      </fig></p></result>
+  </taskbody>
+</task>

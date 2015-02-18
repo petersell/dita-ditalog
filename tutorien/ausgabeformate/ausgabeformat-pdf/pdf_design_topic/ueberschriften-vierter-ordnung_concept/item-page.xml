@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="ueberschriften-vierter-ordnung_concept" xml:lang="de-de">
+  <title>Überschriften vierter Ordnung</title>
+
+  <shortdesc>Vermeiden Sie eine zu tiefe Kapitelstruktur in Ihren
+  Publikationen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>ditalog.com</publisher>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>ditalog.com</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="10.02.2015"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Kapitelstruktur im PDF</indexterm>
+
+        <indexterm>Shortdescription im PDF</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="10.02.2015" version="2"/>
+        </vrmlist>
+
+        <brand>ditalog</brand>
+
+        <component>ditalog</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="ueberschriften-vierter-ordnung_concept"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Falsche Formatierung der Kurzbeschreibung</title><p>In
+    meinen Publikationen wurden Topics, die in vierter Ordner angelegt wurden,
+    nicht richtig formatiert. Hier speziell war der Absatz für
+    <codeph>&lt;shortdesc&gt;</codeph> nicht genügend eingerückt. Oder: die
+    Überschrift zu weit eingerückt.</p><p><fig>
+        <title>Shortdesc nicht im Lot</title>
+
+        <image href="pdf-headline-vierter-ordnung.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Nicht zu tief struktieren</title><p>Ich hätte mich in die
+    Tiefen des PDF2-Plugins begeben können, doch manchmal ist es ratsam,
+    Zeichen auch von einer "Maschine" zu erkennen und zu aktzeptieren. Ich
+    habe die Kapitel so umstrukturiert, dass es maximal Topics in dritter
+    Ordnung gibt.</p><p><fig>
+        <title>Shortdesc wieder im Lot</title>
+
+        <image href="pdf-headline-vierter-ordnung-2.gif" placement="break"/>
+      </fig></p></section>
+  </conbody>
+</concept>

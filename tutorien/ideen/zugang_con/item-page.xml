@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="zugang_con" xml:lang="de-de">
+  <title>Zugang zum Bildschirm voranstellen</title>
+
+  <shortdesc>Wie kommen Sie zu diesem Bildschirm? Nicht jede Anleitung
+  benötigt diese Information, denn Sie sind über die kontextsensitive Hilfe ja
+  bereits an Ort und Stelle.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="03.03.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Zugang zum Bildschirm</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="zugang_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Handbuch vs. kontextsensitiver Hilfe</title><p>Es gibt
+    zweierlei Arten des Lesens einer Online-Hilfe: linear als Buch oder per
+    <indexterm>Zugang zum Bildschirm auskoppeln</indexterm>Verknüpfung aus der
+    Anwendung. Und immer dann, wenn letzteres geschieht, also eine
+    Handlungsanleitung gezielt durch die kontextsensitive Hilfe geöffnet wird,
+    bedarf es keiner Beschreibung mehr, wie man zum jeweiligen Bildschirm
+    gelangt ist.</p><p>Dies ist nur bei Online-Hilfen relevant, jedoch kann
+    man dies getrost auch in Handbüchern übernehmen. Der Aufwand, beim
+    PDF-Output den Zugang zum Bildschirm in die normale Handlungsanleitung als
+    Step zu integrieren, wäre zu hoch. Denn meistens wird man diese
+    immerwiederkehrende Arbeitsschritte per conref-Mechanismus zentral pflegen
+    und einfügen.</p></section>
+
+    <section><title>Vorschlag einer Zugangsauszeichnung</title><p><fig>
+        <title>Zugangsbeschreibung zum beschriebenen Bildschirm
+        auskoppeln</title>
+
+        <image alt="Zugang" href="zugang.gif" placement="break"/>
+      </fig></p><p>Nutzer, die durch die kontextsensitive Hilfe zum Hilfetopic
+    geleitet wurden, können gleich mit Schritt 1 anfangen.</p></section>
+
+    <section otherprops="inhalt"><title>Inhalt</title><p/></section>
+  </conbody>
+</concept>

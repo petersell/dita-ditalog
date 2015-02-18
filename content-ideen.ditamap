@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="content-ideen" scope="local" title="Content Ideen" xml:lang="de-de">
+  <!-- Topics Part -->
+
+<mapref href="tutorien/keydef-ideen.ditamap" processing-role="resource-only"/>
+<topicref keyref="artikel_start_con">
+  <topicref keyref="feedback-mail_con" scope="local"/>
+
+  <topicref keyref="font-combinumerals_con" scope="local"/>
+
+  <topicref collection-type="sequence" keyref="zugang_con"
+            scope="local">
+    <topicref keyref="pdf-zugang_task" scope="local"/>
+
+    <topicref keyref="zugang-flagging_task" scope="local"/>
+  </topicref>
+
+  <topicref keyref="kontextsensitive-hilfe-map_con" scope="local"/>
+
+  <topicref keyref="plugin-erstellen_con" scope="local"/>
+
+  <topicref keyref="plugin-erstellen-bildunterschrift_con"
+            scope="local"/>
+
+  <topicref collection-type="sequence" keyref="faq-plugin_start_con" scope="local">
+    <topicref keyref="faq-plugin-einbinden_task"/>
+
+    <topicref keyref="faq-plugin-einbinden-2_task" scope="local"/>
+
+    <topicref keyref="faq-plugin-einbinden-3_task"/>
+  </topicref>
+
+  <topicref keyref="metadata-output_con" scope="local"/>
+
+  <topicref keyref="metadata-mailto_con" scope="local"/>
+
+  <topicref keyref="tocofsection_con" scope="local"/>
+
+  <topicref collection-type="sequence" keyref="favicon-erstellen"
+            scope="local">
+    <topicref keyref="icon1-inkscape_task" scope="local"/>
+
+    <topicref keyref="icon2-iconsushi_task" scope="local"/>
+  </topicref>
+</topicref>  
+</map>

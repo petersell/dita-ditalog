@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="filtern-nach-eigenschaft.concept" xml:lang="de-de">
+  <title>Filtern nach Eigenschaft</title>
+
+  <shortdesc>Bestimmte Ausgabeformate haben bestimmte Eigenschaften. Bilden
+  Sie dies in Ihren Filterdateien ab.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="16.03.2014"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>DITA XML</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component/>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="filtern-nach-eigenschaft.concept"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Ausgabeformat und Eigenschaft</title><p>Viele Jahre hatte
+    ich lediglich zwei Ditaval-Dateien: eine für Print (PDF) und eine
+    restliche für alle Online-Formate, als da wären HTML, CHM und EPUB. Doch
+    gerade letzteres bereitete mir immer wieder Kopfzerbrechen. Obwohl EPUB
+    auf HTML-Dateien basiert, ist es in vielen Dingen eher wie ein
+    Buch.</p><p>Bei Webseiten benutze ich eine zentrale Impressumsseite, d.h.
+    ich brauche für den HTML-Output keine eigene Seite dafür. Die EPUB-Dateien
+    benötigen jedoch immer eine eigene Impressumsseite.</p><p>Das Plugin
+    Dita4Publishers in seiner EPUB-Generierung kommt mit dem Chunking, dem
+    Ausgeben mehrerer Topics in einer HTML-Seite, nicht klar. Dies ist aber
+    auch nicht schlimm. Jedoch beim HTML-Output ist bei sehr kurzen Topics das
+    Chunking sehr wichtig.</p><p>Ich bin also dazu übergegangen, nach
+    Eigenschaften wie <i>Impressum</i> oder <i>Chunking</i> zu filtern. Ich
+    erstelle für jedes Ausgabeformat eine Ditaval-Datei und vermerke darin
+    jede mögiche Eigenschaft, und ob diese möglich sein soll oder
+    nicht.</p></section>
+
+    <section><title>Beispiel für die EPUB-Filterdatei</title><p>Für die
+    EPUB-Ausgabe benötige ich eine Impressumsseite. Das Action-Attribut steht
+    auf include.</p><codeblock>&lt;val&gt;
+&lt;prop action="include" att="otherprops" val="impressum"/&gt;
+&lt;/val&gt;
+</codeblock><p>Das Chunking funktioniert im EPUB-Plugin nicht. Die topicrefs
+    in der ditamap-Datei, die für die das chunking vorgesehen sind, werden mit
+    dem otherprops-Attribut <userinput>chunking-yes</userinput> belegt. In der
+    Ditaval-Datei wird das Action-Attribut des Wertes
+    <uicontrol>chunking-yes</uicontrol> auf <userinput>exclude</userinput>
+    gesetzt. Da es aber auch parallel die topicrefs ohne chunking geben muss,
+    werden in der ditamap diese Topics mit dem otherprops-Attribut =
+    <uicontrol>chunking-no</uicontrol> gekennzeichnet. In der Ditaval-Datei
+    wird das Action-Attribut auf <userinput>include</userinput>
+    gesetzt.</p><codeblock>&lt;val&gt;
+&lt;prop action="exclude" att="otherprops" val="chunking-yes"/&gt;
+&lt;prop action="include" att="otherprops" val="chunking-no"/&gt;
+&lt;/val&gt;
+</codeblock></section>
+
+    <section><title>Beispiel für die HTML-Filterdatei</title><p>Für die
+    HTML-Ausgabe benötige ich keine! Impressumsseite. Das Action-Attribut
+    steht auf exclude.</p><codeblock>&lt;val&gt;
+&lt;prop action="exclude" att="otherprops" val="impressum"/&gt;
+&lt;/val&gt;
+</codeblock><p>Das Chunking wird dringend benötigt, so dass das
+    Action-Attribut des Wertes <uicontrol>chunking-yes</uicontrol> auf
+    <userinput>include</userinput> steht.</p><codeblock>&lt;val&gt;
+&lt;prop action="include" att="otherprops" val="chunking-yes"/&gt;
+&lt;prop action="exclude" att="otherprops" val="chunking-no"/&gt;
+&lt;/val&gt;
+</codeblock></section>
+  </conbody>
+</concept>

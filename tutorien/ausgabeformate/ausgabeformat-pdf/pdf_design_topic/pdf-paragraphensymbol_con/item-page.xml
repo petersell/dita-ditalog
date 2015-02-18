@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-paragraphensymbol_con" xml:lang="de-de">
+  <title>Paragraphensymbol § im indexterm</title>
+
+  <shortdesc>Innerhalb des indexterm-Tags wird das Paragraphensymbol
+  nicht ausgeben und der Stichworteintrag entfällt als Ergebnis
+  ganz.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="04.06.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Paragraphen-Symbol</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>Ausgabeformat PDF</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="pdf-paragraphensymbol_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>Es kann sein, dass Ihre Stichworteinträge, beginnend mit dem
+    <indexterm>Paragraphensymbol im indexterm</indexterm>Paraphensymbol, nicht
+    geparst und somit nicht im Stichwortverzeichnis auftauchen. Behelfen Sie
+    sich mit der Nummer im ISO-8859-1-Character-Set oder dem Namen. Im Falle
+    des Paragraphensymbols (Section Sign) ist dies <i>&amp;#167;</i> bzw.
+    <i>&amp;sect</i>;</p>
+
+    <p>Zwei zwingende Vorraussetzungen:<ol>
+        <li>Texteingabe nur in der Quellcode-Ansicht des Editors. XML Mind
+        macht aus dem <i>&amp;sect;</i> gnadenlos ein <i>&amp;amp;sect;</i> -
+        mit dem Ergebnis, dass dieses Stichwort falsch dargestellt wird.</li>
+
+        <li>Das Paraphensymbol darf nicht zu Beginn des Stichworteintrages
+        stehen. Setzen Sie z.B. das Kürzel des Gesetzes davor: <userinput>StAG
+        3 Abs. 2</userinput>.</li>
+      </ol></p>
+
+    <p>Manchmal sind aber auch Quellcode-Editoren störrisch. Da hilft, wir bei
+    mir, nur ein gutes Suchen-Ersetzen-Tool für das ändern von
+    <i>&amp;amp;#167</i> in <i>&amp;#167</i>.</p>
+  </conbody>
+</concept>

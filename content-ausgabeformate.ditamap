@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ausgabeformate" scope="local" title="Content Ausgabeformate"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+  <mapref href="tutorien/keydef-ausgabeformate.ditamap"
+          processing-role="resource-only"/>
+
+  <topicref keyref="ausgabeformate">
+    <topicref keyref="ausgabeformat-html" product="online">
+      <topicref collection-type="sequence" keyref="tools.dita-ot-html.topic">
+        <topicref keyref="plugin-dita-ot-html.task"/>
+
+        <topicref keyref="jekyll-ordner-editieren.task"/>
+
+        <topicref keyref="output-manuell-editieren.task"/>
+      </topicref>
+    </topicref>
+
+    <topichead navtitle="Ausgabeformat HTML" product="print" scope="local">
+      <topicref collection-type="sequence" keyref="tools.dita-ot-html.topic">
+        <topicref keyref="plugin-dita-ot-html.task"/>
+
+        <topicref keyref="jekyll-ordner-editieren.task"/>
+
+        <topicref keyref="output-manuell-editieren.task"/>
+      </topicref>
+    </topichead>
+
+    <topicref keyref="ausgabeformat-epub">
+      <topicref collection-type="sequence" keyref="d4p-installieren_topic">
+        <topicref keyref="d4p-insall_task"/>
+
+        <topicref keyref="d4p-dtds-in-xml-spy_task"/>
+
+        <topicref keyref="d4p-dtds-in-xmlmind_task"/>
+
+        <topicref keyref="d4p-dtds-in-eclipse_task"/>
+      </topicref>
+
+      <topicref collection-type="sequence"
+                keyref="d4p-epub-einstellungen_topic">
+        <topicref keyref="d4p-related-links-abstellen_con"/>
+
+        <topicref keyref="d4p-covergraphic-standarddtd_task"/>
+
+        <topicref keyref="d4p-epub-coverbild_con"/>
+
+        <topicref keyref="d4p-epub-autor-unbekannt_con"/>
+      </topicref>
+    </topicref>
+
+    <topicref collection-type="sequence" keyref="ausgabeformat-chm">
+      <topicref keyref="chm-konfigurieren_con"/>
+
+      <topicref keyref="umlaute-in-toc_task"/>
+    </topicref>
+
+    <topicref keyref="ausgabeformat-pdf">
+      <topicref collection-type="sequence" keyref="pdf_design_topic">
+        <topicref keyref="pdf-a4_con"/>
+
+        <topicref keyref="pdf-metadaten_con"/>
+
+        <topicref keyref="pdf-einzelkapitel_con"/>
+
+        <topicref keyref="pdf-textintend_task"/>
+
+        <topicref keyref="pdf-fusszeile_task"/>
+
+        <topicref keyref="pdf-fusszeile-2_task"/>
+
+        <topicref keyref="pdf-paragraphensymbol_con"/>
+      </topicref>
+
+      <topicref collection-type="sequence" keyref="pdf_versus_topic">
+        <topicref keyref="pdf-inhaltsverzeichnis_con"/>
+
+        <topicref keyref="pdf-direktlinks_con"/>
+      </topicref>
+
+      <topicref collection-type="sequence" keyref="pdf_tipps_topic">
+        <topicref keyref="install-renderx_task"/>
+
+        <topicref keyref="xep-umziehen_task"/>
+
+        <topicref keyref="pdf-leere-seiten_con"/>
+      </topicref>
+    </topicref>
+  </topicref>
+</map>

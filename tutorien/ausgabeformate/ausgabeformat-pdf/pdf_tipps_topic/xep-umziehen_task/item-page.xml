@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="xep-umziehen_task" xml:lang="de-de">
+  <title>Umzug des RenderX-Formatierers</title>
+
+  <shortdesc>Anleitung: So kopieren Sie nach einem Update des DITA-OT den
+  RenderX-Formatter für das FO-Plugin in das neue OT-Verzeichnis.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="25.11.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>RenderX umziehen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>Ausgabeformat PDF</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="xep-umziehen_task"/> 
+  </prolog>
+
+  <taskbody>
+    <prereq><p otherprops="bedingung" outputclass="bedingung">Sie müssen
+    bereits für eine alte DITA-OT-Installtion eine RenderX Personal Edition
+    installiert haben.</p></prereq>
+
+    <steps>
+      <step importance="optional">
+        <cmd>Fall Sie den alten Customization-Ordner im DITA-OT abgelegt
+        haben, kopieren Sie das Verzeichnis in das neue Toolkit.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie den alten <filepath>xep</filepath>-Ordner
+        <filepath>DITA-OT1.5.3\demo\fo\lib\xep</filepath> und die Datei (bei
+        älteren DITA-OTs) <filepath>icu4j.jar</filepath> in den
+        <filepath>lib</filepath>-Ordner des neuen DITA-OT-Plugin-Ordner
+        <filepath>org.dita.pdf\lib</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Passen Sie in den 3 batch-Dateien <filepath>xep.bat</filepath>,
+        <filepath>x4u.bat</filepath> und <filepath>validate.bat</filepath> die
+        Pfade zum neuen DITA-OT an.</cmd>
+      </step>
+
+      <step>
+        <cmd>Ändern Sie in den Dateien
+        <filepath>\plugins\org.dita.pdf2\build.xml</filepath> und
+        <filepath>build_template.xml</filepath> den Wert
+        <codeph>pdf.formatter</codeph> von <userinput>fop</userinput> in
+        <userinput>xep</userinput></cmd>
+
+        <stepresult><codeblock>&lt;property name="pdf.formatter" value="xep"/&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Ändern Sie in den selben build-Dateiein den Eintrag für die
+        deutsche Sprache. Ab DITA-OT1.6.3 ist dieser Schritt nicht mehr
+        nötig.</cmd>
+
+        <stepresult><codeblock>&lt;condition property="document.locale" value="de_DE"&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie über <filepath>startcmd.bat</filepath> die
+        DITA-OT-Eingabeaufforderung und geben Sie folgenen ANT-Befehl
+        ein:</cmd>
+
+        <stepresult><codeblock>ant -f integrator.xml</codeblock></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

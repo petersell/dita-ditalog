@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="github-petersell-5" scope="local" title="Ditalog" xml:lang="de-de">
+  <topicref collection-type="family" href="index.xml" scope="local"
+            type="concept" xml:lang="de-de"/>
+
+  <!-- Kapitel 1 -->
+
+  <topicref href="chapters/part1_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref href="chapters/common/wasistneu_concept.xml" scope="local"
+              type="concept" xml:lang="de-de"/>
+
+    <topicref href="frontmatter/ueber-den-autor_con.xml" scope="local"
+              type="concept" xml:lang="de-de"/>
+  </topicref>
+
+  <!-- Kapitel 2 Dita-Buildumgebung -->
+
+  <topicref href="chapters/dita-buildumgebung/buildumgebung.topic.xml"
+            scope="local" type="topic" xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content2.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel DITA Vokabular -->
+
+  <topicref href="chapters/kap_dita-vokabular.concept.xml" scope="local"
+            type="concept" xml:lang="de-de">
+    <topicref format="ditamap"
+              href="chapters/dita-vokabular/dita-vokabular.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 3 Ideen fÃ¼r Dokumentationen -->
+
+  <topicref href="chapters/kap3_ideen_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content3.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 4 Ideen fÃ¼r Online-Hilfen -->
+
+  <topicref href="chapters/kap4_onlinehilfe_con.xml" scope="local"
+            type="concept" xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content4.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 5 Ausgabeformat PDF -->
+
+  <topicref href="chapters/kap5_pdf_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content5.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 6 Ausgabeformat EPUB -->
+
+  <topicref href="chapters/kap6_epub_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content6.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 7 Ausgabeformat HTML -->
+
+  <topicref href="chapters/kap7_html_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content7.ditamap"/>
+  </topicref>
+
+  <!-- Kapitel 8 Ausgabeformat CHM -->
+
+  <topicref href="chapters/kap8_chm_con.xml" scope="local" type="concept"
+            xml:lang="de-de">
+    <topicref format="ditamap" href="maps/content8.ditamap"/>
+  </topicref>
+</map>

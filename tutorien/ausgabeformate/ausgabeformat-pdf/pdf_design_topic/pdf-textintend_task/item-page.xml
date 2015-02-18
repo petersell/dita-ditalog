@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="pdf-textindent_task" xml:lang="de-de">
+  <title>Texteinrückung mit hängender erster Zeile</title>
+
+  <shortdesc>Anleitung: So erstellen Sie einen Literaturverzeichniseintrag mit
+  hängender 1. Zeile.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="26.03.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Texteinrückung</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-textindent_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p><note id="renderx">Der PDF-Output wird mit Hilfe des
+    Idiom-FO-Plugins realisiert. Letzteres verwendet den RenderX als
+    XSL-FO-Prozessor. Die "Personal Edition" unter <xref format="html"
+    href="http://www.renderx.com/download/personal.html"
+    scope="external">www.renderx.com/download/personal.html</xref> ist
+    kostenlos und zeitlich unbegrenzt für nichtkommerzielle Zwecke nutzbar.
+    </note></p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Für ein Literaturverzeichnis sollen die Absätze pro Eintrag
+        <indexterm>text-indent</indexterm>eingerückt
+        <indexterm>Texteinrückung</indexterm>werden mit der
+        <indexterm>hängende erste Zeile</indexterm>ersten Zeile hängend.</cmd>
+
+        <stepresult><p><fig>
+            <title>Hängende erste Zeile</title>
+
+            <image alt="Textindent" href="textindent.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie in der Datei <filepath>custom.xsl</filepath> im Ordner
+        <filepath>\demo\fo\Customization\fo\xsl</filepath> folgenden Eintrag
+        für ein Template hinzu:</cmd>
+
+        <stepresult><codeblock>&lt;xsl:template match="*[contains(@class, ' topic/p ')]"&gt;
+&lt;xsl:choose&gt;
+&lt;xsl:when test="@otherprops='indent'"&gt;
+&lt;fo:block text-indent="-2em" start-indent="4.5em"&gt;
+&lt;xsl:apply-templates/&gt;
+&lt;/fo:block&gt;
+&lt;/xsl:when&gt;
+&lt;xsl:otherwise&gt;
+&lt;fo:block xsl:use-attribute-sets="p" id="{@id}"&gt;
+&lt;xsl:apply-templates/&gt;
+&lt;/fo:block&gt;
+&lt;/xsl:otherwise&gt;
+&lt;/xsl:choose&gt;
+&lt;/xsl:template&gt;
+</codeblock>Neu ist hier die <codeph>when</codeph>-Anweisung. Die
+        <codeph>otherwise</codeph>-Anweisung ist das normale Template für
+        einen Absatz. Für <userinput>indent</userinput> können Sie eigene
+        Entsprechungen finden. Es soll hier nur als Beispiel
+        dienen.</stepresult>
+      </step>
+
+      <step>
+        <cmd>Versehen Sie sämtliche Absätze, die Quellenangaben enthalten
+        sollen, mit dem Attribut
+        <userinput>otherprops="indent"</userinput>.</cmd>
+
+        <stepresult><codeblock>&lt;p otherprops="indent" outputclass="indent"&gt;
+Erich Loest: Es geht seinen Gang oder Mühen in unserer Ebene. München 1994 (dtv 10430)&lt;/p&gt;</codeblock></stepresult>
+      </step>
+
+      <step importance="optional">
+        <cmd>Falls Sie die Texteinrückung auch in XHTML-Output haben möchten,
+        vergeben Sie wie oben ein Attribut
+        <userinput>outputclass="indent"</userinput>. Erstellen Sie
+        anschließend in der CSS-Datei eine Deklaration gleichen Namens mit
+        einem Eintrag für <userinput>text-indent</userinput>.</cmd>
+
+        <stepresult><codeblock>.indent
+{
+ text-indent: -2em;
+ margin-left: 2em;
+}
+</codeblock></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

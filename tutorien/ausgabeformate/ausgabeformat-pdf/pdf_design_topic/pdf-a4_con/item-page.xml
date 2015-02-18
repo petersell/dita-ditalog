@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-a4_con" xml:lang="de-de">
+  <title>A4 als Standardseitenformat</title>
+
+  <shortdesc>A4 ist für Europa ein Standard. Nicht jedoch für die Entwickler
+  des Idiom FO Plugins. Es gilt, das Standardseitenformat A4 für den
+  PDF-Output einzustellen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="09.07.2010"/>
+
+      <revised modified="20.08.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>A4 als Standardformat</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-a4_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Egozentrik des Druckers</title><p>Ich sitze (sic!) viel im
+    Büro. Da kam es mir schon gelegen, dass mein Drucker mich persönlich sehen
+    wollte: immer dann, <indexterm>FO Plugin</indexterm>wenn ein PDF-Druck aus
+    dem DITA-OT mit Hilfe des Idiom FO-Plugins anstand. Immer fragte mich der
+    Drucker via Display, ob er auf A4
+    <indexterm>layout-master.xml</indexterm>umstellen <indexterm>Seitengröße
+    A4</indexterm>solle. <indexterm>A4</indexterm>Nun habe ich Dank eines
+    Tutorials auf Scriptorium meine gesundheitsfördernden Spaziergänge (2 m)
+    zum Drucker abgestellt.</p><p><fig>
+        <title>Kein sofortiger Ausdruck</title>
+
+        <image alt="A4-Drucker" href="pdf-a4-drucker.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>A4 beim DITA-OT 1.4.2.1</title><p>Editieren Sie die Datei
+    <filepath>fo\cfg\fo\layout-master.xml</filepath> und tragen Sie die
+    folgenden Werte in mm für A4 bei sämtlichen Seitenbreiten und Seitenhöhen
+    ein:</p><codeblock>page-width="210mm"
+page-height="297mm"
+</codeblock></section>
+
+    <section><title>A4 beim DITA-OT 1.5 und höher</title><p>Editieren Sie die
+    Datei <filepath>fo\cfg\fo\attrs\basic-settings.xml</filepath> und
+    <indexterm>basic-settings.xml</indexterm>tragen Sie die Werte
+    <indexterm>page-width</indexterm>in <indexterm>page-height</indexterm>mm
+    für A4 ein:</p><codeblock>&lt;xsl:variable name="page-width"&gt;210mm&lt;/xsl:variable&gt;
+&lt;xsl:variable name="page-height"&gt;297mm&lt;/xsl:variable&gt;
+</codeblock></section>
+
+    <section><title>Links zum Artikel</title><p><ul>
+        <li><xref format="html"
+        href="http://www.scriptorium.com/whitepapers/ditaotpdf/index.html"
+        scope="external">Scriptorium.com - Customizing PDF output in the DITA
+        Open Toolkit</xref></li>
+      </ul></p></section>
+  </conbody>
+</concept>

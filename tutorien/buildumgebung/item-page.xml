@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="buildumgebung_topic" xml:lang="de-de">
+  <title>DITA-Buildumgebung</title>
+
+  <shortdesc>Vorschlag einer bequemen Build-Umgebung mit Hilfe von Ant.
+  Desweiteren: wie veröffentliche ich die Quellen auf github.com und gestalte
+  eine statische Webseite mit github-pages?</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="2011-09-14"/>
+
+      <revised modified="2011-09-14"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body/>
+</topic>

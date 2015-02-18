@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="tools.gh-pages-branch.task" xml:lang="de-de">
+  <title>Eine Github-Page erstellen</title>
+
+  <shortdesc>Anleitung: So erstellen Sie einen Branch und darin eine
+  HTML-Seite als Github-Page.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="21.02.2014"/>
+
+      <!-- <revised modified="13.02.2014"/> -->
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>github.com</indexterm>
+
+        <indexterm>gh-pages</indexterm>
+
+        <indexterm>Branch erstellen</indexterm>
+
+        <indexterm>Git</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014-02-12" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="tools.gh-pages-branch.task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p><note>Der Autor ist ein Redakteur und kein Programmierer. Dies
+    ist keine Anleitung zur Versionskontrolle. Die Veröffentlichung von
+    HTML-Output aus DITA-Quelldateien steht hier im Vordergrund.</note></p><p
+    otherprops="bedingung" outputclass="bedingung">Sie haben bereits ein
+    lokales Repository, welches mit Ihrem Remote Repository auf github.com
+    verbunden ist.</p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Erstellen Sie einen neuen Branch <userinput>gh-pages</userinput>.
+        Gehen Sie dazu im Windows Explorer in das Verzeichnis Ihres
+        Repositorys und machen Sie einen rechten Mausklick. Wählen Sie den
+        Eintrag <uicontrol>Git Bash Here</uicontrol>.</cmd>
+
+        <stepresult><screen>$ git checkout --orphan gh-pages</screen><p>Dies
+        erzeugt einen Branch <filepath>gh-pages</filepath> und wechselt gleich
+        in diesen.</p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Löschen Sie nun, da Sie sich im Branch
+        <filepath>gh-pages</filepath> befinden, sämtliche Dateien, die nicht
+        in ihre Github-Page gehören. D. h. sämtlich DITA-Quelldateien Ihres
+        Master-Braches. Keine Angst: sobald Sie am Ende in den Master-Branch
+        zurückschwenken, erscheinen Ihnen dort wieder die DITA-Quelldateien in
+        diesem Verzeichnis.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die Dateien in das Verzeichnis, die Ihre Github-Page
+        ausmachen. Erstellen Sie wenigstens eine
+        <filepath>index.html</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Wechseln Sie wieder in die git-Konsole im Branch
+        <filepath>gh-pages</filepath> und geben Sie ein:</cmd>
+
+        <stepresult><screen>$ git add --all</screen></stepresult>
+      </step>
+
+      <step>
+        <cmd>Bestätigen Sie die Änderungen:</cmd>
+
+        <stepresult><screen>$ git commit -m "Initial commit"</screen></stepresult>
+      </step>
+
+      <step>
+        <cmd>Laden Sie den neuen Branch hoch in Ihr Projekt-Repository:</cmd>
+
+        <stepresult><screen>$ git push origin gh-pages</screen></stepresult>
+      </step>
+
+      <step>
+        <cmd>Kehren Sie in Ihren Master-Branch zurück, in dem die
+        DITA-Quelldateien liegen.</cmd>
+
+        <stepresult><screen>$ git checkout master</screen><p>Alle Ihre
+        DITA-XML-Dateien kommen Ihnen nun wieder zur Ansicht.</p></stepresult>
+      </step>
+    </steps>
+
+    <result outputclass="ergebnis"><p otherprops="ergebnis">Sie finden nun auf
+    <userinput>IhrBenutzername.github.io/RepositoryName</userinput> Ihre
+    Github-Page zum Projekt.</p></result>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li>Github.com Hilfe - Eine Projekt Page manuell erstellen, <xref
+        format="html"
+        href="https://help.github.com/articles/creating-project-pages-manually"
+        scope="external">zum Link</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

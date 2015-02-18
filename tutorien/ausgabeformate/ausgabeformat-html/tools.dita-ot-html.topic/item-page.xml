@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="tools.dita-ot-html.topic" xml:lang="de-de">
+  <title>Bootstrapping your DITA</title>
+
+  <shortdesc>Erstellen Sie mit dem Plugin <i>net.sourceforge.dita-ot.html</i>
+  und dem Bootstrap.css sowie viel Handarbeit eine statische Webseite auf
+  github-pages. Ein Beispiel ist die Dokumentation zum DITA-OT.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="26.03.2014"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body id="tools.dita-ot-html.topic">
+    <note>Dies ist keine ausführliche Schritt-für-Schritt-Anleitung. Dafür ist
+    es zu umfangreich und kann sich bei jedem anders gestalten. Jedoch zuvor
+    diese Hinweise: <ul>
+        <li>Ich empfehle ein DITA-OT oberhalb der Version 1.6.3.</li>
+
+        <li>Nutzen Sie möglichst keine pupmaps (Dita4Publishers) und andere
+        Spezialisierungen der DITA-Topics.</li>
+
+        <li>Chunking erfordert viel manuelles Nacharbeiten.</li>
+
+        <li>Wenn Sie mit einem Texteditor arbeiten: vorsichtshalber von ASCII
+        auf UTF-8 umstellen.</li>
+      </ul></note>
+
+    <section><title>Beispielanwendung - Dokumentation zum DITA Open
+    Toolkit</title><p><fig>
+        <title>So soll es aussehen</title>
+
+        <image alt="DITA-OT-Doku" href="dita-ot-doku_961.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Links zum Artikel</title><ol>
+        <li>Bootstrapping Your DITA for Sweet Responsive HTML5 Help, Carlos
+        Evia, <xref format="html"
+        href="http://blog.carlosevia.com/blog/2013/09/13/Bootstrapping-your-DITA/"
+        scope="external">zum Link</xref></li>
+
+        <li>Onlinedokumentation zum DITA-OT als Beispiel auf
+        dita-ot.github.io, Jarno Elorvirta, <xref format="html"
+        href="http://dita-ot.github.io/" scope="external">zum Link</xref></li>
+      </ol></section>
+
+    <section product="online"><title>Inhalt</title><p/></section>
+  </body>
+</topic>

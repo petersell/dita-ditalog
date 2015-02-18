@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="keydef-ausgabeformate" scope="local" title="Container Ausgabeformate"
+     xml:lang="de-de">
+  <keydef href="ausgabeformate/item-page.xml" keys="ausgabeformate"
+          processing-role="resource-only" type="topic" xml:lang="de-de"/>
+
+  <!-- Topics Part 1 HTML -->
+
+  <keydef href="ausgabeformate/ausgabeformat-html/item-page.xml"
+          keys="ausgabeformat-html" processing-role="resource-only"
+          type="topic" xml:lang="de-de"/>
+
+  <!-- Topics Kapitel Bootstrapping-->
+
+  <keydef href="ausgabeformate/ausgabeformat-html/tools.dita-ot-html.topic/item-page.xml"
+          keys="tools.dita-ot-html.topic" processing-role="resource-only"
+          type="topic" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-html/tools.dita-ot-html.topic/jekyll-ordner-editieren.task/item-page.xml"
+          keys="jekyll-ordner-editieren.task" processing-role="resource-only"
+          type="task" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-html/tools.dita-ot-html.topic/output-manuell-editieren.task/item-page.xml"
+          keys="output-manuell-editieren.task" processing-role="resource-only"
+          type="task" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-html/tools.dita-ot-html.topic/plugin-dita-ot-html.task/item-page.xml"
+          keys="plugin-dita-ot-html.task" processing-role="resource-only"
+          type="task" xml:lang="de-de"/>
+
+  <!--Part 2 EPUB-->
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/item-page.xml"
+          keys="ausgabeformat-epub" type="topic" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-installieren_topic/item-page.xml"
+          keys="d4p-installieren_topic" type="topic" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-installieren_topic/d4p-dtds-in-eclipse_task/item-page.xml"
+          keys="d4p-dtds-in-eclipse_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-installieren_topic/d4p-dtds-in-xml-spy_task/item-page.xml"
+          keys="d4p-dtds-in-xml-spy_task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-installieren_topic/d4p-dtds-in-xmlmind_task/item-page.xml"
+          keys="d4p-dtds-in-xmlmind_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-installieren_topic/d4p-insall_task/item-page.xml"
+          keys="d4p-insall_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-epub-einstellungen_topic/item-page.xml"
+          keys="d4p-epub-einstellungen_topic" scope="local" type="topic"
+          xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-epub-einstellungen_topic/d4p-covergraphic-standarddtd_task/item-page.xml"
+          keys="d4p-covergraphic-standarddtd_task" scope="local" type="task"
+          xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-epub-einstellungen_topic/d4p-epub-autor-unbekannt_con/item-page.xml"
+          keys="d4p-epub-autor-unbekannt_con" scope="local" type="concept"
+          xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-epub-einstellungen_topic/d4p-epub-coverbild_con/item-page.xml"
+          keys="d4p-epub-coverbild_con" scope="local" type="concept"
+          xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-epub/d4p-epub-einstellungen_topic/d4p-related-links-abstellen_con/item-page.xml"
+          keys="d4p-related-links-abstellen_con" scope="local" type="concept"
+          xml:lang="de-de"/>
+
+  <!--Part 3 PDF-->
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/item-page.xml"
+          keys="ausgabeformat-pdf" type="topic" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/item-page.xml"
+          keys="pdf_design_topic" type="topic" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_tipps_topic/item-page.xml"
+          keys="pdf_tipps_topic" type="topic"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_versus_topic/item-page.xml"
+          keys="pdf_versus_topic" type="topic"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-a4_con/item-page.xml"
+          keys="pdf-a4_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-einzelkapitel_con/item-page.xml"
+          keys="pdf-einzelkapitel_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-fusszeile-2_task/item-page.xml"
+          keys="pdf-fusszeile-2_task" type="task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-fusszeile_task/item-page.xml"
+          keys="pdf-fusszeile_task" type="task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-metadaten_con/item-page.xml"
+          keys="pdf-metadaten_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-paragraphensymbol_con/item-page.xml"
+          keys="pdf-paragraphensymbol_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/pdf-textintend_task/item-page.xml"
+          keys="pdf-textintend_task" type="task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_tipps_topic/install-renderx_task/item-page.xml"
+          keys="install-renderx_task" type="task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_tipps_topic/pdf-leere-seiten_con/item-page.xml"
+          keys="pdf-leere-seiten_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_tipps_topic/xep-umziehen_task/item-page.xml"
+          keys="xep-umziehen_task" type="task"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_versus_topic/pdf-direktlinks_con/item-page.xml"
+          keys="pdf-direktlinks_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_versus_topic/pdf-inhaltsverzeichnis_con/item-page.xml"
+          keys="pdf-inhaltsverzeichnis_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-pdf/pdf_design_topic/ueberschriften-vierter-ordnung_concept/item-page.xml"
+          keys="ueberschriften-vierter-ordnung_concept"/>
+
+  <!--Part 4 CHM-->
+
+  <keydef href="ausgabeformate/ausgabeformat-chm/item-page.xml"
+          keys="ausgabeformat-chm" type="topic"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-chm/chm-konfigurieren_con/item-page.xml"
+          keys="chm-konfigurieren_con" type="concept"/>
+
+  <keydef href="ausgabeformate/ausgabeformat-chm/umlaute-in-toc_task/item-page.xml"
+          keys="umlaute-in-toc_task" type="task"/>
+
+  <keydef keys="petersell-mail-allgemein">
+    <topicmeta>
+      <keywords>
+        <keyword>mail@petersell.de</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+</map>

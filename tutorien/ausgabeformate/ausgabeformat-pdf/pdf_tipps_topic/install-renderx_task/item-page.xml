@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="install-renderx_task" xml:lang="de-de">
+  <title>Installation des RenderX-Formatierers</title>
+
+  <shortdesc>Anleitung: So installieren Sie den RenderX-Formatter für das
+  FO-Plugin und den PDF2-Output.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="30.08.2010"/>
+
+      <revised modified="29.01.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>RenderX installieren</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="install-renderx_task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Installieren Sie das
+        <indexterm>DITA-OT</indexterm>DITA-OpenToolkit</cmd>
+      </step>
+
+      <step>
+        <cmd>Downloaden<indexterm>RenderX Personal Edition</indexterm> Sie die
+        RenderX Personal Edition unter <xref format="html"
+        href="http://www.renderx.com/download/personal.htm"
+        scope="external">www.renderx.com/download/personal.htm</xref></cmd>
+
+        <stepresult><p><fig>
+            <title>Persönliche Lizenz anfordern</title>
+
+            <image alt="RenderX downloaden" href="install-renderx1.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Nach Klick auf <uicontrol outputclass="button">Submit</uicontrol>
+        erhalten Sie an Ihre E-Mailadresse einen Lizenzdatei vom Absender
+        <systemoutput>sales@renderx.com</systemoutput>. Betreff:
+        <systemoutput>Download Instructions: RenderX XEP Trial Software:
+        IhrName</systemoutput> etc. Im Anhang befindet sich die
+        Lizenzschlüsseldatei <filepath>license.xml</filepath></cmd>
+      </step>
+
+      <step>
+        <cmd>Speichern Sie die Lizenzschlüsseldatei lokal ab und klicken Sie
+        auf den Downloadlink.</cmd>
+      </step>
+
+      <step>
+        <cmd>Speichern die Datei
+        <filepath>xep-Versionsnummer-personal.zip</filepath> lokal ab und
+        entpacken Sie diese.</cmd>
+      </step>
+
+      <step>
+        <cmd>Eine von den drei Dateien ist das JAR-Archiv
+        <filepath>setup-Versionsnummer-personal.jar</filepath>. Öffnen Sie im
+        entsprechenden Verzeichnis eine Eingabeaufforderung und geben Sie
+        folgenden Befehl ein (ggf. Version und Datum anpassen):</cmd>
+
+        <stepresult><codeph>java -jar
+        setup-4.21-20121114-personal.jar</codeph></stepresult>
+      </step>
+
+      <step>
+        <cmd>Scrollen Sie bis ans Endes der Lizenzvereinbarung, so dass die
+        Schaltlfäche <uicontrol outputclass="button">Yes, I Accept</uicontrol>
+        aktiv wird. Klicken Sie auf die nun aktive Schaltfläche.</cmd>
+
+        <stepresult><fig>
+            <title>Lizenzvereinbarung zustimmen</title>
+
+            <image alt="Lizenzvereinbarung Renderx"
+                   href="install-renderx3.gif" placement="break"/>
+          </fig></stepresult>
+      </step>
+
+      <step>
+        <cmd>Wählen Sie das Verzeichnis
+        <filepath>C:\DITA-OT1.6.3\plugins\org.dita.pdf2\lib\xep</filepath> als
+        das Installationsverzeichnis. <indexterm>icu4j.jar</indexterm>Dies
+        erspart später Pfadkorrekturen im FO-Plugin.</cmd>
+
+        <stepresult><fig>
+            <title>Installationsverzeichnis und Lizenzschlüssel
+            bestimmen</title>
+
+            <image alt="Rencerx Installationsverzeichnis"
+                   href="install-renderx4.gif" placement="break"/>
+          </fig></stepresult>
+      </step>
+
+      <step>
+        <cmd>Suchen Sie die Lizenzdatei und klicken Sie auf <uicontrol
+        outputclass="button">Install</uicontrol> und abschließend auf
+        <uicontrol outputclass="button">Finish</uicontrol>.</cmd>
+      </step>
+
+      <step importance="optional">
+        <cmd>Ab DITA-OT 1.6 kann dieser Schritt entfallen: Laden Sie die
+        Javabibliothek <filepath>icu4j-Versionsnummer.jar</filepath> unter
+        folgender URL herunter: <xref format="html"
+        href="http://site.icu-project.org/download"
+        scope="external">site.icu-project.org/download</xref></cmd>
+
+        <stepresult><fig>
+            <title>Download icu4j.jar</title>
+
+            <image alt="icu4j.jar" href="install-renderx5-icu4j.gif"
+                   placement="break"/>
+          </fig><p><fig>
+            <title>Download icu4j.jar 2. Fenster</title>
+
+            <image alt="ICU4J" href="install-renderx6.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step importance="optional">
+        <cmd>Kopieren Sie die Datei in das Verzeichnis
+        <filepath>C:\DITA-OT1.5.2\demo\fo\lib</filepath> und nennen Sie die
+        Datei um in <filepath>icu4j.jar</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei
+        <filepath>C:\DITA-OT1.6.3\plugins\org.dita.pdf2\build.xml</filepath>
+        und ändern Sie den Wert für den <codeph>pdf.formatter</codeph> von
+        <userinput>fop</userinput> in <userinput>xep</userinput>:</cmd>
+
+        <stepresult><codeblock>&lt;property name="pdf.formatter" value="xep"/&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Ändern Sie in der selben build-Datei den Eintrag für die deutsche
+        Sprache.</cmd>
+
+        <stepresult><codeblock>&lt;condition property="document.locale" value="de_DE"&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie über <filepath>startcmd.bat</filepath> die
+        DITA-OT-Eingabeaufforderung und geben Sie folgenen ANT-Befehl
+        ein:</cmd>
+
+        <stepresult><codeblock>ant -f integrator.xml</codeblock></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN"
+"../../../../dtd/technicalContent/dtd/generalTask.dtd">
+<task id="icon2-iconsushi_task" xml:lang="de-de">
+  <title>ICO-Datei erstellen und einbinden (Teil 2)</title>
+
+  <shortdesc>Anleitung: So erstellen Sie mit Hilfe des Freewareprogramms Icon
+  Sushi aus mehreren Graphiken eine ICO-Datei und binden Sie in die
+  HTML-Seiten ein.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="08.03.2011"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Favicon mit Inkscape erstellen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Online-Hilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="icon2-iconsushi_task"/>
+  </prolog>
+
+  <taskbody>
+    <context><p>Sobald Sie Icon-Graphiken in den Größen 16, 32, 48 und 128 px
+    haben, können Sie daraus eine Icondatei erstellen. Je nach Erfordernis
+    erscheint das jeweilige Icon in der richtigen Größe. So z.B. auf dem
+    Desktop als Verknüpfungssymbol oder im Internetbrowser an diversen Stellen
+    wie z.B. in der URL-Adresszeile. Das Open-Souce-Programm <i>Icon
+    Sushi</i><indexterm>Icon Sushi</indexterm><indexterm>Icondatei ico
+    erstellen</indexterm><indexterm>ico-Datei einbinden</indexterm> hilft bei
+    der ICO-Dateierstellung.</p><p><fig>
+        <title>Icon im Browser Firefox</title>
+
+        <image alt="favicon im Browser" href="icon-im-browser.gif"
+               placement="break"/>
+      </fig></p></context>
+
+    <steps>
+      <step>
+        <cmd>Klicken Sie im Open-Souce-Programm <i>Icon Sushi</i> auf die
+        Symbolschaltfläche <uicontrol outputclass="button">Öffnen</uicontrol>
+        und laden Sie sämtliche Icon-Graphiken ins Programm. Sie können
+        mehrere markieren und im Block ins Programm laden. Das Icon der Größe
+        256 px kann nicht ins Programm importiert werden.</cmd>
+
+        <stepresult><p><fig>
+            <title>Graphiken sämtlicher Größen laden</title>
+
+            <image alt="Dateien öffnen" href="iconsushi1.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Markieren Sie sämtliche Bilddateien und klicken Sie auf die
+        Symbolschaltfläche <uicontrol outputclass="button">Save as Multiple
+        Icon</uicontrol>.</cmd>
+
+        <stepresult><p><fig>
+            <title>Als Mehrfach-Icon abspeichern</title>
+
+            <image href="iconsushi2.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Wählen Sie im Fenster <wintitle>Save as Multiple Icon</wintitle>
+        einen Speicher-Ordner und einen Namen für die ICO-Datei. Klicken Sie
+        abschließend auf <uicontrol
+        outputclass="button">Speichern</uicontrol>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die ICO-Datei in das Hauptverzeichnis Ihrer
+        Online-Hilfe. Bei einer Wordpress-Installation kopieren Sie die
+        Icondatei in das Hauptverzeichnis bzw. in das Hauptverzeichnis Ihres
+        Templates.</cmd>
+      </step>
+
+      <step>
+        <cmd>Bei Wordpress: binden Sie die Icondatei
+        (<filepath>dateiname.ico</filepath>) in die
+        <filepath>header.php</filepath> innerhalb des
+        <filepath>head</filepath>-Tags ein. Haben Sie keine WP-Installation,
+        tragen Sie die URL ohne php-Tags ein.</cmd>
+
+        <stepresult><codeph>&lt;link rel="shortcut icon" href="&lt;?php
+        bloginfo('url'); ?&gt;/dateiname.ico" type="image/x-icon"
+        /&gt;</codeph></stepresult>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ul>
+        <li>Icon Sushi von pcmasters.de downloaden, <xref format="html"
+        href="http://www.pcmasters.de/download/informationen/review/icon-sushi.html"
+        scope="external">zum Link</xref></li>
+      </ul></postreq>
+  </taskbody>
+</task>

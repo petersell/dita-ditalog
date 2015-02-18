@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="dita-vokabular" scope="local" title="Content DITA-Vokabular"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+  <mapref href="tutorien/keydef-dita-vokabular.ditamap"
+          processing-role="resource-only"/>
+
+  <topicref collection-type="sequence" keyref="dita-vokabular">
+    <topicref keyref="every-page-is-page-one_con"/>
+
+    <topicref keyref="filtern-nach-eigenschaften.concept"/>
+  </topicref>
+</map>

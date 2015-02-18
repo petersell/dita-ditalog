@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="index5" xml:lang="de-de">
+  <title>DITA für Redakteure</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>petersell.com</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="10.04.2014"/>
+    </critdates>
+
+    <metadata>
+      <keywords/>
+
+      <prodinfo>
+        <prodname>techcomm-001</prodname>
+
+        <vrmlist>
+          <vrm release="2011-11-01" version="1"/>
+        </vrmlist>
+
+        <featnum>0.1</featnum>
+
+        <series>Techcomm</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="intro_con"/>
+  </prolog>
+
+  <conbody>
+    <section><p>Das Ditalog ist eine lose Erfahrungsschatzsammlung eines
+    Redakteurs zum Dokumentationsstandard DITA (Darwin Information Typing
+    Architecture). Im Vordergrund stehen Handlungsanleitungen zu Problemen,
+    wie sie sich in der Praxis des Autors auftaten. Besonderheit: Sprache
+    deutsch. Das Ditalog richtet sich in erster Linie an
+    Solo-Redakteure.</p></section>
+
+    <section><title>Was ist neu?</title><p><xref
+    href="chapters/common/wasistneu_concept.xml" scope="local" type="concept"
+    xml:lang="de-de">Diese Artikel</xref> sind neu hinzugekommen.</p><p><image
+    href="frontmatter/images/ditalog-artikelbild.png"
+    placement="break"/></p></section>
+  </conbody>
+</concept>

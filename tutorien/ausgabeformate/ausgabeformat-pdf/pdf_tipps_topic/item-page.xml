@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/task.dtd">
+<topic id="pdf_tipps_topic" xml:lang="de-de">
+  <title>Weitere Tipps und Werkzeuge</title>
+
+  <shortdesc product="online">Tipps und Tools bei der
+  PDF-Generierung.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2010"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2010-06-18" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body id="topic-id"/>
+</topic>

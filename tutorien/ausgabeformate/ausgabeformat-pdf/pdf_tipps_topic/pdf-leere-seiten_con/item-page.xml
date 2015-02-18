@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-leere-seiten_con" xml:lang="de-de">
+  <title>Leere Seiten aus der PDF-Datei entfernen.</title>
+
+  <shortdesc>Leere oder nicht benötigte Seiten sollen aus der PDF-Datei
+  entfernt werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.12.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>PDFSam</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-leere-seiten_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Problem der nicht benötigten Seiten</title><p>Als
+    PDF-Ergebnis erhält man, auch ohne eine bookmap zu nutzen, eine PDF-Datei
+    mit <indexterm>PDF leere Seiten entfernen</indexterm>Deckblatt und
+    Inhaltsverzeichnis. Möchte man jedoch nur eine A4-Seite für eine kleine
+    Änderungsliste oder ähnliches erstellen, wirkt ein Deckblatt und ein
+    Inhaltsverzeichnis mit nur einem Eintrag deplatziert. </p><p>Desweiteren
+    enstehen oftmals leere Seiten, die nur im beidseitigem Druck einen Sinn
+    ergeben. Der PDF-Ausdruck geschieht jedoch meistens für den einseitigen
+    Ausdruck, worin die leeren Seiten als störend empfunden werden.
+    </p><p>Wenn man also nicht gleich in den XSL-FO-Stylesheets Änderungen
+    vornehmen möchte, gibt mehrere Gründe, Seiten aus der PDF-Datei zu
+    entfernen.</p></section>
+
+    <section><title>Links in PDF-Datei</title><p>Bisher habe ich mich damit
+    begnügt, die PDF-Datei aufzurufen und nur die Seiten, die ich benötigte,
+    <indexterm>Links in PDF</indexterm>über einen PDF-Druckertreiber
+    <i>auszudrucken</i>. Jedoch verschwand damit die
+    Internet-Linkfähigkeit:</p><p><fig>
+        <title>Link funktioniert auch im PDF-Output</title>
+
+        <image alt="Feedback in PDF" href="email-link-feedback-in-pdf.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section id="pdfsam"><title>Tool PDFsam</title><p>Das kleine Tool PDFsam
+    bewältigt zwei Probleme: <indexterm>PDF Split and Merge</indexterm>Seiten
+    entfernen und Internet-Linkfähigkeit der PDF-Datei erhalten.</p><p><fig>
+        <title>Teilen und wieder zusammenführen</title>
+
+        <image alt="PDFsam" href="pdf-sam-teilen.gif" placement="break"/>
+      </fig>Das Prinzip des Programm ist es, Dateien zu zerteilen, die leeren
+    und unbrauchbaren Seiten zu löschen und nur die beschriebenen, wichtigen
+    Seiten wieder zu einer PDF-Datei zusammenzuführen. Im Beispiel wird nach
+    Seite 2 getrennt, weil die ersten beiden Seiten das nicht benötigte
+    Deckblatt und das Inhaltsverzeichnis darstellen. Und es wird nach Seite 7
+    getrennt, weil Seite 8 das Stichtwortvzeichnis ist, welches für eine kurze
+    Installationsanleitung nicht vonnöten ist. </p><p>Im obigen Beispiel
+    kommen wir also mit Teilen aus. Sind zwischendurch Leerseiten zu
+    entfernen, müssen die einzelnen wichtigen Zwischenstücke am Ende wieder zu
+    einer PDF-Datei zusammengeführt werden.</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li>PDFsam Download, <xref format="html"
+        href="http://www.pdfsam.org/?page_id=32" scope="external">zum
+        Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

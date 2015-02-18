@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <!-- PETERSELL ALLGEMEIN -->
+  <!-- Impressum-Mail -->
+  <!-- <keydef keys="petersell-mail-allgemein"><topicmeta><keywords><keyword>mail@petersell.de</keyword></keywords></topicmeta></keydef> -->
+  <!-- Petersell-Logo Titel_con -->
+  <!-- <keydef keys="pic-petersell-logo-buchtitel" href="../../includes/images/petersell-logo-buchtitel.gif" format="gif"></keydef> -->
+  <!-- Über den Autor - Bild -->
+  <!-- <keydef keys="pic-petersell-autor" href="../images/andreas-petersell.gif" format="gif"></keydef>  -->
+  <!-- PETERSELL SPEZIELL -->
+  <!-- Autor - / Titel / Impressum -->
+  <keydef keys="autor"><topicmeta><keywords><keyword>Andreas Petersell</keyword></keywords></topicmeta></keydef>
+  
+  <!-- Autor - E-Mailadresse / Interview -->
+  <keydef keys="autor-email"><topicmeta><keywords><keyword>interview@petersell.de</keyword></keywords></topicmeta></keydef>
+  
+  <!-- URL des jeweiligen Buches - Impressum - auch Betreff in Interviewmail -->
+  <keydef keys="buch-url"><topicmeta><keywords><keyword>5.Petersilienbuch.de</keyword></keywords></topicmeta></keydef>
+  
+  <!-- URL der Quelldateien - Impressum  -->
+  <keydef keys="github-url"><topicmeta><keywords><keyword>https://github.com/petersell/ditalog</keyword></keywords></topicmeta></keydef>
+  
+  <!-- Erstmals erschienen am -->
+  <keydef keys="erschienen-am"><topicmeta><keywords><keyword>19.03.2010</keyword></keywords></topicmeta></keydef>
+  
+  <!-- Inhaltsebene aktualisiert am -->
+  <keydef keys="inhaltsebene-am"><topicmeta><keywords><keyword>05.02.2015</keyword></keywords></topicmeta></keydef>
+  
+  <!-- Inhalt-Änderung Nr. ... -->
+  <keydef keys="inhaltsebene-version"><topicmeta><keywords><keyword>2</keyword></keywords></topicmeta></keydef>
+  
+  <!-- Sozialebene aktualisiert am -->
+  <!-- <keydef keys="sozialebene-am"><topicmeta><keywords><keyword>04.07.2012</keyword></keywords></topicmeta></keydef>  -->
+  
+  <!-- Sozial-Änderung Nr. ... -->
+  <!-- <keydef keys="sozialebene-version"><topicmeta><keywords><keyword>0</keyword></keywords></topicmeta></keydef>  -->
+  
+  <!-- Links -->
+  <!-- <keydef keys="dita-for-pract" href="http://xmlpress.net/publications/dita/practitioners-1/" format="html" scope="external"></keydef> --> 
+  </map>

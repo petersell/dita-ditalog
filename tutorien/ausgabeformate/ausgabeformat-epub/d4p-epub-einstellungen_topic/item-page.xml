@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"../../dtd/technicalContent/dtd/topic.dtd">
+<topic id="d4p-epub-einstellungen_topic" xml:lang="de-de">
+  <title>Einstellungen für die EPUB-Generierung</title>
+
+  <shortdesc product="online">So nehmen Sie die Konfiguration für bestimmte Anzeigen und Ausgaben vor.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+     <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body id="topic-id"/>
+</topic>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="tocofsection_con" xml:lang="de-de">
+  <title>Seiteninhaltsverzeichnis am rechten Rand</title>
+
+  <shortdesc>Bei Concepts sollen die Überschriften jeder section am rechten
+  Rand als kleines Inhaltsverzeichnis dieser Konzept-Seite
+  erscheinen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <critdates>
+      <created date="17.09.2009"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2009-12-01" version="0.1"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="tocofsection_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>XSL-Stylesheet in der Dokumentation</title><p>Natürlich
+    habe ich versucht, selbst XSL-Stylesheet-Anpassungen zu kreieren. Das
+    Ergebnis: keine Fehlermeldung und kein Inhaltsverzeichnis. Bis ich in der
+    Datei <filepath>DITA-OT\xsl\xslhtml\dita2htmlImpl.xsl</filepath>
+    <indexterm>dita2htmlImpl.xsl<indexterm>gen-user-sidetoc</indexterm></indexterm>auf
+    den Eintrag</p><codeblock>&lt;xsl:template <indexterm>gen-user-side-toc</indexterm>name="gen-user-sidetoc"&gt;</codeblock><p>stieß.
+    Schnell danach gegoogelt und hier die Rettung in der neuen
+    Toolkit-Dokumentation und einem XSL-Tutorial gefunden. Hier das
+    Beispielskript vom DITA-OT:</p><codeblock>&lt;!-- override for main stub --&gt;
+&lt;xsl:template name="gen-user-sidetoc"&gt;
+&lt;!-- if there are nested topics... --&gt; 
+&lt;xsl:if test="descendant::*[contains(@class,' topic/topic ')]"&gt;
+&lt;p&gt;&lt;table width="150" align="right" border="1" frame="box" rules="none"&gt;
+&lt;tr&gt;&lt;td height="5" bgcolor="#0033CC" align="center"&gt; 
+&lt;b&gt;&lt;font color="#FFFFFF"&gt;Contents:&lt;/font&gt;&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;xsl:for-each select="descendant::*[contains(@class,' topic/topic ')]"&gt;
+&lt;xsl:variable name="ttext"&gt;&lt;xsl:value-of select="*[contains(@class,' topic/title ')]"/&gt;
+&lt;/xsl:variable&gt; &lt;tr&gt;&lt;td class="toc"&gt;
+- &lt;a href="#{generate-id()}"&gt;&lt;xsl:value-of select="$ttext"/&gt;&lt;/a&gt;
+&lt;!--recursive call for subtopics here"/--&gt; &lt;/td&gt;&lt;/tr&gt;
+&lt;/xsl:for-each&gt;&lt;/table&gt;&lt;/p&gt;&lt;/xsl:if&gt;
+&lt;/xsl:template&gt;
+</codeblock></section>
+
+    <section><title>XSL-Stylesheet individuell anpassen</title><p>Durch
+    <i>trial and error</i> habe ich das Template derart angepaßt, dass immer
+    nur in Concepts rechts oben
+    <indexterm>Seiteninhaltsverzeichnis</indexterm>ein
+    Seiteninhaltsverzeichnis erscheint, welches die <i>section titles</i> -
+    sprich die Überschriften zu jeder Sektion - auflistet.</p><p><fig>
+        <title>Die Sektionsüberschriften am rechten Rand des Concepts</title>
+
+        <image alt="sectiontoc Beispiel" href="sectiontoc.gif"
+               placement="break"/>
+      </fig></p><codeblock id="gen-user-sidetoc">&lt;xsl:template name="gen-user-sidetoc"&gt;
+&lt;xsl:if test="descendant::*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"&gt;
+&lt;p&gt;&lt;table class="table" width="200" align="right" border="0"&gt;
+&lt;tr&gt;&lt;td class="tablehead" align="center"&gt;Seitenübersicht&lt;/td&gt;&lt;/tr&gt;
+&lt;xsl:for-each select="descendant::*[contains(@class,' topic/section ')]/*[contains(@class,' topic/title ')]"&gt;
+&lt;xsl:value-of select="*[contains(@class,' topic/title ')]"/&gt;
+&lt;tr&gt;&lt;td&gt;&lt;a href="#{generate-id()}"&gt;&lt;xsl:value-of select="text()"/&gt;&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;/xsl:for-each&gt;
+&lt;/table&gt;&lt;/p&gt;
+&lt;/xsl:if&gt;
+&lt;/xsl:template&gt;
+</codeblock></section>
+
+    <section><title>Anker generieren</title><p>Es mußte noch ein Template her,
+    um <indexterm>Anker</indexterm>Namensanker
+    <indexterm>Namensanker</indexterm>zu erstellen.</p><codeblock>&lt;xsl:template name="id"&gt;
+&lt;a name="{generate-id()}"/&gt;
+&lt;/xsl:template&gt;
+</codeblock><p>Dieses Anker-Template muss nun innerhalb des Template für die
+    <i>section-titles</i> aufgerufen werden, damit in jeder <i>section</i> ein
+    Namensanker generiert wird:</p><codeblock>&lt;xsl:call-template name="id"/&gt;</codeblock></section>
+
+    <section><title>Stylesheet auslagern in ein Plugin</title><p>Damit die
+    geänderte Datei <filepath>dita2htmlImpl.xsl </filepath>nicht beim nächsten
+    DITA-OT-Update verloren <indexterm>scriptorium.com</indexterm>geht, ist es
+    ratsam, das <codeph>gen-user-sidetoc</codeph>-Template in ein Plugin
+    auszulagern.</p></section>
+
+    <section><title>Sections und EPUB</title><p>Bei der Generation von
+    EPUB-Dateien wirkt jedoch die Section-Übersicht am rechten Rand als
+    störend. Dann ist es besser, einfach den Plugin-Ordner herauszunehmen bzw.
+    umzubenennten.</p></section>
+
+    <section><title>Links zum Artikel</title><ol>
+        <li>DITA-OT Dokumentation - Stubs for user-proviede override
+        extensions, <xref format="html"
+        href="http://dita-ot.sourceforge.net/doc/DITA-stubs.html"
+        scope="external">zum Link</xref></li>
+
+        <li>Scriptorium.com - Hacking the DITA OT, <xref format="html"
+        href="http://www.scriptorium.com/whitepapers/hackingot/index.html"
+        scope="external">zum Link</xref></li>
+      </ol></section>
+  </conbody>
+</concept>

@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="plugin-erstellen-bildunterschrift_con" xml:lang="de-de">
+  <title>Plugin für die Bildunterschrift erstellen</title>
+
+  <shortdesc>Im Standard-DITA-OT ist die Bildunterschrift immer oberhalb des
+  Bild mit der Ausschrift <systemoutput>Abbildung 1</systemoutput> usw. Sie
+  soll unterhalb des Bildes erscheinen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <critdates>
+      <created date="06.02.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>figcap</indexterm>
+
+        <indexterm>Bildunterschrift unterhalb des Bildes</indexterm>
+
+        <indexterm>Plugin erstellen</indexterm>
+
+        <indexterm>string-de-de.xml</indexterm>
+
+        <indexterm>Schriftgrad verkleinern</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Online-Hilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="plugin-erstellen-bildunterschrift_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Bildunterschrift in der Onlineausgabe</title><p>Zudem soll
+    sie etwas kleiner als die Absatzschriftart sein und lediglich die
+    Abkürzung <systemoutput>Abb. 1</systemoutput> als Präfix
+    ausgeben.</p><p>Den etwas kleineren Schriftgrad ereichen Sie durch
+    folgenden Eintrag in Ihrer CSS-Datei.</p><codeblock>.figcap {font-size: 80%;}</codeblock><p>Nachtrag:
+    ich konnte keine Verkleinerung erkennen. Auch allgemeinere Werte wie
+    <codeph>smaller</codeph> brachten keine Änderung. Aber vielleicht haben
+    Sie mehr Glück.</p><p>Die Abkürzung <systemoutput>Abb.</systemoutput>
+    erreichen Sie durch das Editieren der Datei
+    <filepath>string-de-de.xml</filepath> im Ordner<filepath>
+    DITA-OT/xsl/common</filepath>.</p><codeblock>&lt;str name="Figure"&gt;Abb.&lt;/str&gt;</codeblock></section>
+
+    <section><title>Override-Stylesheet-Datei erstellen</title><p>Erstellen
+    Sie analog der Datei <filepath>dita2htmlImpl.xsl</filepath> eine neue
+    XSL-Datei bzw. das Gerüst einer solchen. In den Kopf und Fuß der neuen
+    Datei, die ein Template des Toolkits außer Kraft setzten soll, müssen die
+    Standardeinträge:</p><codeblock>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+xmlns:dita-ot="http://dita-ot.sourceforge.net/ns/201007/dita-ot"
+xmlns:dita2html="http://dita-ot.sourceforge.net/ns/200801/dita2html"
+xmlns:ditamsg="http://dita-ot.sourceforge.net/ns/200704/ditamsg"
+xmlns:exsl="http://exslt.org/common"
+xmlns:java="org.dita.dost.util.ImgUtils"
+xmlns:url="org.dita.dost.util.URLUtils"
+exclude-result-prefixes="dita-ot dita2html ditamsg exsl java url"&gt;
+</codeblock><p><codeph>&lt;!-- Hier kommt Ihr angepaßtes Stylesheet
+    hinein.--&gt;</codeph></p><codeblock>&lt;/xsl:stylesheet&gt;</codeblock></section>
+
+    <section><title>Zu änderndes Stylesheet in Override-Datei
+    kopieren</title><p>Kopieren Sie aus der Datei
+    <filepath>DITA-OT\xsl\xslhtml\dita2htmlImpl.xsl</filepath> das Template in
+    die soeben neu erstellte Override-Stylesheet-Datei, welches Sie ändern
+    möchten. Suchen Sie nach dem Template mit seinem class-Attribut<codeph>
+    topic/fig</codeph>:</p><codeblock>&lt;xsl:template match="*[contains(@class, 'topic/fig')]"</codeblock><p>Das
+    Template sieht in Gänze folgendermaßen aus. Sie müssen darin den Eintrag
+    <codeph>&lt;xsl:call-template name="place-fig-lbl"/&gt;</codeph> nach
+    unten verschieben: fügen Sie es vor der Zeile <codeph>&lt;xsl:value-of
+    select="$newline"/&gt;</codeph> wieder ein.</p><codeblock>&lt;xsl:template match="*[contains(@class,' topic/fig ')]" mode="fig-fmt"&gt;
+  &lt;!-- &lt;xsl:variable name="default-fig-class"&gt;
+    &lt;xsl:apply-templates select="." mode="dita2html:get-default-fig-class"/&gt;
+  &lt;/xsl:variable&gt; --&gt;
+  &lt;xsl:variable name="flagrules"&gt;
+    &lt;xsl:call-template name="getrules"/&gt;
+  &lt;/xsl:variable&gt;
+  &lt;xsl:call-template name="start-flags-and-rev"&gt;
+  &lt;xsl:with-param name="flagrules" select="$flagrules"/&gt;&lt;/xsl:call-template&gt;
+ &lt;div&gt;
+   &lt;!-- &lt;xsl:if test="$default-fig-class!=''"&gt;
+     &lt;xsl:attribute name="class"&gt;&lt;xsl:value-of select="$default-fig-class"/&gt;&lt;/xsl:attribute&gt;
+   &lt;/xsl:if&gt;
+   &lt;xsl:call-template name="commonattributes"&gt;
+     &lt;xsl:with-param name="default-output-class" select="$default-fig-class"/&gt;
+   &lt;/xsl:call-template&gt; --&gt;
+   &lt;xsl:call-template name="gen-style"&gt;
+     &lt;xsl:with-param name="flagrules" select="$flagrules"&gt;&lt;/xsl:with-param&gt;
+   &lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="setscale"/&gt;
+  &lt;xsl:call-template name="setidaname"/&gt;
+  &lt;!-- hier war der alte Eintrag, jetzt 3. Zeile von unten --&gt;
+  &lt;xsl:apply-templates
+  select="*[not(contains(@class,' topic/title '))][not(contains(@class,' topic/desc '))] |text()|comment()|processing-instruction()"/&gt;
+ &lt;/div&gt;
+  &lt;xsl:call-template name="end-flags-and-rev"&gt;&lt;xsl:with-param name="flagrules" select="$flagrules"/&gt;&lt;/xsl:call-template&gt;
+  &lt;xsl:call-template name="place-fig-lbl"/&gt;
+&lt;xsl:value-of select="$newline"/&gt;
+&lt;/xsl:template&gt;</codeblock><p>Wenn Sie das Stylesheet kopiert und
+    geändert haben, speichern Sie die Override-Stylesheet-Datei
+    (<filepath>figcap.xsl</filepath>) ab.</p></section>
+
+    <section><title>Plugin-Verzeichnis erstellen</title><p><ol>
+        <li>Erstellen Sie einen neuen Ordner im Verzeichnis
+        <filepath>DITA-OT\plugins\IhrName.html.override.figcap</filepath>.</li>
+
+        <li>Erstellen Sie im neu erstellten Ordner einen neuen Ordner
+        <filepath>\xsl</filepath>.</li>
+
+        <li>Kopieren Sie die neue Override-Stylesheet-Datei<filepath>
+        figcap.xsl</filepath> in den Ordner <filepath>\xsl</filepath>.</li>
+
+        <li>Erstellen Sie eine neu XML-Datei namens
+        <filepath>plugin.xml</filepath>:<codeblock>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;plugin id="IhrName.html.override.figcap"&gt;
+&lt;feature extension="dita.xsl.xhtml" value="xsl/figcap.xsl" type="file"/&gt;
+&lt;/plugin&gt;
+</codeblock><p>und kopieren diese in den Ordner
+        <filepath>\plugins\IhrName.html.override.figcap</filepath>.</p></li>
+      </ol></p><p>Bitte vergessen Sie nicht, <filepath>IhrName</filepath> zu
+    ersetzen. Bei mir heißen die Plugins nach meiner Domain
+    <filepath>com.petersell.html.override.usw-usf</filepath>. Wie Sie die
+    Plugins benennen, ist letztendlich egal. Wichtig ist nur der
+    gleichlautende Name des Plugin-Verzeichnisses und dessen Erwähnung in der
+    <filepath>plugin.xml</filepath>-Datei.</p></section>
+
+    <section><title>Plugin integrieren</title><p>Doppelklicken Sie die
+    <filepath>startcmd.bat</filepath>, um ein DITA-Kommandofenster zu öffnen
+    und führen Sie folgenden Befehl aus:</p><screen>ant -f integrator.xml</screen><p>Im
+    Ergebnis sollte in der Datei
+    <filepath>DITA-OT\xsl\dita2xhtml.xsl</filepath> die
+    <filepath>figcap.xsl</filepath> über ein
+    <codeph>&lt;xsl:import&gt;</codeph> referenziert werden. Natürlich sind
+    nun die Bildunterschriften ab sofort unterhalb des Bildes.</p></section>
+
+    <section><title>HTML-Overrides</title><p>Bestimmt wird es nicht bei einer
+    Änderung der HTML-Ausgabe bleiben. Ich habe dieses Plugin später umbenannt
+    in <filepath>IhrName.html.overrides</filepath>. Darin fanden sämtliche
+    geänderte Templates für die Petersilienbücher unter petersell.com ihren
+    Platz.</p></section>
+
+    <section><title>Update 2015-01</title><p>Nachdem ich auf das DITA-OT 1.8.5
+    geupdatet hatte, erschienen die Bildunterschriften wieder oberhalb des
+    Bildes. Wie ich herausfand, gilt es, einige Zeilen aus dem Template zu
+    löschen. So sind im obigen Template 2 Stellen herauskommentiert. Siehe
+    auch meinen Blogpost dazu unter <xref format="html"
+    href="http://www.ditalog.com/blog/dita-ot-figcaption"
+    scope="external">www.ditalog.com/blog/dita-ot-figcaption</xref>. Nach dem
+    Auskommentieren erscheint die Bildunterschrift wieder unter dem
+    Bild.</p></section>
+  </conbody>
+</concept>

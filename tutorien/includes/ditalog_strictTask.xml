@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="ditalog_strictTask" xml:lang="de-de">
+  <title>Zugangsweg in Online-Hilfe darstellen</title>
+
+  <shortdesc>Includes für Handlungsanleitungen strictTask</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="2011-01-27"/>
+
+      <revised modified="2011-01-27"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <taskbody>
+    <prereq><p otherprops="bedingung" outputclass="bedingung">Hier steht die
+    Voraussetzung!</p> <p><note>Hier steht der erste Hinweis!</note></p>
+    <p/></prereq>
+
+    <steps>
+      <step id="startcmdbat">
+        <cmd>Doppelklicken Sie auf auf die Datei
+        <filepath>startcmd.bat</filepath> (Windows) innerhalb Ihrers
+        DITA-OT-Ordners, um ein Kommandofenster zur Eingabe von build-Befehlen
+        zu öffnen.</cmd>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li id="xiruss"><xref format="html"
+        href="http://www.xiruss.org/tutorials/dita-specialization/"
+        scope="external">DITA Configuration and Specialization Tutorials von
+        Eliot Kimber</xref></li>
+
+        <li id="d4p-download"><xref format="html"
+        href="http://sourceforge.net/projects/dita4publishers/"
+        scope="external">Dita4Publishers downloaden von Sourceforge</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

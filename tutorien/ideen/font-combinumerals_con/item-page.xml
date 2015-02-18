@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="font-combinumerals_con" xml:lang="de-de">
+  <title>Schriftart für Zahlen</title>
+
+  <shortdesc>Mit Hilfe der Schriftart <i>CombiNumerals</i> können Sie schnell
+  Nummerierungen durchführen. Die Zahlen werden auf einem Kreis abgebildet
+  (invers) bzw. von einem Kreis umgeben.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.12.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Schriftart für Zahlen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="font-combinumerals_con"/>
+  </prolog>
+
+  <conbody>
+    <section><p>Wählt man wie im Bespiel die Art <uicontrol>Solid</uicontrol>,
+    werden die Zahlen invers dargestellt. Die Zahl
+    <systemoutput>2</systemoutput> wird erzeugt durch den Buchstaben
+    <userinput>c</userinput>. So läßt sich vom Screenshot schnell auf einen
+    ebenfalls durchnummerierten Schritt der Handlungsanleitung
+    referenzieren.</p><p><fig>
+        <title>CombiNumerals in Photoshop</title>
+
+        <image alt="CombiNumerals" href="font-combinumerals.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Hinweise vom Autor zum Gebrauch</title><p>Den beiden
+    TTF-Dateien ist eine Readme-Datei zum Gebrauch sowie der Installation
+    beigelegt. Hier die Hinweis zum Gebrauch der
+    Schrift:</p><p>CombiNumerals(tm) is <indexterm>Font
+    CombiNumerals</indexterm>a typeface <indexterm>Nummerierung in
+    Screenshots</indexterm>for creating circled numbers,
+    <indexterm>CombiNumerals</indexterm>popular for use in Web graphics,
+    documentation and instructional material, maps, signs and guide books, for
+    example. With CombiNumerals, you can create any number between 0 and 99.
+    Here's how:</p><p>SINGLE-DIGIT NUMBERS - The numbers 0 through 9 are
+    created by pressing the A, B, C, D, E, F, G, H, I, and J keys respectively
+    (you can type either lower- or uppercase).</p><p>DOUBLE-DIGIT NUMBERS -
+    The numbers 00 through 99 are created by first pressing one of the number
+    keys (0-9), followed by Shift-number. For example, to create the number
+    67, press the 6 key followed by Shift-7. You can also create two-digit
+    circled numbers with a leading zero, 07 (0, Sh-7), for
+    example.</p><p>MULTIPLE WEIGHTS - CombiNumerals is available in two
+    weights -- Open and Solid. The Open weight displays numbers inside hollow
+    circles. The Solid weight displays white numbers inside filled circles.
+    The Solid weight is the Bold version of the Open weight.</p><p>ADDITIONAL
+    CHARACTERS - Several other characters besides numerals are available in
+    this font. For instance, arrows, hands, pointers, and the Mac OS and
+    Windows logos (including circled M and W characters) can be created. These
+    characters are commonly used by people writing documentation, but are also
+    used for things like maps, signs, posters, guide books, etc.</p></section>
+
+    <section><title>Der Autor</title><p>CombiNumerals was designed and created
+    by Sean Cavanaugh, the author of Digital Type Design Guide, The Page
+    Designer's Guide to Working with Type, published by Hayden Books (ISBN
+    1-56830-190-1). You can contact the author via e-mail
+    &lt;seanc@compuserve.com&gt;.</p></section>
+
+    <section><title>Links zum Artikel</title><p><ol>
+        <li><xref format="html"
+        href="http://www.maxfonts.com/fonts/c/combi-numerals.font"
+        scope="external">Download der kostenlosen Version von CombiNumerals
+        von www.maxfonts.com</xref></li>
+
+        <li><xref format="html" href="http://www.mvd.com/seanc/"
+        scope="external">Buch des Autors mit Schrifterweiterung</xref></li>
+      </ol></p></section>
+  </conbody>
+</concept>

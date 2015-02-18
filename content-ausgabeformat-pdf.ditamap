@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ausgabeformat-pdf" scope="local" title="Content Ausgabeformat PDF"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+  <mapref href="tutorien/keydef-ausgabeformate.ditamap"
+          processing-role="resource-only"/>
+
+  <topicref keyref="ausgabeformat-pdf">
+    <topicref collection-type="sequence" keyref="pdf_design_topic">
+      <topicref keyref="pdf-a4_con"/>
+
+      <topicref keyref="pdf-metadaten_con"/>
+
+      <topicref keyref="pdf-einzelkapitel_con"/>
+
+      <topicref keyref="pdf-textintend_task"/>
+
+      <topicref keyref="pdf-fusszeile_task"/>
+
+      <topicref keyref="pdf-fusszeile-2_task"/>
+
+      <topicref keyref="pdf-paragraphensymbol_con"/>
+
+      <topicref keyref="ueberschriften-vierter-ordnung_concept"/>
+    </topicref>
+
+    <topicref collection-type="sequence" keyref="pdf_versus_topic">
+      <topicref keyref="pdf-inhaltsverzeichnis_con"/>
+
+      <topicref keyref="pdf-direktlinks_con"/>
+    </topicref>
+
+    <topicref collection-type="sequence" keyref="pdf_tipps_topic">
+      <topicref keyref="install-renderx_task"/>
+
+      <topicref keyref="xep-umziehen_task"/>
+
+      <topicref keyref="pdf-leere-seiten_con"/>
+    </topicref>
+  </topicref>
+</map>

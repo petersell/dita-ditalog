@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ausgabeformat-chm" scope="local" title="Content Ausgabeformat CHM"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+<mapref href="tutorien/keydef-ausgabeformate.ditamap" processing-role="resource-only"/>
+<topicref collection-type="sequence" keyref="ausgabeformat-chm">
+      <topicref keyref="chm-konfigurieren_con"/>
+      <topicref keyref="umlaute-in-toc_task"/>
+    </topicref>
+</map>

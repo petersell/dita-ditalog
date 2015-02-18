@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="was-ist-das-ditalog_concept" xml:lang="de-de">
+  <title>Was ist das Ditalog?</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="29.06.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Ditalog</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>Was ist das Ditalog?</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="was-ist-das-ditalog_concept"/> 
+  </prolog>
+
+  <conbody>
+    <section><title>Für Solo-Redakteure</title><p>Das Ditalog ist eine lose
+    Erfahrungsschatzsammlung eines Redakteurs zum Dokumentationsstandard DITA
+    (Darwin Information Typing Architecture). Im Vordergrund stehen
+    Handlungsanleitungen. Besonderheit: Sprache deutsch.</p><p>Die Anleitungen
+    im Ditalog sind für Solo-Redakteure gedacht. Dies hat 2 Gründe:</p><ol>
+        <li>(Technische) Redakteure in größeren Firmen nutzen leistungsstarke
+        Software-Tools im Redaktionsteam und haben Programmierkollegen zur
+        Unterstützung.</li>
+
+        <li>Die programmiertechnische Umsetzung ist die eines Redakteurs und
+        somit für Programmierer manchmal befremdlich. Doch nur so ist eine
+        Dokumentation der Dokumentation zu haben.</li>
+      </ol></section>
+
+    <section><title>Ausgabeformate kostenlos generieren</title><p>Texte, die
+    im DITA XML-Standard geschrieben werden, können mit Hilfe der kostenlosen
+    Software <i>DITA Open Toolkit</i> wie auf petersell.com im PDF- oder
+    EPUB-Format ausgegeben werden. Aber auch andere Formate wie HTML oder CHM
+    sind möglich.</p></section>
+
+    <section><title>Einmal editieren und an tausenden Stellen
+    einbinden</title><p>Der größte Vorteil von DITA ist das Prinzip der
+    Wiederverwendbarkeit (reuse). So ist das Kapitel zur DITA-Build-Umgebung
+    in zwei eBooks enthalten (Dita4Pubishers und Ditalog), ohne dass die
+    Topics zum Kapitel auch nur einmal angefaßt werden mussten.</p></section>
+
+    <section><title>Blogposts auf ditalog.com</title><p>Ab 2010 hatte ich
+    einzelne Anleitungen auch als Blogpost auf ditalog.com veröffentlicht, was
+    den Titel dieses Buches erklärt.</p><p><fig>
+        <title>Logo des Blogs von Ditalog</title>
+
+        <image href="images/ditalog-logo.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Dank</title><p>Einen leichten und trotzdem umfassenden
+    Zugang zu DITA ermöglichte mir <xref base="" format="html"
+    href="http://www.ditausers.org/tutorials/lone-dita/ditaguide.pdf"
+    scope="external">DITA for Solo Writers</xref> von Louise
+    Kasemeier.</p></section>
+  </conbody>
+</concept>

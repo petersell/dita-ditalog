@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ditalog-kirby" scope="local" xml:lang="de-de">
+  <topicref href="tutorien/item-page.xml" keys="ditalog_topic" scope="local">
+    <mapref href="content-buildumgebung.ditamap" scope="local"/>
+    <mapref href="content-dita-vokabular.ditamap" scope="local"/>
+    <mapref href="content-ideen.ditamap" scope="local"/>
+    <mapref href="content-ausgabeformat-html.ditamap" scope="local"/>
+    <mapref href="content-ausgabeformat-epub.ditamap" scope="local"/>
+    <mapref href="content-ausgabeformat-chm.ditamap" scope="local"/>
+    <mapref href="content-ausgabeformat-pdf.ditamap" scope="local"/>
+  </topicref>
+</map>

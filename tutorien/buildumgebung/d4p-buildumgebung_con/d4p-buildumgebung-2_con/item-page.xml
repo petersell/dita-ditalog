@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung-2_con" xml:lang="de-de">
+  <title>properties-Datei</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="21.05.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm><indexterm>properties-Datei</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>DITA-Buildumgebung</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-buildumgebung-2_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>Erstellen Sie eine neue Textdatei <filepath>build.properties</filepath>
+    und speichern Sie diese unter <uicontrol>Benutzer/IhrName</uicontrol> bzw.
+    im Verzeichnis <filepath>C:\Users\IhrName</filepath>.</p>
+
+    <codeblock># File: build.properties
+# Property file for DITA builds
+#
+dita-ot-dir=C:/DITA-OT1.6.3
+pdf.formatter=xep
+xep.dir=C:/DITA-OT1.6.3/plugins/org.dita.pdf2/lib/xep
+out-dir=C:/Dita-Output/out</codeblock>
+
+    <p>Bitte passen Sie die Pfade Ihren Gegebenheiten an.</p>
+  </conbody>
+</concept>

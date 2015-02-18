@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="chm-konfigurieren_con" xml:lang="de-de">
+  <title>Symbolschaltflächen hinzufügen</title>
+
+  <shortdesc>Anleitung: So fügen Sie der CHM-Hilfe eigene Symbolschaltflächen
+  hinzu und verknüpfen zu bestimmten Seiten der Online-Hilfe.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="25.11.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Schaltflächen in CHM-Hilfe</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat CHM</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="chm-konfigurieren_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Standard-Schaltflächen</title><p>Eine
+    Standard-Schaltflächenleiste im CHM-Standard-Output <indexterm>CHM-Datei
+    konfigurieren</indexterm>sieht folgendermaßen <indexterm>Schaltflächen in
+    CHM-Datei</indexterm>aus:</p><p><fig>
+        <title>Nur 4 Schaltflächen im CHM-Output</title>
+
+        <image alt="Standardschaltflächen" href="chm-schaltflaechen1.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Neue Schaltflächen hinzufügen</title><p>Es sollen einige
+    Schaltflächen hinzukommen:</p><p><fig>
+        <title>Weitere Schaltflächen hinzufügen</title>
+
+        <image alt="Schaltflächen hinzufügen" href="chm-schaltflaechen2.gif"
+               placement="break"/>
+      </fig></p><p>Besonders wichtig erscheinen mir hier die
+    Navigationsschaltflächen.<ul>
+        <li><uicontrol>Vorherige</uicontrol> - Vorheriges Topic im
+        Inhaltsverzeichnis. Im Beispiel also nach oben auf
+        <i>Nachrichtentelegramm</i>.</li>
+
+        <li><uicontrol>Nächstes</uicontrol> - Nächstes Topic nach unten im
+        Inhaltsverzeichnis.</li>
+
+        <li><uicontrol>Zurück</uicontrol> - Zum zuvor geöffneten Topic in der
+        Historie.</li>
+
+        <li><uicontrol>Vorwärts</uicontrol> - Zum danach geöffneten Topic in
+        der Historie.</li>
+      </ul></p><p>Die beiden Schaltflächen, die das Blättern durch das
+    Inhaltsverzeichnis ermöglichen, benötigen als Vorraussetzung den Eintrag
+    <codeph>Binary TOC=Yes</codeph>. Dieser Eintrag steht in der
+    HTML-Workshop-Projekt-Datei <filepath>Dateiname.hhp</filepath>. Entweder
+    Sie editieren diesen Eintrag direkt im Editor oder nutzen dafür die
+    Oberfläche des HTML-Workshops.</p><p>Einen kleinen Nachteil hat jedoch der
+    Einsatz der Inhaltsnavigation. Es sind nun keine individuellen oder
+    erweiterten Icons für das Inhaltsverzeichnis mehr möglich. Es können nur
+    noch die Standard-Icons <uicontrol>Buch</uicontrol> und
+    <uicontrol>Seite</uicontrol> eingesetzt werden.</p><p>HTML-Workshop
+    erlaubt den Einsatz von 2 individuellen Schaltflächen, die zur einer
+    Inhaltsseite Ihrer Wahl verlinkt werden kann. Im Beispiel verlinkt die
+    Schaltfläche <uicontrol>Was ist neu</uicontrol> zu einer Seite, die die
+    Neuerungen in der Software als auch in der Online-Hilfe
+    aufzeigt.</p></section>
+
+    <section><title>Die Projektdatei .hhp</title><p>Es mussten einige Einträge
+    in die <indexterm>Projektdatei .hhp</indexterm>Projektdatei geschrieben
+    <indexterm>hhp-Datei</indexterm>werden. Im Bereich
+    <codeph>[OPTIONS]</codeph> kamen <indexterm>Binary
+    TOC</indexterm>hinzu:</p><codeblock>Binary TOC=Yes
+Default Window=main
+</codeblock><p>Zwischen OPTIONS und FILES wurde ein weiterer Bereich
+    eingefügt: <codeph>[WINDOWS]</codeph>. Dem folgt eine lange Zeile. Wie
+    diese Zeile zustande kommt, ist in vielen HTML-Workshop-Internetseiten gut
+    dokumentiert. Ein guter Weg wäre es auch, die Schaltflächen in der
+    Oberfläche des HTML-Workshops hinzufügen und das Ergebnis in der
+    Projektdatei <filepath>Dateiname.hhp</filepath> anschließend zu betrachten
+    und als Grundlage für das DITA-xsl-Stylesheet zu nehmen. Hier der
+    <userinput>WINDOWS</userinput>-Bereich zum obigen
+    Screenshot.</p><codeblock>[WINDOWS]
+main=,"Dokupedia.hhc","Dokupedia.hhk","topics\common\default.html",
+"topics\common\home.html",
+"topics\common\erste-individuelle-schaltflaeche.html",
+"Beschriftung Individuelle Schaltfläche",,,0x3520,,0x64204e,,,,,,,,0
+</codeblock><p>Man beachte jedoch, dass nach dem Wort <codeph>main</codeph>
+    alles in einer Zeile geschrieben sein muss! </p></section>
+
+    <section><title>Das Stylesheet map2hhpImpl.xsl</title><p>Damit die
+    Individualisierung der CHM-Datei automatisch bei jedem
+    <indexterm>map2hhp.xsl</indexterm>build aus dem DITA-OT generiert wird,
+    müssen die Neuerungen der Projektdatei in das für die Projektdatei
+    verantwortliche XSL-Stylesheet geschrieben werden. Dies ist die Datei
+    <filepath>DITA-OT\xsl\map2htmlhelp\map2hhpImpl.xsl</filepath> im
+    XSL-Ordner der Toolkit-Installation. An 2 Stellen erfolgt die Anpassung im
+    Stylesheet. Diese sind jeweils grün gefärbt.</p><p><fig>
+        <title>Options-Einträge</title>
+
+        <image alt="Options-Einträge" href="chm-schaltflaechen3.gif"
+               placement="break"/>
+      </fig></p><p><fig>
+        <title>Windows-Einträge</title>
+
+        <image alt="Windows-Einträge" href="chm-schaltflaechen4.gif"
+               placement="break"/>
+      </fig></p>Im Beispiel der WINDOS-Einträge ist die default-Datei eine
+    Datei namens <filepath>a0_start_NAV_startseite.html</filepath>. Diese
+    Datei ist zugleich der Symbolschaltfläche <uicontrol>Home</uicontrol>
+    zugeordnet. Es wurde eine individuelle Schaltfläche <uicontrol>Was ist
+    neu?</uicontrol> hinzugefügt, die auf die Seite
+    <filepath>wasistneu_startseite_con.html</filepath> verlinkt.</section>
+
+    <section><title>Nachteil der Hartkodierung</title><p>Sobald man obige
+    Windows-Einträge in die DITA-XSL-Datei hartkodiert, provoziert man bei
+    anderen Projekten anderen Namens unweigerlich eine Fehlermeldung.
+    Vielleicht wäre eine Plugin-Lösung besser?</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li>Inoffizielle HTML-Help-Spezifikation, <xref format="html"
+        href="http://chmspec.nongnu.org/latest/INI.html" scope="external">zum
+        Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

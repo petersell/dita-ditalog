@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="faq-plugin_start_con" xml:lang="de-de">
+  <title>Das FAQ-Template des DITA-OTs einbinden</title>
+
+  <shortdesc>Anleitung: So binden Sie das FAQ-Template des DITA-OT mit
+  ein.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="17.01.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>FAQ-Template</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Online-Hilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="faq-plugin_start_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>DITA Users Group</title><p>Zum zweiten Mal habe ich den
+    Versuch unternommen, das FAQ-Plugin, das standardmäßig im DITA-OT mit
+    ausgeliefert wird, in mein Toolkit einzubinden. Dieses Mal mit Erfolg In
+    der <i>DITA Users Group</i> gab Eliot Kimber den Hinweis, nach welcher
+    Anleitung man dabei vorgehen kann. Da sich bei mir jedoch einige
+    Abweichungen ergaben, hier in folgender Anleitung meine Erfahrungen beim
+    Einbinden der FAQ-DTD.</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li>DITA Users Group - FAQ-Template, <xref format="html"
+        href="http://tech.groups.yahoo.com/group/dita-users/message/22928"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+
+    <section><title>Inhalt</title><p/></section>
+  </conbody>
+</concept>

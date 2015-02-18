@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="links-zum-artikel_con" xml:lang="de-de">
+  <title>Standard-Konzeptionen</title>
+
+  <shortdesc>Diese Dingen werden immer wieder benötigt.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="2011-08-30"/>
+
+      <revised modified="2011-08-30"/>
+    </critdates>
+  </prolog>
+
+  <conbody>
+    <section><title>Links zum Artikel</title><ol>
+        <li id="softwijs"><xref format="html"
+        href="http://www.softwijs.nl/e-boeken.html" scope="external">Softwijs
+        Anleitungen</xref></li>
+
+        <li id="pdfmeta"><xref format="html"
+        href="http://tech.groups.yahoo.com/group/dita-users/message/21900"
+        scope="external">Yahoo-Groups-Post zu Metaangaben im PDF</xref></li>
+
+        <li id="chm-spezifikation"><xref format="html"
+        href="http://chmspec.nongnu.org/latest/INI.html"
+        scope="external">Inoffizielle HTML-Help-Spezifikation</xref></li>
+
+        <li id="jederkannschreiben"><xref format="html"
+        href="http://www.redakteuse.de/?p=645" scope="external">Redakteuse.de:
+        Jeder kann schreiben</xref></li>
+
+        <li id="warum-investieren"><xref format="html"
+        href="http://technicalwritingworld.com/forum/topics/what-are-your-arguments-for"
+        scope="external">Warum sollte man in Technische Redaktion
+        investieren?</xref></li>
+
+        <li id="smes"><xref format="html"
+        href="http://user-assistance.blogspot.com/2011/02/degentrification-of-user-assistance.html"
+        scope="external">Subject Matter Experts schreiben selbst</xref></li>
+
+        <li id="salesforce"><xref format="html"
+        href="http://techcrunch.com/2011/03/02/salesforce-debuts-a-more-social-service-cloud-3-with-chatter-facebook-and-twitter/"
+        scope="external">TechCrunch - Salesforce integriert soziale
+        Sercvices</xref></li>
+
+        <li id="individuellerzugang"><xref format="html"
+        href="http://idratherbewriting.com/2011/04/15/everything-is-miscellaneous-by-david-weinberger/"
+        scope="external">Everything is miscellaneous by David
+        Weinberger</xref></li>
+
+        <li id="epubreader"><xref format="html"
+        href="http://www.epubread.com/de/" scope="external">Firefox Addon
+        ePub-Reader</xref></li>
+
+        <li id="xmlspycatalogs"><xref format="html"
+        href="http://manual.altova.com/XMLSpy/spystandard/index.html?xsdtdandxsd_catalogs.htm"
+        scope="external">Catalogs in XMLSpy</xref></li>
+
+        <li id="doktypdeklaration"><xref format="html"
+        href="http://de.wikipedia.org/wiki/Dokumenttypdefinition"
+        scope="external">Wikipedia: Dokumenttypdeklaration</xref></li>
+      </ol></section>
+  </conbody>
+</concept>

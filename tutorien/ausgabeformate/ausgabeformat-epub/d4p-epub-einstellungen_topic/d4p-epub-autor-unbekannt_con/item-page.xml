@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-epub-autor-unbekannt_con" xml:lang="de-de">
+  <title>Autor unbekannt in ePub-Vorschau</title>
+
+  <shortdesc>Geben Sie Autor und Verleger in einer Ditamap an, so dass in der
+  <i>Adobe Digital Editions</i> bei <systemoutput>Autor</systemoutput> und
+  <systemoutput>Verleger</systemoutput> Ihre Angaben stehen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2009"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="18.02.2011"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2009-12-01" version="0.1"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-epub-autor-unbekannt_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Fehlende Angaben in Adobe Digital Editions</title><fig>
+        <title>Unbekannter Autor und Verlag</title>
+
+        <image href="epub-autor-unbekannt.gif"/>
+      </fig><p>In vielen EPUB-Reader fällt der Umstand der fehlenden Angaben
+    zu <i>Autor</i> und <i>Verlag</i> nicht auf. So z.B. im Firefox-Addon
+    <i>ePUB-Reader</i>. Jedoch in <i>Adobe Digital Editions</i> wirken die
+    <i>unbekannt</i>-Vermerke wenig vertrauenserweckend.<indexterm>Autor
+    unbekannt</indexterm><indexterm>Verlag
+    unbekannt</indexterm><indexterm>topicmeta</indexterm><indexterm>Adobe
+    Digital Editions</indexterm><indexterm>ePUP-Reader Firefox
+    Addon</indexterm></p></section>
+
+    <section><title>Angaben in der ditamap hinterlegen</title><p>Hinterlegen
+    Sie in Ihrer Ditamap-Datei nach dem <codeph>map</codeph>-Tag und vor dem
+    ersten <codeph>topicref</codeph>-Tag die
+    <codeph>topicmeta</codeph>-Angaben wie in diesem Beispiel.</p><codeblock>&lt;map id="DDR-Protagonisten" scope="local" title="DDR-Protagonisten der 70er und 80er Jahre" xml:lang="de-de"&gt;
+&lt;topicmeta&gt;
+&lt;author&gt;Andreas Petersell&lt;/author&gt;
+&lt;publisher&gt;Andreas Petersell&lt;/publisher&gt;
+&lt;copyright&gt;
+  &lt;copyryear year="2011"&gt;&lt;/copyryear&gt;
+  &lt;copyrholder&gt;Andreas Petersell&lt;/copyrholder&gt;
+&lt;/copyright&gt;
+&lt;/topicmeta&gt;
+...
+</codeblock></section>
+
+    <section><title>Links zum Artikel</title><p><ol>
+        <li>Adobe Digital Editions <xref format="html"
+        href="http://www.adobe.com/de/products/digitaleditions/"
+        scope="external">zum Link</xref></li>
+      </ol></p></section>
+  </conbody>
+</concept>

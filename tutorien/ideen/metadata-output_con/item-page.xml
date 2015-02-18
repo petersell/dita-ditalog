@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="metadata-output_con" xml:lang="de-de">
+  <title>Metadaten im Text ausgeben</title>
+
+  <shortdesc>So geben Sie z.B. das Datum der letzten Änderung unterhalb des
+  Seitentitels aus.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="19.02.2013"/>
+
+      <revised modified="26.02.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Letzte Aktualisierung</indexterm>
+
+        <indexterm>Metadaten im Text ausgeben</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Onlinehilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="metadata-output_con"/>
+  </prolog>
+
+  <conbody>
+    <p>Seit Jahren war ich auf der Suche nach einem Weg, die Metadaten,
+    speziell das Erstellungs- und Aktualisierungsdatum eines Topics, im Text
+    auszugeben. Da ich keine Lösung dafür hatte, habe ich das
+    Aktualisierungsdatum immer im <codeph>abstract</codeph> hart kodiert. Bis
+    ich im XMetal-Forum (<xref format="html"
+    href="http://forums.xmetal.com/index.php?topic=1041.0"
+    scope="external">zum Link</xref>) auf ein Skript stieß, das die beiden
+    Datumsangaben im PDF-Output mit ausgibt. Dies habe ich selbst noch nicht
+    ausprobiert.</p>
+
+    <p>Da ich die Datumsangaben für den XHTML-Output benötige, habe ich das
+    Skript für meine Online-Publikationen folgendermaßen angepaßt.</p>
+
+    <section><title>So soll es aussehen</title><p>In den Formaten CHM, XHTML
+    und EPUB sollte oben rechts immer das Datum der Erstellung und der letzten
+    Änderung in grauer Schrift kursiv ausgegeben werden. Und zwar rechtsbündig
+    unterhalb des Titels und vor der Kurzbeschreibung
+    (<codeph>shortdesc</codeph>).</p><p><fig>
+        <title>Datumsangaben in der CHM-Hilfe</title>
+
+        <image alt="Aktualsierungsdatum"
+               href="metadata-datum_363.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Metaangaben im Topic</title><p>Vorraussetzung ist, dass in
+    jedem Topic, egal ob Task oder Concept etc, folgende Metadaten innerhalb
+    des Tags <codeph>prolog</codeph> gefüllt sind.</p><codeblock>&lt;critdates&gt;
+    &lt;created date="08.06.2012"/&gt;
+    &lt;revised modified="01.07.2012"/&gt;
+&lt;/critdates&gt;</codeblock><p>Hat das Topic noch kein Änderungsdatum,
+    lassen Sie den Tag für <codeph>revised</codeph> weg.</p></section>
+
+    <section><title>gen-user-header-Template anpassen</title><p>Suchen Sie
+    innerhalb Ihres DITA-Open Toolkits im Ordner
+    <filepath>xsl/xslhtml</filepath> nach der Datei
+    <filepath>dita2htmlImpl.xsl</filepath>. Innerhalb dieser Datei muss das
+    Template <codeph>gen-user-header</codeph> angepasst werden. Es ist das
+    zweite Template im Bereich, der extra für Ihre Modifikationen für den
+    Header, Footer etc angelegt wurde.</p><codeblock>&lt;!-- ========== STUBS FOR USER PROVIDED OVERRIDE EXTENSIONS ========== --&gt;</codeblock><p>Im
+    vorhandenen Template <codeph>gen-user-header</codeph> fügen Sie, wie
+    unterhalb des Kommentars <uicontrol>folgende Zeile ist neu</uicontrol>
+    aufgeführt, eine neue Zeile ein.</p><codeblock>&lt;xsl:template name="gen-user-header"&gt;
+  &lt;xsl:apply-templates select="." mode="gen-user-header"/&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="/|node()|@*" mode="gen-user-header"&gt;
+  &lt;!-- to customize: copy this to your override transform, add the content you want. --&gt;
+  &lt;!-- it will be placed in the running heading section of the XHTML. --&gt;
+  &lt;!-- folgende Zeile ist neu! --&gt;
+  &lt;xsl:apply-templates select="*[contains(@class, ' topic/prolog ')]" mode="gen-user-header"/&gt;
+&lt;/xsl:template&gt;</codeblock><p>Unterhalb dieses angepaßten Templates
+    <codeph>gen-user-header</codeph> fügen Sie ein zweites Template
+    hinzu.</p><codeblock>&lt;xsl:template match="*[contains(@class, ' topic/prolog ')]"&gt;
+  &lt;p class="header-metadata" align="right"&gt;
+    &lt;xsl:if test="*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/created ')]/@date"&gt;
+    &lt;span&gt;Erstellt am &lt;xsl:value-of select="*[contains(@class,' topic/critdates ')]/
+    *[contains(@class,' topic/created ')]/@date"/&gt;.   &lt;/span&gt;&lt;/xsl:if&gt;
+    &lt;xsl:if test="*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/revised ')]/@modified"&gt;
+    &lt;xsl:for-each select="child::*[contains(@class,' topic/critdates ')]/
+    *[contains(@class,' topic/revised ')]"&gt;
+    &lt;span&gt;Letzte Änderung: &lt;xsl:value-of select="@modified"/&gt;&lt;/span&gt;
+    &lt;/xsl:for-each&gt;
+    &lt;/xsl:if&gt;
+   &lt;/p&gt;
+&lt;/xsl:template&gt;</codeblock></section>
+
+    <section><title>Formatierung in der CSS-Datei</title><p>Der Absatz
+    <codeph>p</codeph> hat eine <codeph>class="header-metadata"</codeph>
+    erhalten. Diese Klasse müssen Sie noch Ihrer CSS-Datei
+    hinzufügen.</p><codeblock>.header-metadata
+{
+  text-align: right;
+  font-style: italic;
+  color: #C2C2C2;
+  margin-right:10px;
+}</codeblock></section>
+
+    <section><title>Plugin</title><p>Da ich die Metadaten nur für Onlinehilfen
+    und eBooks benöte, die des Öfteren aktualisiert werden, habe ich das
+    Template in ein Plugin ausgelagert.</p></section>
+
+    <section><title>Links</title><ul>
+        <li>Skript für Metadaten im Text für PDF-Dateien im XMetal-Forum,
+        <xref format="html"
+        href="http://forums.xmetal.com/index.php?topic=1041.0"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="kontextsensitive-hilfe-map_con" xml:lang="de-de">
+  <title>Kontextsensitive Hilfe per Ditamap</title>
+
+  <shortdesc>Eine Ditamap hilft, Hilfeseiten für die kontextsensitive Hilfe
+  relativ einfach zu erstellen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="09.09.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>E-Mail-Link</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Onine-Hilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="kontextsensitive-hilfe-map_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Vorteile des Map-Processings nutzen</title><p>Die Elemente
+    <codeph>&lt;title&gt;</codeph> und <codeph>&lt;shortdesc&gt;</codeph> von
+    <indexterm>shortdesc<indexterm>für kontextsensitive
+    Hilfe</indexterm></indexterm>eingebetteten <indexterm>Kontextsensitive
+    Hilfe<indexterm>per ditamap</indexterm></indexterm>Seiten werden immer
+    dann als Vorankündigung angezeigt, wenn ein
+    <codeph>&lt;topicref&gt;</codeph> andere
+    <codeph>&lt;topicrefs&gt;</codeph> umschließt. Dieses normale ditamap
+    processing kann sehr gut für die einfache und schnelle Erstellung von
+    kontextsensitiven Hilfeseiten genutzt werden.</p></section>
+
+    <section><title>Beispiel einer Hilfeseite</title><p>Diese Seite wird extra
+    zum Aufruf aus dem Programm über F1 bzw. der Hilfe-Schaltfläche
+    geschrieben. Es ist eine leere Seite. Nur Titel und scortdesc sowie die
+    gebräuchlisten Links zu den Neuigkeiten in den <codeph>related
+    links</codeph> wurden gefüllt. Die 4 Links in der Mitte entstehen
+    automatisch durch das map processing.</p><p><fig>
+        <title>Kontextsensitive Hilfe per ditamap</title>
+
+        <image alt="Beispiel kontextsensitive Hilfe"
+               href="kontextsensitive-hilfe-bsp.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Ditamap für die Links</title><p>Hier das Beispiel der
+    ditamap für die Link-Generierung. Hier werden die Seiten im
+    Navigationsbaum (TOC) mit angezeigt. Ändern Sie <codeph>toc="no"</codeph>,
+    kann man nur aus dem Programm auf diese Seite gelangen. Obiges Beispiel
+    ist hier die Datei <filepath>csh_ebgmain_con.xml</filepath>. Sie
+    umschließt in der Ditamap die 4 Dateien, die als Link oben zur Anzeige
+    kommen. Auf die <filepath>csh_ebgmain_con.xml</filepath> wird wird von der
+    Software per F1-Druck verlinkt. Die Datei <filepath>csh_start_con.xml
+    </filepath>dient lediglich als Anzeige im TOC.</p><p><fig>
+        <title>Sichtbarmachen in der Navigation?</title>
+
+        <image alt="ditamap für Links"
+               href="kontextsensitive-hilfe-ditamap1.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>ditamap einbinden in Haupt-Map</title><p>Da eine einzelne
+    Map für ein Projekt doch sehr unübersichtlich werden würde, wurde sie im
+    obigen Beispiel in eine Extra-ditamap geschrieben. Diese ditamap muss nun
+    in die Haupt-Map eingebunden werden. Hier ist ebenfalls zu entscheiden, ob
+    die Map für die kontextsensitive Hilfe in der Navigation erscheinen
+    soll.</p><p><fig>
+        <title>Einbinden in die Haupt-ditamap</title>
+
+        <image alt="ditamap in Haupt-Map"
+               href="kontextsensitive-hilfe-ditamap2.gif"
+               placement="break"/>
+      </fig></p></section>
+  </conbody>
+</concept>

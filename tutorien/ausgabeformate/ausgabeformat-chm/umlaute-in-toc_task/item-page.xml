@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd">
+<task id="umlaute-in-toc_task" xml:lang="de-de">
+  <title>Umlaute im Inhaltsverzeichnis</title>
+
+  <shortdesc>Anleitung: So stellen Sie sicher, dass im Inhaltsverzeichnis der
+  CHM-Hilfe die Umlaute und das <systemoutput>ß</systemoutput> korrekt
+  ausgegeben werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="18.08.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Umlaute in CHM-Hilfe</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat CHM</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="umlaute-in-toc_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p><note>Dies tritt insbesondere beim DITA-OT 1.5
+    auf!</note></p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Editieren
+        <indexterm>CHM-Datei<indexterm>Inhaltsverzeichnis</indexterm></indexterm>Sie
+        die <indexterm>Umlaute</indexterm>Datei
+        <filepath>C:\DITA-OT1.5\xsl\map2hhc.xsl</filepath>
+        folgendermaßen<indexterm>map2hhc.xsl</indexterm>:</cmd>
+
+        <stepresult><p><fig>
+            <title>encoding-Attribut hinzufügen</title>
+
+            <image href="dita_umlaute-in-toc.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie wie im Bild angeben beim <i>xsl:output</i> das Attribut
+        <userinput>encoding="ISO-8859-1"</userinput> hinzu.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

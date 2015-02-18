@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="variablen-ausserhalb-projekt_con" xml:lang="de-de">
+  <title>Variablen ausserhalb des Projektordners</title>
+
+  <shortdesc>Variablen für sämtliche Projekte können mithilfe zweier
+  Ant-Befehle weiterhin ausserhalb des Projektverzeichnisses abgelegt
+  werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.07.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>keyref</indexterm>
+
+        <indexterm>Variablen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>DITA Buildumgebung</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="variablen-ausserhalb-projekt_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Gleiche Variablen in allen Projekten</title><p>Einige
+    Angaben und Bilder werden in sämtlichen Projekten immer in gleicher Weise
+    genutzt. Sie werden an zentraler Stelle gepflegt und als Variablen in die
+    Topics eingefügt. Wenn sich eine Variable ändern soll, soll das in allen
+    Projekten geschehen.</p><p><fig>
+        <title>Grün eingerahmte Variablen</title>
+
+        <image alt="Variablen" keyref="variablen-beispiel_568"
+               placement="break"/>
+      </fig></p><p>So ist die E-Mailadresse und die Internetadresse in
+    sämtlichen <xref format="html" href="http://www.petersell.com"
+    scope="external">Petersilienbüchern</xref> gleich. Gleichwohl möchte ich
+    nicht auf die Möglichkeit verzichten, sie schnell auf einem Schlag ändern
+    zu können. Speziell die E-Mail-Adresse möchte ich bei zu hohem
+    Spamaufkommen ändern können.</p></section>
+
+    <section><title>Variablen erstellen im gemeinsamen
+    Verzeichnis</title><p>Es liegt in innerhalb meines
+    Petersilienbuch-Projektes folgende Verzeichnisstruktur vor:</p><codeblock>includes
+petersilienbuch-1
+petersilienbuch-2
+</codeblock><p>Im Ordner <filepath>includes</filepath> sind sämtliche
+    Gemeinsamkeiten der Petersilienbücher enthalten. So auch eine
+    <filepath>keyref.ditamap</filepath> mit den Angaben für E-Mail und
+    Internetadresse. Hier das Beispiel für die oben im Bild grün eingerahmte
+    E-Mailadresse.</p><codeblock>&lt;map&gt;
+&lt;!-- Impressum-Mail --&gt;
+&lt;keydef keys="petersell-mail-allgemein"&gt;
+&lt;topicmeta&gt;&lt;keywords&gt;&lt;keyword&gt;Emailadresse@beispieldomain.de&lt;/keyword&gt;&lt;/keywords&gt;
+&lt;/topicmeta&gt;
+&lt;/keydef&gt;
+&lt;/map&gt;</codeblock></section>
+<section>
+<title>Variablen-Maps im
+    Projektverzeichnis</title><p>In jedem Ordner für ein Petersilienbuch
+    befindet sich eine keyref-Ditamap mit sämtlichen lokalen Variablen wie
+    z.B. Download-URL oder Erscheinungsdatum. Und natürlich eine Haupt-Ditamap
+    für jedes Petersilienbuch. Darin befinden sich zuoberst die Links zur
+    globalen, danach die der lokalen keyref-ditamap-Datei.</p><codeblock>&lt;!-- Globale Variablen --&gt;
+&lt;mapref href="../includes/maps/keyref.ditamap"/&gt;
+&lt;!-- Lokale Variablen --&gt;
+&lt;mapref href="maps/keyref-petersell-1.ditamap"/&gt;</codeblock></section>
+
+    <section><title>Topic mit eingefügter Variable</title><p>Die im Bild oben
+    dargestellte Seite ist die Impressums-Seite eines jeden Petersilienbuchs.
+    Um den Platzhalter für die E-Mailadress-Variable zu füllen, steht in der
+    Concept-Datei für das Impressum folgende Notation: </p><codeblock>&lt;p&gt;&lt;keyword keyref="petersell-mail-allgemein"/&gt;&lt;/p&gt;</codeblock></section>
+
+    <section><title>Ant-Befehle für die build-Datei</title><p>Bis zum Einsatz
+    des DITA-OTs 1.5.3 funktionierte die Auslagerung der globalen Variablen
+    ausserhalb der Projektordner fehlerfrei. Mit Einsatz des DITA-OTs 1.6.3
+    war dies nicht mehr möglich. Die globale, ausserhalb des Buchprojekts
+    liegende <filepath>keyref.ditamap</filepath> wurde nicht
+    verarbeitet.</p><codeph><systemoutput>[keyref] [DOTJ047I][INFO] Unable to
+    find key definition for keyref="petersell-mail-allgemein", href may be
+    used as fallback if it exists.</systemoutput></codeph><p>Bis ich bei Eliot
+    Kimbers <i>DITA for Practitioners</i> [1] fündig wurde. Es fehlten 2
+    Zeilen in meiner build-Datei für das jeweilige Target (EPUB und
+    PDF):</p><codeblock>&lt;property name= "generate.copy.outer" value="2"/&gt;
+&lt;property name= "onlytopic.in.map" value="true"/&gt;
+</codeblock></section>
+
+    <section><title>Links zur Seite</title><ul>
+        <li>[1] Eliot Kimber, DITA for Practitioners Vol. 1, <xref
+        format="html"
+        href="http://xmlpress.net/publications/dita/practitioners-1/"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

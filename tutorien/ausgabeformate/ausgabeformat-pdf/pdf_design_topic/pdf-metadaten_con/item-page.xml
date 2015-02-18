@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../../../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-metadaten_con" xml:lang="de-de">
+  <title>Metadaten der PDF-Datei erzeugen</title>
+
+  <shortdesc>So generieren Sie über das DITA OT und dem FO-Plugin die
+  Metadaten einer PDF-Datei.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <critdates>
+      <created date="28.03.2011"/>
+
+      <revised modified="28.11.2011"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <option/>
+
+        <indexterm>PDF-Metaangaben</indexterm>
+
+        <indexterm>Acrobat Reader</indexterm>
+
+        <indexterm>DITA Yahoo Users Group</indexterm>
+
+        <indexterm>rootprocessing.xsl</indexterm>
+
+        <indexterm>Verfasser</indexterm>
+
+        <indexterm>Titel</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-metadaten_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Fehlenden Metaangaben</title><p>Auf zweierlei Wegen kann
+    man sich die Eigenschaften einer PDF-Datei anzeigen lassen. Im Acrobat
+    Reader unter dem Menüpunkt <menucascade>
+        <uicontrol>Datei</uicontrol>
+
+        <uicontrol>Eigenschaften.</uicontrol>
+      </menucascade> Im Windows-Explorer per rechten Mausklick und Menüeintrag
+    <uicontrol>Eigenschaften</uicontrol>. Nun wies mich Ben (www.softwijs.nl)
+    , der seine Anleitungen ebenfalls mit DITA realisiert, darauf hin, dass in
+    meinen PDFs die Meta-Angaben fehlen. Kurz darauf gab es zufällig einen
+    Forum-Eintrag in der <i>DITA-User-Yahoogruppe</i> bezüglich der Meta-Daten
+    in einer PDF-Datei. Hier die Umsetzung des Forum-Beitrages. </p><p><fig>
+        <title>Fehlende Angaben hier im Acrobat Reader</title>
+
+        <image href="metadaten-in-pdf.gif" placement="break"/>
+      </fig><fig>
+        <title>So sollte es mit Meta-Angaben aussehen</title>
+
+        <image alt="Metaangaben vorhanden" href="metadaten-in-pdf2.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Bearbeiten der root-processing.xsl</title><p>Öffnen Sie
+    die Datei <filepath>DITA-OT\demo\fo\xsl\fo\root-processing.xsl</filepath>.
+    Fügen Sie gleich nach dem Eintrag <codeph>&lt;fo:root
+    xsl:use-attribute-sets="__fo__root"&gt;</codeph> folgendes
+    ein:</p><codeblock>&lt;rx:meta-info&gt;
+&lt;rx:meta-field name="author" value="_____"/&gt;
+&lt;rx:meta-field name="creator" value="_____"/&gt;
+&lt;rx:meta-field name="title" value="_____"/&gt;
+&lt;rx:meta-field name="subject" value="_____"/&gt;
+&lt;rx:meta-field name="keywords" value="_____"/&gt;
+&lt;rx:meta-field name="publisher" value="_____"/&gt;
+&lt;/rx:meta-info&gt;
+</codeblock><p>Ersetzen Sie die Unterstriche bei <uicontrol>value</uicontrol>
+    jeweils mit Ihren Angaben. Damit der Renderx-Präfix <codeph>rx:</codeph>
+    validiert werden kann, muss, wenn noch nicht vorhanden, folgender Eintrag
+    für <codeph>rx:</codeph> in die Stylesheet-Deklaration hinzugefügt
+    werden:</p><codeblock>&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:fo="http://www.w3.org/1999/XSL/Format"
+  xmlns:rx="http://www.renderx.com/XSL/Extensions"
+version="2.0"&gt;
+</codeblock><p>Der Autor des Yahoo-Group-Beitrages betont, dass die statischen
+    Angaben, die er unter <userinput>value</userinput> getätigt hat, sich
+    bestimmt auch durch Variablen aus den Bookmap-Metadaten füllen lassen
+    könnten. Doch das ist ein Thema für sich.</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li>Yahoo-Groups-Post zu Metaangaben im PDF, <xref format="html"
+        href="http://tech.groups.yahoo.com/group/dita-users/message/21900"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

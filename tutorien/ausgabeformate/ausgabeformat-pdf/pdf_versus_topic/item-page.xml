@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/topic.dtd">
+<topic id="pdf_versus_topic" xml:lang="de-de">
+  <title>Online versus Druckausgabe</title>
+
+  <shortdesc product="online">Einige nützliche Merkmale in der Onlinehilfe
+  müssen im PDF anders gestaltet werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2010"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2010-06-18" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body/>
+</topic>

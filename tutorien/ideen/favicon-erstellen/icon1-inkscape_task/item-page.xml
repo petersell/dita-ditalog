@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN"
+"../../../../dtd/technicalContent/dtd/generalTask.dtd">
+<task id="icon_task" xml:lang="de-de">
+  <title>Favicon in Inkscape erstellen (Teil 1)</title>
+
+  <shortdesc>Man kommt als Technischer Redakteur nicht so oft in die
+  Verlegenheit, ein Favicon erstellen zu müssen. Als ich zum zweiten Mal vor
+  der Aufgabe stand, hatte ich alles bisherige zur Iconerstellung wieder
+  vergessen. Für mich und für manch weiteren Redakteur sei die Anleitung darum
+  hier fixiert.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="28.02.2011"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Favicon mit Inkscape erstellen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Online-Hilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="icon_task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Erstellen Sie im Open Source Graphikprogramm <i>Inkscape</i> eine
+        Grundform Ihres Icons. Bestimmt hilft Ihnen wie mir ein Graphiker
+        weiter.</cmd>
+      </step>
+
+      <step>
+        <cmd>Es gilt, Icons für die Größen 16, 32, 48 und 128 px zu erstellen.
+        Erstellen Sie ein Quadrat mit 32px Breite und Höhe.</cmd>
+
+        <stepresult><p><fig>
+            <title>Breite und Höhe des Quadrats einstellen</title>
+
+            <image alt="Breite und Höhe einstellen"
+                   href="icon-quadrat-hintergrund1.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Bestimmen Sie Farbe der Füllung und der Kontur des Quadrats. Soll
+        das Icon transparent sein, wählen Sie links die Kreuzfarbfläche für
+        "keine Farbe".</cmd>
+      </step>
+
+      <step importance="optional">
+        <cmd>Soll das Icon und somit diese Hintergrundquadrat abgerundetet
+        Ecken haben, markieren Sie das Rechteckt. Anschließend klicken Sie auf
+        das <uicontrol>Rechteck-/Quadrat-Tool</uicontrol> in der
+        Werkzeugleiste und ziehen den Anfasser in Kreisform in der rechten
+        oberen Ecke in die diagonale, linke untere Ecke.</cmd>
+
+        <stepresult><p><fig>
+            <title>Mit Rechtecktool die Ecken abrunden</title>
+
+            <image alt="Ecken abrunden"
+                   href="icon-inkscape-runde-ecken.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Falls Ihnen das Icon nicht plastisch genug erscheint, fügen Sie
+        der Icon-Grundform einen <uicontrol>Farbverlauf</uicontrol> zu.</cmd>
+
+        <stepresult><fig>
+            <title>Mit dem Farbverlaufs-Tool arbeiten</title>
+
+            <image alt="Farbverlauf hinzufügen"
+                   href="icon-inkscape-verlauf.gif"
+                   placement="break"/>
+          </fig></stepresult>
+      </step>
+
+      <step>
+        <cmd>Positionieren Sie das zuerst gezeichnete Objekt der Grundform in
+        die Mitte des Hintergrundquadrats.</cmd>
+      </step>
+
+      <step>
+        <cmd>Markieren Sie beide Objekte und klicken Sie auf <menucascade>
+            <uicontrol>Objekt</uicontrol>
+
+            <uicontrol>Gruppieren.</uicontrol>
+          </menucascade></cmd>
+      </step>
+
+      <step>
+        <cmd>Klicken Sie auf <menucascade>
+            <uicontrol>Datei</uicontrol>
+
+            <uicontrol>Bitmap exportieren.</uicontrol>
+          </menucascade></cmd>
+
+        <stepresult><p><fig>
+            <title>Bitmap mit exakter Breite exportieren</title>
+
+            <image alt="bitmap exportieren"
+                   href="icon-quadrat-hintergrund4-bitmap-exportieren.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Klicken Sie im Fenster <wintitle>Bitmap exportieren</wintitle>
+        auf <uicontrol outputclass="button">Auswahl</uicontrol>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kontrollieren Sie, ob in den Feldern
+        <uicontrol>Breite</uicontrol> und <uicontrol>Höhe</uicontrol> die
+        korrekten Pixelwerte hinterlegt sind.</cmd>
+      </step>
+
+      <step importance="optional">
+        <cmd>Hinterlegen Sie im Feld <uicontrol>Dateiname</uicontrol> einen
+        Ausgabepfad.</cmd>
+      </step>
+
+      <step>
+        <cmd>Klicken Sie auf <uicontrol
+        outputclass="button">Exportieren</uicontrol>. Es wird im ausgewählten
+        Pfad eine PNG-Datei erzeugt.</cmd>
+      </step>
+
+      <step>
+        <cmd>Wiederholen Sie die Schritte für die Größen 16, 48, 128 und 256
+        px.</cmd>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ul>
+        <li>Inkscape von heise.de downloaden, <xref format="html"
+        href="http://www.heise.de/software/download/inkscape/24698"
+        scope="external">zum Link</xref></li>
+      </ul></postreq>
+  </taskbody>
+</task>

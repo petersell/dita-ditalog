@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung-7_con" xml:lang="de-de">
+  <title>Ausgabedatei generieren</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="21.05.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>DITA-Buildumgebung</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-buildumgebung-7_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>Doppelklicken Sie die <filepath>startcmd.bat</filepath> im
+    Hauptverzeichnis Ihres DITA-OT-Ordners, um ein Kommandozeilenfenster Ihres
+    Toolkits zu öffnen. Geben Sie anschließend <userinput>runbuild
+    dita2epub</userinput> ein und drücken Sie [Enter].</p>
+
+    <p>Im Ordner <filepath>out</filepath> sollte sich ein neuer Ordner
+    <filepath>Testbuch</filepath> befinden mit der generierten<filepath>
+    Testbuch.epub</filepath> und einer Logdatei. Kontrollieren Sie ggf in der
+    Datei <filepath>build.properties</filepath>, wo Ihr Output-Ordner
+    liegt.</p>
+
+    <p>Möchten Sie ein anderes Ausgabeformat generieren, ändern Sie den
+    build-Befehl im DITA-Kommandozeilenfenster folgendermaßen:</p>
+
+    <ul>
+      <li><userinput>runbuild</userinput> - PDF-Datei wird erstellt, da hier
+      PDF als Standardausgabe eingestellt</li>
+
+      <li><userinput>runbuild dita2pdf</userinput> - PDF-Datei</li>
+
+      <li><userinput>runbuild dita2xhtml</userinput> - HTML-Dateien ohne
+      Navigationsframe</li>
+
+      <li><userinput>runbuild dita2tocjs</userinput> - ab DITA-OT 1.5.4 -
+      HTML-Dateien mit Navigationsrahmen</li>
+
+      <li><userinput>runbuild dita2kindle</userinput> - Kindle, bitte lesen
+      Sie diesbezgl. die Anleitungen zum Modul Dita4Publishers von Eliot
+      Kimber</li>
+    </ul>
+
+    <p>Der Build für PDF und EPUB funktioniert fehlerfrei. Für TOCJS und XHTML
+    sind noch einige Pfadanpassungen nötig.</p>
+  </conbody>
+</concept>

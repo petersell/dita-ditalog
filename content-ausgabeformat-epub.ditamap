@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="ausgabeformat-epub" scope="local" title="Content Ausgabeformat EPUB"
+     xml:lang="de-de">
+  <!-- Topics Part -->
+
+  <mapref href="tutorien/keydef-ausgabeformate.ditamap"
+          processing-role="resource-only"/>
+
+   <topicref keyref="ausgabeformat-epub">
+      <topicref collection-type="sequence" keyref="d4p-installieren_topic">
+        <topicref keyref="d4p-insall_task"/>
+
+        <topicref keyref="d4p-dtds-in-xml-spy_task"/>
+
+        <topicref keyref="d4p-dtds-in-xmlmind_task"/>
+
+        <topicref keyref="d4p-dtds-in-eclipse_task"/>
+      </topicref>
+
+      <topicref collection-type="sequence"
+                keyref="d4p-epub-einstellungen_topic">
+        <topicref keyref="d4p-related-links-abstellen_con"/>
+
+        <topicref keyref="d4p-covergraphic-standarddtd_task"/>
+
+        <topicref keyref="d4p-epub-coverbild_con"/>
+
+        <topicref keyref="d4p-epub-autor-unbekannt_con"/>
+      </topicref>
+    </topicref>
+</map>

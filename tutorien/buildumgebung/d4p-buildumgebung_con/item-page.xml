@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung_con" xml:lang="de-de">
+  <title>Buildumgebung - ein Beispielprojekt</title>
+
+  <shortdesc>Wenn Sie sich build-Dateien anlegen, können Sie auf dem
+  DITA-OT-Kommandofenster kurze bequeme Befehle für das Generieren des Outputs
+  absetzen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="21.05.2012"/>
+
+      <revised modified="16.04.2014"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>DITA-Buildumgebung</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-buildumgebung_con"/>
+  </prolog>
+
+  <conbody>
+    <section><p>Bisher hatte ich für jedes Ausgabeformat eine eigene
+    build-Datei, die ich einzeln aufrufen musste. Bis mir Ben Welman (<xref
+    format="html" href="http://http://www.softwijs.nl/"
+    scope="external">www.softwijs.nl</xref>) in einem Beispielprojekt zeigte,
+    wie einfach eine Buildumgebung mit Hilfe von Ant sein kann.</p><p>Ich
+    glaube, die größten Hindernisse für eine massenhafte Verbreitung von DITA
+    unter den Redakteuren sind:</p><ol>
+        <li>der spröde Charme des DITA-Open Toolkits und</li>
+
+        <li>fehlende Ant-Kenntnisse der Redakteure.</li>
+      </ol><p>Vielleicht hilft Bens Beispielprojekt und diese deutsche
+    Übersetzung, dass DITA größere Verbreitung innerhalb der deutschsprachigen
+    Redakteure findet. Denn die Vorteile von Wiederverwendung (reuse) und
+    Single Source Publishing weiß jeder Profi zu schätzen - auch ohne die
+    Darwin Information Typing Architecture.</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li>Installationsanleitung zum DITA Open Toolkit unter
+        sourceforge.net, <xref format="html"
+        href="http://dita-ot.sourceforge.net/1.6/quickstartguide/installing.html"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

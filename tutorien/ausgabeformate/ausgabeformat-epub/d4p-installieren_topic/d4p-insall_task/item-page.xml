@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="d4p-install_task" xml:lang="de-de">
+  <title>Dita4Publishers installieren</title>
+
+  <shortdesc>Anleitung: So installieren Sie das Plugin Dita4Publishers -
+  Version 0.9.18.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="09.12.2009"/>
+
+      <revised modified="10.01.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Dita4Publishers installieren</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat EPUB</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-install_task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Downloaden Sie das Plugin unter
+        <filepath>http://sourceforge.net/projects/dita4publishers/files/</filepath>.
+        Die
+        <indexterm>Dita4Publishers<indexterm>installieren</indexterm></indexterm>Dateisyntax
+        ist
+        <filepath>dita4publishers</filepath>-VERSIONSNUMMER<filepath>.zip</filepath>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Entpacken Sie die Zip-Datei. Als Ergebnis erhalten Sie folgende
+        Zip-Dateien und Ordner:</cmd>
+
+        <stepresult><ul>
+            <li><filepath>documentation</filepath></li>
+
+            <li><filepath>sample_data</filepath></li>
+
+            <li><filepath>templates</filepath></li>
+
+            <li><filepath>xslt</filepath></li>
+
+            <li><filepath>dita4publishers_toolkit_plugins.zip</filepath></li>
+
+            <li>verschiedene d4p-users-guide-Dateien</li>
+          </ul></stepresult>
+      </step>
+
+      <step>
+        <cmd>Entpacken Sie die Datei
+        <filepath>dita4publishers_toolkit_plugins.zip</filepath> in den
+        Plugin-Ordner Ihrer Toolkit-Installation.</cmd>
+
+        <stepresult><fig>
+            <title>plugins als Zielverzeichnis zum Entpacken</title>
+
+            <image alt="Entpacken" href="dita-4-publishers-install1_286.gif"
+                   placement="break"/>
+          </fig><p>Im Ergebnis entstehen im Verzeichnis
+        <filepath>\plugins</filepath> folgende Unterordner:<ul>
+            <li>net.sourceforge.dita4publishers.common.html</li>
+
+            <li>net.sourceforge.dita4publishers.common.mapdriven</li>
+
+            <li>net.sourceforge.dita4publishers.common.xslt</li>
+
+            <li>net.sourceforge.dita4publishers.common.xslfo</li>
+
+            <li>net.sourceforge.dita4publishers.doctypes</li>
+
+            <li>net.sourceforge.dita4publishers.enumeration-d.fo</li>
+
+            <li>net.sourceforge.dita4publishers.enumeration-d.html</li>
+
+            <li>net.sourceforge.dita4publishers.epub</li>
+
+            <li>net.sourceforge.dita4publishers.epub3</li>
+
+            <li>net.sourceforge.dita4publishers.formatting-d.fo</li>
+
+            <li>net.sourceforge.dita4publishers.formatting-d.html</li>
+
+            <li>net.sourceforge.dita4publishers.graphviz</li>
+
+            <li>net.sourceforge.dita4publishers.html2</li>
+
+            <li>net.sourceforge.dita4publishers.html5</li>
+
+            <li>net.sourceforge.dita4publishers.kindle</li>
+
+            <li>net.sourceforge.dita4publishers.math</li>
+
+            <li>net.sourceforge.dita4publishers.pubContent-d.fo</li>
+
+            <li>net.sourceforge.dita4publishers.pubmap.html</li>
+
+            <li>net.sourceforge.dita4publishers.rss</li>
+
+            <li>net.sourceforge.dita4publishers.ruby.fo</li>
+
+            <li>net.sourceforge.dita4publishers.ruby.html</li>
+
+            <li>net.sourceforge.dita4publishers.sample.epub_override</li>
+
+            <li>net.sourceforge.dita4publishers.shakespear.doctypes</li>
+
+            <li>net.sourceforge.dita4publishers.shakespear.html</li>
+
+            <li>net.sourceforge.dita4publishers.variables-d.html</li>
+
+            <li>net.sourceforge.dita4publishers.variables-d.pdf</li>
+
+            <li>net.sourceforge.dita4publishers.word2dita</li>
+
+            <li>net.sourceforge.dita4publishers.xmldomain.doctypes</li>
+
+            <li>net.sourceforge.dita4publishers.xmldomain.fo</li>
+
+            <li>net.sourceforge.dita4publishers.xmldomain.html</li>
+          </ul></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie das Toolkit auf Kommandoebene und geben Sie den Befehl
+        <codeph>ant -f integrator.xml</codeph> ein.</cmd>
+
+        <stepresult><p><fig>
+            <title>Starten der startcmd.bat und Skript ausführen</title>
+
+            <image href="dita4pub-integrator-xml-skript.gif" placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Sie können die Generierung einer ePUB-Datei testen, in dem Sie
+        die vom DITA-Open Toolkit mitgelieferten Doku-Quelldateien als ePUB
+        generieren. Öffnen Sie dazu die Datei <filepath>readme.txt</filepath>
+        im DITA-OT-Ordner
+        <filepath>\plugins\net.sourceforge.dita4publishers.epub</filepath>.
+        Kopieren Sie den ersten Java-Befehl <codeph>java -jar lib\dost.jar
+        /i:doc\DITA-readme.ditamap /transtype:epub</codeph> und kopieren Sie
+        den Befehl in das bereits geöffnete DITA-OT-Kommandofenster.
+        Anschließend setzen Sie den Befehl durch Drücken der [Enter]-Taste
+        ab.</cmd>
+
+        <stepxmp>Beim DITA-OT 1.5.3 hat sich der Dateiname für die
+        Doku-Quelldatei geändert. Sie müssen den Java-Befehl zum Generieren
+        der ePub-Version ändern in: <userinput>java -jar lib\dost.jar
+        /i:doc\readme.ditamap /transtype:epub</userinput></stepxmp>
+
+        <stepresult>Im Ordner <filepath>\out</filepath> sollte sich die
+        generierte ePUB-Datei <filepath>DITA-readme.epub</filepath>
+        befinden.</stepresult>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li><xref format="html"
+        href="http://sourceforge.net/projects/dita4publishers/"
+        scope="external">Dita4Publishers bei Sourgeforge
+        downloaden</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

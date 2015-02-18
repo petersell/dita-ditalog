@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE pubmap PUBLIC "urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:dtd:pubmap" "pubmap.dtd">
+<pubmap xml:lang="de-de">
+  <pubtitle> <mainpubtitle>Ditalog - DITA für Redakteure</mainpubtitle></pubtitle>
+  <pubmeta>
+  <author>Andreas Petersell</author> <publisherinformation><organization>petersell.com</organization></publisherinformation>
+  <keywords>
+  <keyword>Technische Redaktion</keyword>
+  <keyword>Techcomm</keyword>
+  <keyword>Technische Dokumentation</keyword>
+  <keyword>Technischer Redakteur</keyword>
+  <keyword>DITA</keyword>
+  <keyword>Darwin Information Typing Architecture</keyword>
+  </keywords> <prodinfo>
+    <prodname>5. Petersilienbuch</prodname>
+    <vrmlist>
+      <vrm
+        version="1.0"/>
+    </vrmlist>
+    </prodinfo> <pubrights> <copyrfirst> <year>2011</year> </copyrfirst> <copyrlast>
+    <year>2015</year> </copyrlast>
+    <pubowner><organization>petersell.com</organization></pubowner> </pubrights>
+    </pubmeta>
+    <publication>
+  <covers>
+      <epub-cover-graphic
+        href="covers/images/cover.gif"
+        format="gif">
+        <topicmeta>
+          <navtitle>Cover Graphic</navtitle>
+        </topicmeta>
+      </epub-cover-graphic>
+      <front-cover
+        href="covers/cover.xml" product="online" locktitle="yes" scope="local" toc="no" type="concept"
+            xml:lang="de-de"/>
+    </covers>
+  <!-- Variablen petersell.com -->
+  <mapref href="includes/maps/keyref.ditamap"/>
+  <!-- Variablen petersell-5 -->
+  <mapref href="maps/keyref-petersell-5.ditamap" scope="local"/>
+  <!-- Frontmatter -->
+  <frontmatter>
+  <!-- Titelei online -->
+      <topicref href="frontmatter/titel_con.xml" toc="yes" locktitle="yes"  navtitle="Titel" type="concept" xml:lang="de-de" product="online">
+      <topicmeta><author>Andreas Petersell</author><publisher>petersell.com</publisher>
+            <copyright>
+				<copyryear year="2012"></copyryear>
+				<copyrholder>Andreas Petersell</copyrholder>
+			</copyright>
+		</topicmeta>
+		</topicref>
+		<topicref href="frontmatter/impressum_con.xml" locktitle="yes"
+            navtitle="Impressum" scope="local" toc="no" type="concept" product="online"/>
+      <!-- Titelei print -->      
+      <topicref href="frontmatter/titel_con.xml" toc="no" type="concept" xml:lang="de-de" product="print">
+      <topicref href="frontmatter/impressum_con.xml" locktitle="yes"
+            navtitle="Impressum" scope="local" toc="no" type="concept" product="print"/>
+      </topicref>
+   </frontmatter>         
+       <pubbody
+      class="+ map/topicref pubmap-d/pubbody ">
+      
+    <!-- Kapitel 1 -->   
+    <part href="chapters/part1_con.xml" scope="local" type="concept" xml:lang="de-de">
+       <topicref href="chapters/common/wasistneu.concept.xml" scope="local" type="concept" xml:lang="de-de"/>
+       <topicref href="frontmatter/ueber-den-autor_con.xml" scope="local" type="concept" xml:lang="de-de"/>
+    </part>   
+    <!-- Kapitel 2 Dita-Buildumgebung --> 
+    <part href="chapters/dita-buildumgebung/buildumgebung.topic.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content2.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel DITA Vokabular --> 
+    <part href="chapters/kap_dita-vokabular.concept.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="chapters/dita-vokabular/dita-vokabular.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 3 Ideen für Dokumentationen --> 
+   <part href="chapters/kap3_ideen_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content3.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 4 Ideen für Online-Hilfen -->
+   <part href="chapters/kap4_onlinehilfe_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content4.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 5 Ausgabeformat PDF -->
+   <part href="chapters/kap5_pdf_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content5.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 6 Ausgabeformat EPUB -->
+   <part href="chapters/kap6_epub_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content6.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 7 Ausgabeformat HTML -->
+   <part href="chapters/kap7_html_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content7.ditamap" format="ditamap"></topicref>
+   </part>
+   <!-- Kapitel 8 Ausgabeformat CHM -->
+   <part href="chapters/kap8_chm_con.xml" scope="local" type="concept" xml:lang="de-de">
+      <topicref href="maps/content8.ditamap" format="ditamap"></topicref>
+   </part>
+   </pubbody>
+    <!-- <backmatter>
+      <topicref
+        href="frontmatter/colophon.xml"/>
+    </backmatter> -->
+  </publication>
+</pubmap>

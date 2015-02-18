@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="tools.git-repository.task" xml:lang="de-de">
+  <title>Das Plugin net.sourceforge.dita-ot.html</title>
+
+  <shortdesc>Bootstrapping Your DITA Teil 1 - Erstellen Sie mithilfe dieses
+  Plugins Output, um ihn später in Ihr github-pages-Repository zu
+  kopieren.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="13.02.2014"/>
+
+      <!-- <revised modified="13.02.2014"/> -->
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Plugin net.sourceforge.dita-ot.html</indexterm>
+
+        <indexterm>YAML Header</indexterm>
+
+        <indexterm>DITA-OT 1.8.2</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014-02-12" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="tools.git-repository.task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Laden Sie das Plugin von <xref format="html"
+        href="https://github.com/dita-ot/dita-ot"
+        scope="external">https://github.com/dita-ot/dita-ot</xref> als ZIP
+        herunter und entpacken Sie das Archiv. Das Plugin befindet sich im
+        Plugin-Ordner des entpackten DITA-OTs. Kopieren Sie das Plugin in den
+        Plugin-Ordner Ihres DITA-Open Toolkits.</cmd>
+      </step>
+
+      <step>
+        <cmd>Integrieren Sie das Plugin im Eingabefenster des DITA-OT.</cmd>
+
+        <stepresult><p><screen>ant -f integrator.xml</screen></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Eines der Hauptaufgaben des Plugins ist es, einen sogenannten
+        YAML-Header zu erzeugen. Dieser könnte z.B. so aussehen:</cmd>
+
+        <stepresult><codeblock>---
+# Generated from DITA source
+layout: base
+title: "Innovation immer mit Gewinn?"
+---</codeblock><p>Jedoch die 3 Striche zu Beginn jeder Datei bereiten,
+        zumindestens bei mir, dem DITA-OT Probleme. Carlos Evia berichtet
+        nicht von solchen Problemen, erzeugt den Output aber auch mit
+        Oxygen.</p><p>Ich erhalte mit dem DITA-OT 1.8.2 folgende
+        Fehlermeldung:</p><cite>[xslt]
+        C:\DITA-OT1.8.2\plugins\net.sourceforge.dita-ot.html\xslt\dita2html.xsl:27:
+        Fatal Error! When 'standalone' or 'doctype-system' is specified, the
+        document must be well-formed; but this document contains a top-level
+        text node</cite><p>Abhilfe verschaffte mir das Ändern der
+        <filepath>dita2html.xsl</filepath> innerhalb des Plugins in folgender
+        Weise: Vor den 3 ersten Bindestrichen eine Zeile einfügen, so dass das
+        Template nun folgendermaßen aussieht:</p><codeblock>&lt;xsl:template match= "/"&gt;
+    &lt;xsl:text&gt;&amp;#xA;&lt;/xsl:text&gt;
+    &lt;xsl:text&gt;---&amp;#xA; &lt;/xsl:text&gt;
+    ...
+&lt;/xsl:template&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Erzeugen Sie mit dem neuen transtype
+        <codeph>net.sourceforge.dita-ot.html</codeph> für Ihre DITA-Dateien
+        den Output. Ich habe mir dafür in <xref
+        href="../../../../buildumgebung/d4p-buildumgebung_con/item-page.xml">meiner
+        Buildumgebung</xref> in der build-Datei ein neues Target angelegt. Der
+        Kürze wegen ist <codeph>${file.separator}</codeph> als /
+        geschrieben.</cmd>
+
+        <stepresult><codeblock>&lt;target name="dita2dita-ot.html" depends="integrate"&gt;
+ &lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+  &lt;property name="args.input" value="${projdir}/${mapfile}"/&gt;
+  &lt;property name="output.dir" value="${out-dir}/${pubname}/dito-ot.html"/&gt;
+  &lt;property name="transtype" value="net.sourceforge.dita-ot.html"/&gt;
+  &lt;property name="args.filter" value="${projdir}/filters/online.ditaval"/&gt;
+ &lt;/ant&gt;
+&lt;/target&gt;
+</codeblock><p>Innerhalb meiner Buildumgebung kann ich nun im
+        DITA-OT-Eingabefensters Output erzeugen mit Hilfe des Aufrufs von
+        <userinput>build-beispielprojekt
+        dita2dita-ot.html</userinput>.</p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die HTML-Ergebnisdateien in den <xref
+        href="../../../../buildumgebung/github.topic/tools.gh-pages-branch.task/item-page.xml">Branch
+        gh-pages</xref>.</cmd>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li>DITA-OT-Quellen mit Plugin net.sourceforge.dita-ot.html, <xref
+        format="html" href="https://github.com/dita-ot/dita-ot"
+        scope="external">zum Link</xref></li>
+
+        <li>Bootstrapping Your DITA for Sweet Responsive HTML5 Help, Carlos
+        Evia, <xref format="html"
+        href="http://blog.carlosevia.com/blog/2013/09/13/Bootstrapping-your-DITA/"
+        scope="external">zum Link</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

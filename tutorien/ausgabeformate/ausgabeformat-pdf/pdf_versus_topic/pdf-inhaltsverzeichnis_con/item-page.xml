@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-inhaltsverzeichnis_con" xml:lang="de-de">
+  <title>Inhaltsverzeichnis Print vs. Online</title>
+
+  <shortdesc>Unterschiede zwischen Print- und
+  Online-Inhaltsverzeichnis.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.03.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Inhaltsverzeichnis</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-inhaltsverzeichnis_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>1:1-Übertragung des
+    Online-Verzeichnisses?</title><p>Meistens ist immer die Online-Hilfe das
+    erst Output-Ergebnis <indexterm>Inhaltsverzeichnis</indexterm>und man
+    macht sich daran, die Haupt-Ditamap als Grundlage für eine Bookmap für den
+    PDF-Output zu nehmen. So sah dann mein erstes Ergebnis des
+    PDF-Inhaltsverzeichnisses so aus:</p><p><fig>
+        <title>Erster Output im PDF-Format</title>
+
+        <image href="pdf-inhaltsverzeichnis.gif" placement="break"/>
+
+        <p>Spätestens jetzt muss man sich Gedanken machen, ob eine 1:1-Kopie
+        des Online-Verzeichnisses für den PDF-Output geeignet ist. Hier im
+        Beispiel des ditalogs liegt es nahe, die verschiedenen Ausgabeformate
+        auch unter einem Stichwort Ausgabeformate zu sammeln. Doch ist dies
+        nicht das, was dem Leser in einem Druckdokument weiterhilft. Hier wäre
+        es besser, den einzelnen Ausgabeformaten ein eigenes Kapitel zu
+        widmen. Man erspart sich die dritte Ebene im Inhaltsverzeichnis und
+        der Leser erhält einen schnelleren Überblick. Und Überblick steht bei
+        einem Printinhaltsverzeichnis im Vordergrund. Wer wirklich etwas
+        Spezielles sucht, muss über das Stichwortverzeichnis gehen.</p>
+      </fig></p></section>
+
+    <section><title>Besondere Gestaltung der bookmap</title><p>Die
+    <indexterm>bookmap<indexterm>planen</indexterm></indexterm>Bookmap bedarf
+    also meistens eine Überarbeitung und sieht im Ergebnis anders als die
+    Online-ditamap aus.</p><p><fig>
+        <title>Neue Anordnung</title>
+
+        <image alt="PDF Inhaltsverzeichnis" href="pdf-inhaltsverzeichnis2.gif"
+               placement="break"/>
+      </fig></p><p>Egal, wie man die bookmap neu anordnet - man wird sie immer
+    flexibel den Bedürfnissen des Lesers (nicht Nutzers) anpassen
+    müssen.</p></section>
+  </conbody>
+</concept>

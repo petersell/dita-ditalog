@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE topic PUBLIC "-//OASIS//DTD DITA Topic//EN"
+"topic.dtd">
+<topic id="ditalog_topic" xml:lang="de-de">
+  <title>Tutorien</title>
+
+  <shortdesc>Von Single Source Publishing bis Self-Publishing. Hier finden Sie
+  Tutorien und Best Practice zum Dokumentationsstandard DITA - Darwin
+  Information Typing Architecture.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="01.12.2014"/>
+    </critdates>
+
+    <metadata>
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <body id="ditalog_topic">
+    <section><title>Download</title><ul>
+        <li>Download als <xref format="html"
+        href="http://www.petersell.com/dita-5/"
+        scope="external">PDF</xref></li>
+
+        <li>Download als <xref format="html"
+        href="http://www.petersell.com/dita-5/"
+        scope="external">EPUB</xref></li>
+
+        <li>Online lesen als <xref format="html"
+        href="http://petersell.github.io/ditalog/"
+        scope="external">HTML</xref></li>
+      </ul></section>
+
+    <section><title>Übersicht der Tutorien</title><p/></section>
+  </body>
+</topic>

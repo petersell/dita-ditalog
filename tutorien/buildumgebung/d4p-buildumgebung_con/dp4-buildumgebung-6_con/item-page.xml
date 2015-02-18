@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung-6_con" xml:lang="de-de">
+  <title>Datei Testbuch.ditamap</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="21.05.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm><indexterm>testbuch.ditamap</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>DITA-Buildumgebung</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-buildumgebung-6_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>Den Namen der Ditamap-Datei haben Sie bereits in der letzten Zeile der
+    runbuild-Datei festgelegt. In Bens Beispiel ist der Name
+    <filepath>Testbuch.ditamap</filepath>. Er hätte aber auch
+    <filepath>liebensroman.ditamap</filepath> sein können, sofern Sie es in
+    der<filepath> runbuild.bat</filepath> so fixieren. </p>
+
+    <codeblock>&lt;map title="Testbuch" xml:lang="de-de"&gt;
+    &lt;title&gt;Testbuch für Andreas von Ben&lt;/title&gt;
+    &lt;topicmeta&gt;
+        &lt;author&gt;Ben Welman&lt;/author&gt;
+        &lt;publisher&gt;softwijs.nl&lt;/publisher&gt;
+        &lt;copyright&gt;
+            &lt;copyryear year="2012"/&gt;
+            &lt;copyrholder&gt;softwijs.nl&lt;/copyrholder&gt;
+        &lt;/copyright&gt;
+        &lt;keywords&gt;
+            &lt;keyword&gt;Zotero&lt;/keyword&gt;
+        &lt;/keywords&gt;
+        &lt;prodinfo&gt;
+            &lt;prodname&gt;Testbuch&lt;/prodname&gt;
+            &lt;vrmlist&gt;
+                &lt;vrm version="1.0" release="27-01-2012" product="" modification=""/&gt;
+            &lt;/vrmlist&gt;
+        &lt;/prodinfo&gt;
+        &lt;data name="covergraphic" value="images/cover_zotero.jpg"/&gt;
+    &lt;/topicmeta&gt;
+    &lt;topicref href="topics/c_einfuerung.dita" type="concept" format="dita" scope="local"/&gt;
+    &lt;topicref href="topics/t_installation.dita" type="task" format="dita" scope="local"/&gt;
+&lt;/map&gt;</codeblock>
+
+    <p>Bitte passen Sie die Datei Ihren Erfordernissen an.</p>
+
+    <p>Sie sehen, dass im Ordner <filepath>images</filepath> eine Covergraphik
+    mit Namen <filepath>cover_zotero.jpg</filepath> liegt. Des weiteren
+    befinden sich 2 DITA-Quelldateien im Ordner
+    <filepath>topics</filepath>.</p>
+  </conbody>
+</concept>

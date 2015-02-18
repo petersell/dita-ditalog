@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-buildumgebung-4_con" xml:lang="de-de">
+  <title>Datei build.xml</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+    <publisher>petersell.com</publisher>
+    <critdates>
+      <created date="21.05.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Buildumgebung</indexterm><indexterm>build.xml</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+        <brand>5. Petersilienbuch</brand>
+        <component>DITA-Buildumgebung</component>
+        <featnum/>
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+  <resourceid id="d4p-buildumgebung-4_con"/> 
+  </prolog>
+
+  <conbody>
+    <p>Im folgenden sehen Sie den Inhalt der Build-Datei zum Testprojekt. Wenn
+    Sie später das Testprojekt kopieren und umbenennen für ein neues
+    DITA-Projekt, ist die Datei <filepath>build.xml</filepath> immer
+    unverändert im Projektordner enthalten.</p>
+
+    <codeblock>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!-- (c) 2010 Softwijs. --&gt;
+&lt;!-- Ant script for Dita projects --&gt;
+&lt;!-- Transformation type depends of the parameter in runbuild.bat. --&gt;
+&lt;!-- basedir is the project directory with the buildfile. --&gt;
+
+&lt;project name="Ditaproject" default="dita2pdf" basedir="."&gt;
+&lt;!-- prefix for environment variabeles so Ant can use them --&gt;
+&lt;property environment="env"/&gt;
+&lt;!-- Read the properties file with settings --&gt;
+&lt;property file="${user.home}${file.separator}build.properties"/&gt;
+&lt;!-- Define the name of the (master) ditamap, value of pubname in runbuild.bat --&gt;
+&lt;property name="mapfile" value="${pubname}.ditamap"/&gt;
+&lt;!-- Define the (absolute) path of the project directory with the ditamap --&gt;
+&lt;dirname property="projdir" file="${ant.file}"/&gt;
+&lt;!-- make the temp directory clean --&gt;
+&lt;property name="clean.temp" value="yes"/&gt;
+&lt;echo&gt;Processing of ditamap ${pubname} is started.&lt;/echo&gt;
+&lt;echo/&gt;
+
+&lt;echo&gt;******************************************&lt;/echo&gt;
+&lt;echo&gt;* basedir      = ${basedir}&lt;/echo&gt;
+&lt;echo&gt;* projdir      = ${projdir}&lt;/echo&gt;
+&lt;echo&gt;* pubname      = ${pubname}&lt;/echo&gt;
+&lt;echo&gt;* mapfile      = ${mapfile}&lt;/echo&gt;
+&lt;echo&gt;* java version = ${java.version}&lt;/echo&gt;
+&lt;echo&gt;* ant version  = ${ant.version}&lt;/echo&gt;
+&lt;echo&gt;******************************************&lt;/echo&gt;
+&lt;!-- Import integrator.xml from the toolkit directory --&gt;
+&lt;import file="${dita-ot-dir}${file.separator}integrator.xml"/&gt;
+
+&lt;target name="dita2pdf" depends="integrate"&gt;
+&lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+&lt;property name="args.input" value="${projdir}${file.separator}${mapfile}"/&gt;
+&lt;property name="output.dir" value="${out-dir}${file.separator}${pubname}${file.separator}pdf"/&gt;
+&lt;property name="transtype" value="pdf2"/&gt;
+&lt;!-- Change the standaarddir for pdf customizations --&gt;
+&lt;property name="customization.dir" value="${basedir}${file.separator}customization"/&gt;
+&lt;!-- Settings for links in pdf output when using collection-type and related links--&gt;
+&lt;!-- Acceptable values: none , all , nofamily. --&gt;
+&lt;property name="args.fo.include.rellinks" value="nofamily"/&gt;
+&lt;/ant&gt;
+&lt;/target&gt;
+
+&lt;target name="dita2xhtml" depends="integrate"&gt;
+&lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+&lt;property name="args.input" value="${projdir}${file.separator}${mapfile}"/&gt;
+&lt;property name="output.dir" value="${out-dir}${file.separator}${pubname}${file.separator}xhtml"/&gt;
+&lt;property name="transtype" value="xhtml"/&gt;
+&lt;!--  Change css file  --&gt;
+&lt;property name="args.css" value="customization${file.separator}swdita.css"/&gt;
+&lt;property name="args.csspath" value="css"/&gt;
+&lt;property name="args.copycss" value="yes"/&gt;
+&lt;!-- Change header and footer --&gt;
+&lt;property name="args.hdr" value="${projdir}${file.separator}customization${file.separator}swheader.html"/&gt;
+&lt;property name="args.ftr" value="${projdir}${file.separator}customization${file.separator}swfooter.html"/&gt;
+&lt;/ant&gt;
+&lt;/target&gt;
+
+&lt;target name="dita2tocjs" depends="integrate"&gt;
+&lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+&lt;property name="args.input" value="${projdir}${file.separator}${mapfile}"/&gt;
+&lt;property name="output.dir" value="${out-dir}${file.separator}${pubname}${file.separator}tocjs"/&gt;
+&lt;property name="transtype" value="tocjs"/&gt;
+&lt;!--  Change css file  --&gt;
+&lt;property name="args.css" value="customization${file.separator}swdita.css"/&gt;
+&lt;property name="args.csspath" value="css"/&gt;
+&lt;property name="args.copycss" value="yes"/&gt;
+&lt;!-- Change header and footer --&gt;
+&lt;property name="args.hdr" value="${projdir}${file.separator}customization${file.separator}swheader.html"/&gt;
+&lt;property name="args.ftr" value="${projdir}${file.separator}customization${file.separator}swfooter.html"/&gt;
+&lt;/ant&gt;
+&lt;/target&gt;
+
+&lt;target name="dita2epub" depends="integrate"&gt;
+&lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+&lt;property name="args.input" value="${projdir}${file.separator}${mapfile}"/&gt;
+&lt;property name="output.dir" value="${out-dir}${file.separator}${pubname}${file.separator}epub"/&gt;
+&lt;property name="epub.pubid.uri.stub" value="http://www.softwijs.nl/"/&gt;
+&lt;property name="transtype" value="epub"/&gt;
+&lt;!--  Change css file --&gt;
+&lt;property name="args.css" value="customization${file.separator}ebook.css"/&gt;
+&lt;property name="args.csspath" value="css"/&gt;
+&lt;property name="args.copycss" value="yes"/&gt;
+&lt;/ant&gt;
+&lt;/target&gt;
+
+&lt;target name="dita2kindle" depends="integrate"&gt;
+&lt;ant antfile="${dita-ot-dir}${file.separator}build.xml" target="init"&gt;
+&lt;property name="args.input" value="${projdir}${file.separator}${mapfile}"/&gt;
+&lt;property name="output.dir" value="${out-dir}${file.separator}${pubname}${file.separator}kindle"/&gt;
+&lt;property name="transtype" value="kindle"/&gt;
+&lt;!--  Change css file --&gt;
+&lt;property name="args.css" value="customization${file.separator}ebook.css"/&gt;
+&lt;property name="args.csspath" value="css"/&gt;
+&lt;property name="args.copycss" value="yes"/&gt;
+&lt;/ant&gt;
+&lt;/target&gt;
+&lt;/project&gt;
+</codeblock>
+  </conbody>
+</concept>

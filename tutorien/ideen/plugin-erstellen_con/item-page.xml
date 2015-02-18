@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/concept.dtd">
+<concept id="plugin-erstellen_con" xml:lang="de-de">
+  <title>Plugin erstellen</title>
+
+  <shortdesc>Irgendwann wollen Sie Ihre individuellen Einstellungen in den
+  Toolkit-XSL-Stylesheets vor einem Update des DITA-OT sichern oder diese an
+  andere weitergeben. Dann ist die Auslagerung Ihrer Templates in ein Plugin
+  angebracht.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="17.09.2009"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Plugin erstellen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="plugin-erstellen_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Override-Stylesheet-Datei erstellen</title><p>Erstellen
+    Sie eine neue XSL-Datei. In den Kopf und Fuß der neuen Datei, die die
+    Templates des Toolkits außer Kraft setzten soll, müssen die
+    Standardeinträge:</p><codeblock>&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"&gt;
+</codeblock><p><codeph>&lt;!-- Hier kommt Ihr angepaßtes Stylesheet
+    hinein.--&gt;</codeph></p><codeblock>&lt;/xsl:stylesheet&gt;</codeblock></section>
+
+    <section><title>Zu änderndes Stylesheet in Override-Datei
+    kopieren</title><p>Kopieren Sie aus der Datei
+    <filepath>DITA-OT\xsl\xslhtml\dita2htmlImpl.xsl</filepath> dasjenige
+    <indexterm>Override</indexterm>Template in die soeben neu erstellte
+    Override-Stylesheet-Datei, welches Sie ändern möchten. Suchen Sie nach dem
+    Template immer nach seinem class-Attribut:</p><codeblock>&lt;xsl:template match="*[contains(@class, 'topic/beispielelement')]</codeblock><p>Wenn
+    Sie das Stylesheet kopiert und geändert haben, speichern Sie die
+    Override-Stylesheet-Datei (<filepath>beispiel.xsl</filepath>) ab. Stellen
+    Sie nun den Originalzustand der Datei
+    <filepath>dita2htmlImpl.xsl</filepath> wieder her, falls Sie darin Ihre
+    Anpassungen vorgenommen hatten.</p></section>
+
+    <section><title>Plugin-Verzeichnis erstellen</title><p><ol>
+        <li>Erstellen Sie einen neuen Ordner im Verzeichnis
+        <filepath>DITA-OT\demo\beispielname</filepath>.</li>
+
+        <li>Erstellen Sie im neu erstellten Ordner einen neuen Ordner
+        <filepath>\xsl</filepath>.</li>
+
+        <li>Kopieren Sie die neue Override-Stylesheet-Datei
+        (<filepath>beispiel.xsl</filepath>) in den Ordner
+        <filepath>\xsl</filepath>.</li>
+
+        <li>Erstellen Sie eine neu XML-Datei namens
+        <filepath>plugin.xml</filepath>:<codeblock>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;plugin id="org.dita.beispielname"&gt;
+&lt;feature extension="dita.xsl.xhtml" value="xsl/beispiel.xsl" type="file"/&gt;
+&lt;/plugin&gt;
+</codeblock><p>und kopieren diese in den Ordner
+        <filepath>\demo\beispielname</filepath>.</p></li>
+      </ol></p></section>
+
+    <section><title>Plugin integrieren</title><p>Doppelklicken Sie die
+    startcmd.bat, um ein DITA-Kommandofenster zu öffnen und führen Sie
+    folgenden Befehl aus:</p><screen>ant -f integrator.xml</screen><p>Im
+    Ergebnis sollte in der Datei
+    <filepath>DITA-OT\xsl\dita2xhtml.xsl</filepath> die
+    <filepath>beispiel.xsl</filepath> über ein
+    <codeph>&lt;xsl:import&gt;</codeph> referenziert werden.</p></section>
+  </conbody>
+</concept>

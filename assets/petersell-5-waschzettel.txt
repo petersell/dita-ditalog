@@ -1,0 +1,12 @@
+
+Das Ditalog ist eine lose Erfahrungsschatzsammlung eines Redakteurs zum Dokumentationsstandard DITA (Darwin
+Information Typing Architecture). Im Vordergrund stehen Handlungsanleitungen zu Problemen, wie sie sich in der Praxis des Autors auftaten. Besonderheit: Sprache deutsch. Das Ditalog richtet sich in erster Linie an Solo-Redakteure.
+
+Texte, die im DITA XML-Standard geschrieben werden, können mit Hilfe der kostenlosen Software DITA Open Toolkit
+wie auf www.petersell.com im PDF- oder EPUB-Format ausgegeben werden. Aber auch andere Formate wie HTML oder
+CHM sind möglich.
+
+Einmal editieren und an tausenden Stellen einbinden. Der größte Vorteil von DITA ist neben dem Single Source Publishing das Prinzip der Wiederverwendbarkeit (reuse).
+
+Wenn Sie als Redakteur nicht nur Handlungsanleitungen, sondern Reportagen, Artikel und Verse schreiben möchten, hilft Ihnen das Plugin Dita4Publishers von Eliot Kimber. Es erweitert das DITA Open Tookit um die EPUB-Generierung und viele nützliche Formatierungen wie den Zeilenumbruch durch den <br>-Tag.
+

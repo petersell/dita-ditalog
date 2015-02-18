@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="tools.git-repository.task" xml:lang="de-de">
+  <title>Quelldateien auf github.com bereitstellen</title>
+
+  <shortdesc>Anleitung: So realisieren Sie eine Versionkontrolle mithilfe von
+  Git und laden die Quelldateien auf github.com hoch.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="13.02.2014"/>
+
+      <!-- <revised modified="13.02.2014"/> -->
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>github.com</indexterm>
+
+        <indexterm>Repository</indexterm>
+
+        <indexterm>Versionskontrolle</indexterm>
+
+        <indexterm>Git</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014-02-12" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="tools.git-repository.task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><p><note>Der Autor ist ein Redakteur und kein Programmierer. Dies
+    ist keine Anleitung zur Versionskontrolle. Die Veröffentlichung der
+    DITA-Quelldateien steht hier im Vordergrund.</note></p></prereq>
+
+    <steps>
+      <step>
+        <cmd>Melden Sie sich auf <i>github.com</i> mit Username und
+        E-Mailadresse an.</cmd>
+      </step>
+
+      <step>
+        <cmd>Erstellen Sie ein neues Repository. Wechseln Sie in die
+        Registerkarte <uicontrol>Repositories</uicontrol> und klicken Sie auf
+        <uicontrol outputclass="button">Neu</uicontrol>.</cmd>
+
+        <stepresult><p><fig>
+            <title>Registerkarte Repositories</title>
+
+            <image alt="github.com" href="github-neues-repo_879.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Wählen Sie einen Namen für Ihr Repository und eine kurze
+        Beschreibung. Klicken Sie auf <uicontrol outputclass="button">Create
+        repository</uicontrol>.</cmd>
+
+        <stepresult><p><fig>
+            <title>Name und Beschreibung füllen - nichts weiter</title>
+
+            <image alt="Namensfindung" href="github-neues-repo4_881.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd><xref format="html"
+        href="https://code.google.com/p/msysgit/downloads/detail?name=Git-1.8.4-preview20130916.exe&amp;can=2&amp;q"
+        scope="external">Download von Git für Windows 1.8.4</xref> - Laden Sie
+        Git herunter in Version 1.8.4, da diese fehlerfrei beim Hochladen ist,
+        im Gegensatz zu Version 1.8.5.2. Installieren Sie das Programm per
+        Doppelklick auf die exe-Datei.</cmd>
+      </step>
+
+      <step>
+        <cmd>Geben Sie bei der Installation von Git den selben Usernamen und
+        die E-Mailadresse an, wie bei der Anmeldung bei github.com.</cmd>
+
+        <stepxmp><screen>$ git config --global user.name "IhrNutzername"
+$ git config --global user.email "Ihre@emailadresse.de"
+</screen></stepxmp>
+      </step>
+
+      <step>
+        <cmd>Erstellen Sie ein neues Projektarchiv. Klicken Sie im Windows
+        Explorer mit einem rechten Mausklick innerhalb Ihres
+        DITA-Quelldatei-Verzeichnisses und wählen den Kontextmenüeintrag
+        <uicontrol>Git Bash here</uicontrol>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Geben Sie im Git-Konsolenfenster folgenden Befehl ein und drücken
+        Sie Enter.</cmd>
+
+        <stepxmp><screen>$ git init</screen></stepxmp>
+
+        <stepresult><p><fig>
+            <title>Verzeichnis .git wird angelegt</title>
+
+            <image alt="Verzeichnis git" href="git-init_878.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>github.com erwartet drei Dateien standardmäßig im Repository.
+        Zumindestens die leeren Dateien sollten Sie vorm Hochladen zu github
+        erstellen. Editieren können Sie diese danach immer noch.</cmd>
+
+        <info><ol>
+            <li>README.md - der Datei-Inhalt kommt zur Anzeige unterhalb der
+            Quelldateien-Übersicht. Besucher Ihrer github-Seite können sich so
+            einen schnellen Überblick über das Projekt verschaffen.</li>
+
+            <li>LICENSE.md - was darf der Besucher mit Ihrem Projekt
+            machen?</li>
+
+            <li>.gitignore - diese Datei filtert Dateien innerhalb Ihres
+            Quelldatei-Verzeichnisses heraus, so dass diese nicht committed
+            werden können und somit auch nicht ins github-Repository
+            gelangen.</li>
+          </ol></info>
+
+        <stepresult><p>Geben Sie auf der Git-Konsole folgende drei Befehle
+        ein, um og. Dateien zu erstellen.</p><screen>$ touch .gitignore
+$ touch README.md
+§ toch LICENSE.md
+</screen></stepresult>
+      </step>
+
+      <step>
+        <cmd>Committen Sie sämtliche Dateien innerhalb Ihres Projektordners.
+        Am besten geht das über die graphische Benutzeroberfläche von git -
+        git ui. Auf der Git-Konsole führen Sie folgende Befehle aus.</cmd>
+
+        <stepresult><screen>$ git add --all
+$ git commit -m "Commit-Nachricht"
+</screen></stepresult>
+      </step>
+
+      <step importance="optional">
+        <cmd>Falls Sie über einen Proxy gehen, müssen Sie vor dem Hochladen
+        noch folgenden Befehl absetzen:</cmd>
+
+        <stepresult><screen>$ git config --global http.proxy &lt;IhrProxyserver&gt;:&lt;Port&gt;</screen></stepresult>
+      </step>
+
+      <step>
+        <cmd>Hochladen des lokalen Repository auf github.com - Ihrem <i>Remote
+        Repo</i>. Dies erfolgt in zwei Schritten.</cmd>
+
+        <stepresult><screen>$ git remote add origin https://github.com/IhrNutzername/ReposityName.git
+$ git push origin master
+</screen></stepresult>
+      </step>
+    </steps>
+
+    <result outputclass="ergebnis"><p otherprops="ergebnis">Sie finden nun auf
+    <userinput>github.com/IhrBenutzername/RepositoryName</userinput> Ihr
+    Remote Repository.</p></result>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li>Github.com Hilfe - Ein Repository erstellen, <xref format="html"
+        href="https://help.github.com/articles/create-a-repo"
+        scope="external">zum Link</xref></li>
+
+        <li>Git für Windows 1.8.4 Download, <xref format="html"
+        href="https://code.google.com/p/msysgit/downloads/detail?name=Git-1.8.4-preview20130916.exe&amp;can=2&amp;q"
+        scope="external">zum Link</xref></li>
+
+        <li>Git Gui von deutsch auf englisch umstellen, <xref format="html"
+        href="http://www.werisworld.ch/blog/git-gui-von-deutsch-auf-englisch-umstellen"
+        scope="external">zum Link</xref></li>
+
+        <li>Pro Git - Anleitung von Scott Chacon, <xref format="html"
+        href="http://git-scm.com/book/de" scope="external">zum
+        Link</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

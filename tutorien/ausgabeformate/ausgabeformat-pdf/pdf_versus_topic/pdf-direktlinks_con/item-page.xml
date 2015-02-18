@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-direktlinks_con" xml:lang="de-de">
+  <title>xref-Direktlinks in Onlinehilfe vs. Print</title>
+
+  <shortdesc>Hilfreiche xref-Links in der Onlinehilfe sollen im PDF-Output
+  ausgeblendet werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="10.06.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Links in PDF und Online</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-direktlinks_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Direktlinks</title><p>Manchmal möchte man auf xref-Links
+    <indexterm>xref-Links</indexterm>einfach nicht verzichten, denn in der
+    Online-Hilfe erfüllen sie ihren Zweck, der auch durch sogenannte
+    <i>related links</i> am Ende des Artikels nicht ersetzt werden kann. Hier
+    der pure xref-Link und das Erscheinungsbild im Output.</p><codeblock>&lt;p&gt;Für eine Entscheidung bedarf es neben den &lt;xref href="stammdaten-pflichtfelder_ref.xml"&gt; generellen Pflichtfeldern&lt;/xref&gt;
+ noch folgender drei Vorraussetzungen, damit sie ans EStA gesendet werden können:&lt;/p&gt;</codeblock><p><fig>
+        <title>Online ein nützlicher Link zum Term "generelle
+        Pflichtfelder"</title>
+
+        <image href="pdf-link2.gif" placement="break"/>
+      </fig></p><p><fig>
+        <title>Im PDF erscheint der Link mit Topic-Titel</title>
+
+        <image alt="xref in PDF" href="pdf-link1.gif" placement="break"/>
+      </fig></p><p>Während man mit der jeweilige Seiteangabe noch leben
+    könnte, erscheint der Linktext nicht mehr. Statt dessen kommt der
+    Topic-Titel der referenzierten Seite zur Ausgabe, was immer
+    grammatikalische Ungeheuer entstehen läßt.</p></section>
+
+    <section><title>Direktlinks pro Ausgabeformat differenzen</title><p>Es
+    soll der nützliche Online-Link erhalten bleiben, der Link innerhalb der
+    PDF-Datei jedoch verschwinden. In der ditaval-Datei müssen - sofern sie
+    nicht schon existieren - zwei
+    <indexterm>Produktattribut</indexterm>Produktattribute
+    <indexterm>ditaval-Datei</indexterm>geschaffen werden. </p><codeblock>&lt;prop action="exclude" att="product" val="print" /&gt;
+&lt;prop action="include" att="product" val="online" /&gt;
+</codeblock><p>Nun können in der jeweiligen Topic-XML-Datei zwei Einträge für
+    den Term <i>generellen Pflichtfeldern</i> vorgenommen werden. Beide
+    bekommen ein anderes Produkt-Attribut.</p><codeblock>&lt;p&gt;Für eine Entscheidung bedarf es neben den
+&lt;xref href="stammdaten-pflichtfelder_ref.xml" product="online"&gt;generellen Pflichtfeldern&lt;/xref&gt;
+&lt;keyword product="print"&gt;generellen Pflichtfeldern&lt;/keyword&gt;
+noch folgender drei Vorraussetzungen, damit sie ans EStA gesendet werden können:&lt;/p&gt;
+</codeblock><p>Die Online-Verlinkung bleibt erhalten, wogegen im PDF der Link
+    <indexterm>Linking in PDFs</indexterm>verschwindet.</p><p><fig>
+        <title>Term ohne Link</title>
+
+        <image alt="Term ohne Link" href="pdf-link3.gif" placement="break"/>
+      </fig></p></section>
+
+    <section><title>Eleganter in DITA 1.2</title><p>Bitte werfen Sie unbedingt
+    einen Blick auf die subjectscheme-maps, mit deren Hilfe Sie ab DITA 1.2
+    ebenso das Filtern vornehmen können.</p></section>
+  </conbody>
+</concept>

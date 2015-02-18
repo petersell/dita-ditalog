@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="impressum_con" xml:lang="de-de">
+  <title/>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <author type="contributor">petersell.com</author>
+
+    <source/>
+
+    <copyright>
+      <copyryear year="2015"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+  </prolog>
+
+  <conbody>
+    <p otherprops="center" outputclass="impressumzeilezwei" product="print">*
+    * *</p>
+
+    <p id="verlag" otherprops="center"><image href="images/ditalog-verlag.gif"
+    placement="break"/></p>
+
+    <p otherprops="center" outputclass="impressumzeilezwei">* * *</p>
+
+    <p otherprops="center" outputclass="impressumzeilezwei">Das Ditalog
+    erschien erstmals am 19.03.2010 und wird regelmäßig erweitert.</p>
+
+    <p otherprops="center" outputclass="impressumzeilezwei">Letzte
+    Aktualisierung am 10.02.2015</p>
+
+    <p otherprops="center" outputclass="impressumzeilezwei">Download dieses
+    Buches unter 5.ditalog.com</p>
+
+    <!-- <p otherprops="center" outputclass="impressumzeilezwei">Download der
+    DITA-Quelldateien: <keyword keyref="github-url"/></p> -->
+
+    <p otherprops="center" outputclass="impressumzeilezwei">* * *</p>
+
+    <p otherprops="center" outputclass="impressumzeilezwei">© 2015 Edition
+    Ditalog - Andreas Petersell, Berlin</p>
+  </conbody>
+</concept>

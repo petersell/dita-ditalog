@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="kontakt_con" xml:lang="de-de">
+  <title>Kontakt</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="2011-12-09"/>
+
+      <revised modified="2011-12-09"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Kontakt</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname/>
+
+        <vrmlist>
+          <vrm release="2011-11-01" version="1"/>
+        </vrmlist>
+
+        <featnum>0.1</featnum>
+
+        <series/>
+      </prodinfo>
+    </metadata>
+  </prolog>
+
+  <conbody>
+    <section id="kontakt"
+    outputclass="impressumzeilezwei"><title>Kontakt</title><p id="email"
+    outputclass="impressumzeilezwei">mail@petersell.de</p><p
+    id="internetadresse"
+    outputclass="impressumzeilezwei">www.petersell.com</p><p id="gplus"
+    outputclass="impressumzeilezwei">Am besten in Kontakt kommen läßt es sich
+    über Google+ - Das Profil des Herausgebers finden Sie unter
+    http://gplus.to/petersell. <xref format="html"
+    href="http://gplus.to/petersell" scope="external">(hier klicken)</xref>
+    </p></section>
+
+    <section><title>Lizenz</title><p id="lizenzbild"
+    outputclass="impressumzeilezwei"><image
+    href="images/creative-commons-by.gif"/></p><p id="lizenzhinweis"
+    outputclass="impressumzeilezwei">Dieses Werk von Andreas Petersell steht
+    unter einer Creative Commons Namensnennung 3.0 Deutschland Lizenz. (<xref
+    format="html" href="http://creativecommons.org/licenses/by/3.0/de/"
+    scope="external">zum Link</xref>)</p><p id="lizenzdetails">Sie dürfen das
+    Werk bzw. den Inhalt vervielfältigen, verbreiten und öffentlich zugänglich
+    machen, Abwandlungen und Bearbeitungen des Werkes bzw. Inhaltes anfertigen
+    und das Werk kommerziell nutzen. Einzige Bedingung: Namensnennung. Sie
+    müssen den Namen des Autors/Rechteinhabers <i>Andreas Petersell</i>
+    nennen. </p></section>
+
+    <section><title>Bestandteile</title><ol id="bestandteile">
+        <li>Teil - Werk des Autors (Inhaltsebene)</li>
+
+        <li>Teil - Interviews (Sozialebene)</li>
+
+        <li>Teil - <i>Das Petersilienbuch (Auszug)</i> beschreibt, wie die
+        Idee der Petersilienbücher entstand (Sozialebene)</li>
+      </ol></section>
+
+    <section><title>Aldiko Reader</title><p id="aldikohead"
+    outputclass="impressumzeilezwei" product="online">ALDIKO</p><p id="aldiko"
+    product="online">Beim Lesen des Buches mit Aldiko achten Sie bitte darauf,
+    dass die Formatierungen des Verlegers nicht überschrieben werden. Gehen
+    Sie zu <menucascade>
+        <uicontrol>Optionen</uicontrol>
+
+        <uicontrol>mehr</uicontrol>
+
+        <uicontrol>Erweiterte Formatierung</uicontrol>
+      </menucascade> und deaktivieren Sie diese Einstellung, so dass das
+    Häkchen ausgegraut erscheint. </p></section>
+  </conbody>
+</concept>

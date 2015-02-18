@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="d4p-epub-coverbild_con" xml:lang="de-de">
+  <title>Cover im EPUB</title>
+
+  <shortdesc>Jede Reader-Software stellt das Coverbild anders dar. Einen
+  Standard, wie ein Umschlagbild eingebunden werden muss, gibt es
+  nicht.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <copyright>
+      <copyryear year="2012"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="20.08.2012"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Sony Reader</indexterm>
+
+        <indexterm>Aldiko</indexterm>
+
+        <indexterm>Cover</indexterm>
+
+        <indexterm>pubmap</indexterm>
+
+        <indexterm>CSS-Datei</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>5.Petersilienbuch</prodname>
+
+        <vrmlist>
+          <vrm release="2012-03-29" version="1"/>
+        </vrmlist>
+
+        <featnum>1.0</featnum>
+
+        <series>DITA</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-epub-coverbild_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>Darstellung des Covers ohne eigene Seite</title><p><fig>
+        <title>In Aldiko (Bild) und iBook wird das Cover im Bücherregal
+        korrekt angezeigt</title>
+
+        <image alt="Alidko" href="cover-aldiko.gif" placement="break"/>
+      </fig></p><p><fig>
+        <title>Im Sony Reader wird das Cover nicht angezeigt</title>
+
+        <image alt="Sony Reader" href="cover-sony-reader.gif"
+               placement="break"/>
+      </fig></p><p>Bisher glaubte ich, ohne eine eigens für ein Coverbild
+    eingerichtete Seite auskommen zu können. Doch nun stellt die Sony Reader
+    Software das Coverbild in der Vorschau nicht mehr zur Verfügung, sondern
+    zeigt die Titelei. Um auf Nummer sicher zu gehen, habe ich wieder eine
+    <filepath>Cover.xml</filepath>-Seite bereitgestellt.</p></section>
+
+    <section><title>Coverseite in pubmap</title><p>In die pubmap-Datei wird
+    ein Link zur Coverseite cover.xml eingefügt. Da diese Seite im PDF-Output
+    nicht erscheinen soll, wird die Ausgabe über das Attribut
+    <codeph>product</codeph> und einer ditaval-Datei dergestalt gefiltert,
+    dass sie nicht in der PDF-Datei zur Anzeige kommt.</p><p><codeblock>&lt;front-cover product="online" href="covers/cover.xml" locktitle="yes"
+navtitle="Cover" scope="local" toc="no" type="concept"
+xml:lang="de-de"/&gt; &lt;/covers&gt;</codeblock></p></section>
+
+    <section><title>Cover.xml</title><p>Die Cover-Datei bekommt genaue
+    Breiten- und Höhenangaben für das Coverbild. Das Coverbild
+    <filepath>titeleinband.gif</filepath> liegt hier im selben Verzeichnis wie
+    die <filepath>cover.xml</filepath>.</p><p><codeblock>&lt;conbody&gt; &lt;p id="cover-image" outputclass="titeleinband"&gt;
+&lt;image align="center" width="400px" height="600px"
+href="titeleinband.gif"/&gt;&lt;/p&gt; &lt;/conbody&gt;</codeblock></p><p>Damit
+    der Hintergrund der Seite, d.h. der Teil ausserhalb der Graphik, die selbe
+    Farbe erhält wie das Coverbild, erhält die die Concept-Datei im Element
+    <codeph>concept</codeph> eine CSS-Klasse.</p><p><codeblock>&lt;concept id="titeleinband_con" xml:lang="de-de" outputclass="cover-thema"&gt;</codeblock></p></section>
+
+    <section><title>CSS-Datei</title><p>Meine Buchreihe Thema hat ein rotes
+    Coverbild und bekommt somit einen roten Hintergrund, der den ganzen
+    Bildschirm ausfüllt und das Bild darin verschwimmen
+    läßt.</p><p><codeblock>.cover-thema { background-color: #FF0F7D; margin-top:-5px; margin-left:0px; }</codeblock></p><p>Auch
+    der Absatz, in dem das Bild eingebunden wurde, erhält eine
+    CSS-Klasse.</p><codeblock>.titeleinband { text-align:center !important; width: 100%; }</codeblock></section>
+  </conbody>
+</concept>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="kurzbiographie_con" xml:lang="de-de">
+  <title>Über den Autor</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="09.12.2011"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Kurzbiographie</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname/>
+
+        <vrmlist>
+          <vrm release="2011-11-01" version="1"/>
+        </vrmlist>
+
+        <featnum>0.1</featnum>
+
+        <series/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="kurzbiographie_con"/>
+  </prolog>
+
+  <conbody id="ueber-den-autor-std">
+    <p id="kurzbio1">Andreas Petersell wurde 1966 in Berlin geboren. Nach der
+    Schule 1983 erlernte er den Beruf des Elektromonteurs. Ab 1986 holte er
+    das Abitur auf einer Berliner Volkshochschule nach. Da die
+    DDR-Hochschullandschaft keine Magisterstudiengänge kannte, startete er
+    1990 sein Lehramtsstudium für Deutsch und Englisch. Er arbeitet heute in
+    Berlin als Technischer Redakteur.</p>
+
+    <p id="autor"><image href="images/andreas-petersell.gif"
+    placement="break"/></p>
+
+    <p><cite>Hier stehe ich, kann Haupt- vom Nebensatz trennen und
+    EPUB-Dateien erstellen. Ich kann nicht anders: ich bin ein
+    Epubber!</cite></p>
+  </conbody>
+</concept>

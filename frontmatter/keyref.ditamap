@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:dtd:map" "map.dtd">
+<map>
+  <!-- Generic map with pubmap module integrated. -->
+  <!-- Impressum-Mail -->
+  <keydef keys="petersell-mail-allgemein"><topicmeta><keywords><keyword>mail@petersell.de</keyword></keywords></topicmeta></keydef>
+  <!-- E-Mail für die Zusendung von Autorentexten -->
+  <keydef keys="petersell-mail-autor"><topicmeta><keywords><keyword>autor@petersell.de</keyword></keywords></topicmeta></keydef>
+  <!-- Petersell-Logo Titel_con -->
+  <keydef keys="pic-petersell-logo-buchtitel" href="images/petersell-logo-buchtitel.gif" format="gif"></keydef>
+  <!-- Petersell-Favicon part2_con -->
+  <keydef keys="pic-petersell-favicon" href="images/petersell-favicon.gif" format="gif"></keydef>
+  <!-- Über den Autor - Bild -->
+  <keydef keys="pic-petersell-autor" href="images/andreas-petersell.gif" format="gif"></keydef>
+  </map>

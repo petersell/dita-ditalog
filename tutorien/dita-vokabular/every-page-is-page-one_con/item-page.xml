@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE concept PUBLIC "urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:concept"
+"../../plugins/net.sourceforge.dita4publishers.doctypes/doctypes/concept/dtd/concept.dtd"> -->
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="every-page-is-page-one_con" xml:lang="de-de">
+  <title>Every Page Is Page One</title>
+
+  <shortdesc>Behandeln Sie jede Seite einer Onlinehilfe oder eines EBooks wie
+  eine Einstiegsseite: bieten Sie Orientierung für die nächsten Schritte und
+  Vertiefung in weitere Themen an.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="07.03.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>keyref</indexterm>
+
+        <indexterm>keys</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Onlinehilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="every-page-is-page-one_con"/>
+  </prolog>
+
+  <conbody>
+    <p>Dieser Artikel verdankt sein Entstehen dem glücklichen Eintreten zweier
+    Ereignisse:</p>
+
+    <ol>
+      <li>Ich hatte über die Metadaten den Dateinamen eines Artikels im
+      sichtbaren Text ausgeben können. Beschrieben ist die Vorgehensweise im
+      Artikel <i>Metadaten im Text - Name des Topics</i> (<xref
+      keyref="metadata-mailto_con">zum Artikel</xref>).<p><fig>
+          <title>Dateiname metadata-output_con</title>
+
+          <image href="metadata-mailto_365.gif"/>
+        </fig></p></li>
+
+      <li>Mark Baker veröffentlicht seinen Blogpost <i>A New Approach to
+      Organizing Help</i> (<xref format="html"
+      href="http://everypageispageone.com/2013/02/19/a-new-approach-to-organizing-help"
+      scope="external">zum Link</xref>). Er bloggt unter der selbsterklärenden
+      Domain <i>Everypageispageone.com</i> mit dem Motto <i>Readers can enter
+      anywhere. Is your content ready to receive them?</i></li>
+    </ol>
+
+    <section><title>Jede Seite hat ein Thema und viele Aspekte - verlinken
+    Sie!</title><p>Mark Bakers Blogname <i>Every Page Is Page One</i> ist
+    programmatisch. Die Frage, ob ich eine komplexe Sache in eine große
+    Online-Hilfe mit einem großen Inhaltsverzeichnis bündele oder die vielen
+    Themen in mehrere Online-Hilfen splitte und somit ein aussagekräftigeres
+    Inhaltsverzeichnis erhalte, beschäftigt viele Technische Redakteure. Doch
+    das ist gar nicht nötig, meint Baker.</p><cite>Every piece of content is
+    rich in subject affinities. That is, the people, places, objects, actions,
+    and ideas mentioned in the piece are connected to those people, places,
+    objects, actions, and ideas, and thus have a connection (an “affinity”) to
+    content that describes those people, places, objects, actions, and
+    ideas.</cite><p><cite>Yet it is those affinities that actually define the
+    place of a topic in its broader subject area. A traditional book index is
+    an ordered list of the subject affinities in the book. A hypertext link in
+    a Web page is the expression of an affinity between the content in which
+    it occurs and content it links to. Subject affinities anchor a piece of
+    content in time, culture and the reader’s
+    experience.</cite></p><p><cite>When the user has landed in your help by
+    way of a Google search, in search of information on a particular problem
+    they are trying to solve, what kinds of additional information are they
+    likely to need if the current topic does not entirely satisfy their needs?
+    It is not information from other general categories of the help system,
+    which is what the TOC provides. It is information related to the subject
+    affinities of the current topic. [1]</cite></p><p>In den Zeiten des
+    Standard DITA 1.1 hieß es oftmals: Setzen Sie innerhalb des Textes keine
+    Links zu anderen Topics! Dies lenkt den Leser ab und bringt Sie in Teufels
+    Küche, so bald eine topic-Datei mal verschoben oder gelöscht wird. Doch
+    nun haben wir im Standard DITA 1.2 die Technologie des relatvien
+    Verlinkens via <codeph>keys</codeph> und <codeph>keyref</codeph> [2]. Ein
+    Link innerhalb des Textes ist nun kein Teufelszeug mehr. Ändert sich der
+    Speicherort einer Datei, braucht dieser nur noch an einer Stelle geändert
+    werden. Die Hyperlinks, die sich mit <codeph>keyref</codeph> auf diese
+    Datei beziehen, aktualisieren die URL ganz von allein.</p></section>
+
+    <section><title>Dateiname gleich keys</title><p>Nun habe ich also den Mut,
+    aus jeder Seite eine EPPO-Seite zu machen (Sie werden die Abk.
+    dechiffrieren). D.h. ich werde nicht scheuen, zu anderen Seiten der
+    Onlinehilfe oder des eBooks auch innerhalb des Textes zu verlinken. So
+    können Sie vorgehen:</p><ol>
+        <li>Geben Sie in der ditamap in jedem <codeph>topicref</codeph> auch
+        einen Begriff für <codeph>keys</codeph> ein.<codeblock>&lt;topicref href="../onlinehilfe/metadata-mailto_con.xml"
+keys="metadata-mailto_con" scope="local" toc="yes" type="concept"
+xml:lang="de-de"/&gt;</codeblock><p>Achten Sie darauf, dass Sie für
+        <codeph>keys</codeph> einfach den Dateinamen eintragen. Hier im
+        Beispiel <filepath>metadata-mailto_con</filepath>. Die
+        Dateierweiterung <filepath>xml</filepath> ist nicht vonnöten.</p></li>
+
+        <li>Sie finden in einer anderen Datei ein Schlüsselwort (z.B.
+        <i>Feedback</i>), zu welchem Details vorliegen und Sie verlinken
+        könnten? Dann machen Sie das mithilfe der Elemente
+        <codeph>keyword</codeph> oder <codeph>xref</codeph> und dem
+        dazugehörigen Attributs <codeph>keyref</codeph>.<codeblock>&lt;keyword keyref="metadata-mailto_con"&gt;Feedback&lt;/keyword&gt;</codeblock><p>Während
+        <codeph>keyword</codeph> standardmäßig nicht im PDF-Output ausgegeben
+        wird, können Sie bei <codeph>xref</codeph> sicher sein, dass der Link
+        im Online- als auch PDF-Output funktioniert.</p><codeblock>&lt;xref keyref="metadata-mailto_con"&gt;Feedback&lt;/xref&gt;</codeblock><p>Sie
+        bearbeiten also die Quelldatei in Ihrem Editor und können parallel im
+        vorher generierten Output schauen, zu welchen Seiten sie verlinken
+        möchten. Der Seitenname wird ja jetzt oben rechts ausgegeben. Kopieren
+        Sie ihn einfach und fügen Sie ihn bei <codeph>keyref</codeph> als Wert
+        ein. Im obigen Beispielbild ist der Dateiname<filepath>
+        metadata-mailto_con</filepath> auch der Wert, den Sie in der
+        ditamap-Datei auch bei <codeph>keys</codeph> hinterlegt
+        haben.</p></li>
+      </ol><p>Der Dateiname wird also als Identifikation für die
+    E-Mail-Rückmeldung des Nutzers benutzt, aber auch als schnelle
+    Linkmöglichkeit für den
+    <codeph>keys-keyref</codeph>-Mechanismus.</p></section>
+
+    <section><title>Links zum Artikel</title><ul>
+        <li id="jederkannschreiben">[1] A New Approach to Organizing Help,
+        Mark Baker, 2013, <xref format="html"
+        href="http://everypageispageone.com/2013/02/19/a-new-approach-to-organizing-help/"
+        scope="external">zum Link</xref></li>
+
+        <li id="warum-investieren">[2] DITA 1.2 feature article: Keyref
+        overview, Sowmya Kannan, 2009, <xref format="html"
+        href="http://dita.xml.org/resource/keyref-overview-dita-12"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>

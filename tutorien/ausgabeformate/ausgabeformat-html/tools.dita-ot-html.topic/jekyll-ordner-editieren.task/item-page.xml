@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd"> -->
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="tools.git-repository.task" xml:lang="de-de">
+  <title>Standardordner für Jekyll und Bootstrap anlegen und anpassen</title>
+
+  <shortdesc>Bootstrapping Your DITA Teil 2 - Kopieren Sie die Jekyll- und
+  Bootstrap-Ordner aus der Onlinedokumentation des DITA-OTs in den Branch
+  gh-pages und passen Sie die Dateien an.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="13.02.2014"/>
+
+      <!-- <revised modified="13.02.2014"/> -->
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Jekyll</indexterm>
+
+        <indexterm>Bootstrap</indexterm>
+
+        <indexterm>gh-pages</indexterm>
+
+        <indexterm>DITA-OT-Onlinehilfe</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014-02-12" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="tools.git-repository.task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Laden Sie die gezippte Onlinehilfe des DITA-OT von <xref
+        format="html" href="https://github.com/dita-ot/dita-ot.github.io"
+        scope="external">https://github.com/dita-ot/dita-ot.github.io</xref>
+        als ZIP herunter und entpacken Sie das Archiv.</cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie folgende Ordner in Ihren Branch gh-pages:</cmd>
+
+        <stepresult><ul>
+            <li><filepath>_site</filepath> (Jekyll)</li>
+
+            <li><filepath>_includes</filepath> (Jekyll)</li>
+
+            <li><filepath>_layouts</filepath> (Jekyll)</li>
+
+            <li><filepath>css</filepath> (Bootstrap)</li>
+
+            <li><filepath>js</filepath> (Bootstrap)</li>
+
+            <li>Datei <filepath>_config.yml</filepath> (Jekyll)</li>
+          </ul></stepresult>
+      </step>
+
+      <step>
+        <cmd>Passen Sie die Datei <filepath>_config.yml</filepath> an. Zu
+        meinem <xref format="html"
+        href="http://petersell.github.io/petersell-4/"
+        scope="external">Beispielprojekt</xref> sah diese so aus:</cmd>
+
+        <stepresult><codeblock>name: Baukasten oder Puzzle?
+baseurl: http://petersell.github.io/petersell-4/
+pygments: false</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Passen Sie die Dateien im Ordner <filepath>_includes</filepath>
+        an. So habe ich in meine <filepath>footer.html</filepath> u.a.
+        eingefügt:</cmd>
+
+        <stepresult><codeblock>&lt;a href="http://www.petersell.com/spielzeug-4/"
+target="_blank"&gt;Download EPUB oder PDF&lt;/a&gt; | DITA-Quelldateien
+ unter &lt;a href="https://github.com/petersell/petersell-4"</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Passen Sie die Dateien im Ordner <filepath>_layouts</filepath>
+        an. So habe noch in die <filepath>base.html</filepath>
+        hinzugefügt:</cmd>
+
+        <stepresult><codeblock>&lt;meta name="DC.subject" content="PeBe Miniautos"&gt;
+&lt;meta name="keywords" content="Spielzeug, Ministeckbausteine,
+Lego, DDR-Spielzeug, Miniauto, PeBe"&gt;
+&lt;link rel="shortcut icon" href="{{ site.baseurl }}petersell.ico" type="image/x-icon" /&gt;
+</codeblock><p>Wenn Sie ein favicon erwähnen, müssen Sie auch die <xref
+        href="../../hilfeallgemein/icon1-inkscape_task.xml">ico-Datei</xref>
+        mit in das Hauptverzeichnis des gh-pages-Branches
+        kopieren.</p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Passen Sie die bootstrap.css-Dateien an, um Ihre Hauptfarbe via
+        <codeph>@linkColor</codeph> zu erhalten. Am besten funktioniert dies
+        hier bei Bootstrap selbst:
+        http://getbootstrap.com/2.3.2/customize.html.</cmd>
+
+        <stepresult><p><fig>
+            <title>@linkColor individualisieren</title>
+
+            <image alt="bootstrap" href="bootstrap-customize_933.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Passen Sie die <filepath>main.css</filepath> von Jarno Elorvirta
+        an. Dort landen die individuellen Änderungen. Die
+        <filepath>main.css</filepath> muss neben den bootstrap.css-Dateien
+        ebenfalls in die <filepath>base.html</filepath> eingebunden werden. Da
+        es mir nicht gefiel, dass die Bildunterschriften die selbe
+        Schriftgröße hatten, habe ich in die <filepath>main.css</filepath>
+        z.B. folgende neue Klasse hinzugefügt:</cmd>
+
+        <stepresult><codeblock>.figcap
+{
+     font-size: 80%;
+     font-style: italic;
+}</codeblock></stepresult>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li>Dokumentation des DITA-OT auf github pages, Jarno Elovirta, <xref
+        format="html" href="https://github.com/dita-ot/dita-ot.github.io"
+        scope="external">zum Link</xref></li>
+
+        <li>Beispielprojekt <i>Baustein oder Puzzle?</i>, Andreas Petersell,
+        <xref format="html" href="http://petersell.github.io/petersell-4/"
+        scope="external">zum Link</xref></li>
+
+        <li>Bootstrap - Hauptfarbe @linkColor einstellen, <xref format="html"
+        href="http://getbootstrap.com/2.3.2/customize.html"
+        scope="external">zum Link</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

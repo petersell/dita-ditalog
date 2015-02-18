@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="pdf-zugang_task" xml:lang="de-de">
+  <title>Zugangsweg im PDF-Output darstellen</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="04.03.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Zugangsweg zum Bildschirm</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-zugang_task"/>
+  </prolog>
+
+  <taskbody>
+    <context>Anleitung: So koppeln Sie den Zugangspfad zu einem Bildschirm aus
+    den Handlungsschritten einer Handlungsanleitung aus und ändern
+    entsprechend das XSL-Stylesheet.</context>
+
+    <steps>
+      <step>
+        <cmd>Der Hinweis auf den Zugangsweg zum Bildschirm soll mit einem
+        Cursor-Icon und <indexterm>Flagging im PDF-Output</indexterm>dem Wort
+        <i>Zugang:</i> gekennzeichnet werden.</cmd>
+
+        <stepresult><p><fig>
+            <title>Cursor-Icon vorm Zugangspfad</title>
+
+            <image alt="Zugangsweg" href="pdf-zugangsweg.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie das Bild, mit welchem Sie den Zugangspfad "flaggen"
+        möchten, in den Idiom-FO-Plugin-Ordner
+        <filepath>C:\DITA-OT1.4.2.1\demo\fo\Customization\common\artwork</filepath></cmd>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie in der Datei <filepath>custom.xsl</filepath> im Ordner
+        <filepath>\demo\fo\Customization\fo\attr\custom.xsl</filepath>
+        folgendes Attributset hinzu:</cmd>
+
+        <stepresult><codeblock>&lt;xsl:attribute-set name="p.zugang"&gt;
+&lt;xsl:attribute name="font-weight"&gt;bold&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie in der Datei <filepath>custom.xsl</filepath> im Ordner
+        <filepath>\demo\fo\Customization\fo\xsl</filepath> folgenden Eintrag
+        für ein Template hinzu:</cmd>
+
+        <stepresult><codeblock>&lt;xsl:template match="*[contains(@class, ' topic/p ')]"&gt;
+&lt;xsl:choose&gt;
+&lt;xsl:when test="@otherprops='zugang'"&gt;
+&lt;fo:block space-before="0.5em"&gt;
+&lt;fo:inline&gt;&lt;fo:external-graphic src="url({concat($artworkPrefix, '/Customization/OpenTopic/common/artwork/icon_cursor.gif')})"/&gt;&lt;/fo:inline&gt;
+&lt;fo:inline xsl:use-attribute-sets="p.zugang"&gt;&lt;xsl:text&gt; Zugang: &lt;/xsl:text&gt;&lt;/fo:inline&gt;
+&lt;xsl:apply-templates/&gt;
+&lt;/fo:block&gt;
+&lt;/xsl:when&gt;
+&lt;xsl:otherwise&gt;
+&lt;fo:block xsl:use-attribute-sets="p" id="{@id}"&gt;
+&lt;xsl:apply-templates/&gt;
+&lt;/fo:block&gt;
+&lt;/xsl:otherwise&gt;
+&lt;/xsl:choose&gt;
+&lt;/xsl:template&gt;
+</codeblock>Neu ist hier die <codeph>when</codeph>-Anweisung. Die
+        <codeph>otherwise</codeph>-Anweisung ist das normale Template für
+        einen Absatz.</stepresult>
+      </step>
+
+      <step conkeyref="zugang-flagging_task/zugang-otherprops">
+        <cmd/>
+      </step>
+
+      <step conkeyref="zugang-flagging_task/zugang-conref">
+        <cmd/>
+      </step>
+
+      <step conkeyref="zugang-flagging_task/zugang-rahmen">
+        <cmd/>
+      </step>
+
+   </steps>
+  </taskbody>
+</task>

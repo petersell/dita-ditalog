@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="d4p-dtds-in-xmlmind_task" xml:lang="de-de">
+  <title>Einbinden der Dita4Publishers-DTDs in XMLMind</title>
+
+  <shortdesc>Anleitung: So binden Sie die DTD für article in den XML-Editor
+  XMLMind ein, so dass Sie diese lokal validieren und benutzen
+  können.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>Andreas Petersell</publisher>
+
+    <copyright>
+      <copyryear year="2011"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="27.09.2011"/>
+
+      <revised modified="08.11.2011"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <option/>
+
+        <indexterm>XMLMind</indexterm>
+
+        <indexterm>topic.xxe</indexterm>
+
+        <indexterm>topic.css</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2011-01-27" version="1.0"/>
+        </vrmlist>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="d4p-dtds-in-xmlmind_task"/>
+  </prolog>
+
+  <taskbody>
+    <prereq><note>Ich war bisher ein großer Fan des Programms, da es den
+    conref-Mechanismuses für den Nutzer sehr einfach werden läßt. Jedoch für
+    Spezialisierungen, wie es die Dita4Publishers-DTDs sind, ist das Programm
+    nicht geeignet. Mir ist es nur gelungen, die
+    <filepath>article.dtd</filepath> einzubinden. Die Einbindung der
+    <filepath>pubmap.dtd</filepath> ist mir nach einer Stunde nicht gelungen,
+    so dass ich beschlossen habe, dass Programm für das Dita4Publisher-Plugin
+    nicht mehr zu nutzen. Vielleicht ist es ja in Zukunft möglich, die Datei
+    <filepath>dita-catalog.xml</filepath> einzubinden. Bisher ist das nicht
+    der Fall. Im Folgenden mein Weg, wenigstens die
+    <filepath>article.dtd</filepath> in XMLMind aufrufen zu
+    können.</note></prereq>
+
+    <steps>
+      <step>
+        <cmd>Erstellen Sie einen Ordner <filepath>\plugins</filepath>
+        innerhalb des XMLMind-Verzeichnisses
+        <filepath>\addon\config\dita\schema\v1.2\</filepath></cmd>
+      </step>
+
+      <step>
+        <cmd>Kopieren Sie die die doctypes-Verzeichnisse aus dem
+        <filepath>plugins</filepath>-Verzeichnis Ihres DITA-OTs in das soeben
+        erstellte <filepath>plugins</filepath>-Verzeichnis des
+        XMLMind-Programms, so dass zwei neue Verzeichnisse entstehen:</cmd>
+
+        <stepresult><ul>
+            <li><filepath>..\addon\config\dita\schema\v1.2\plugins\net.sourceforge.dita4publishers.doctypes</filepath></li>
+
+            <li><filepath>..\addon\config\dita\schema\v1.2\plugins\net.sourceforge.dita4publishers.xmldomain.doctypes</filepath></li>
+          </ul></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei
+        <filepath>..\XMLmind_XML_Editor\addon\config\dita\catalog.xml</filepath>
+        und fügen Sie für die Topic Domain <i>article</i> folgende Zeilen
+        ein:</cmd>
+
+        <stepresult><codeblock>&lt;group xml:base="schema/v1.2/plugins/net.sourceforge.dita4publishers.doctypes/doctypes/article/dtd/"&gt;
+&lt;/group&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei <filepath>catalog.xml</filepath> im
+        Verzeichnis
+        <filepath>..\plugins\net.sourceforge.dita4publishers.doctypes\doctypes\article\dtd</filepath>
+        und kopieren Sie die 4 Einträge zwischen dem Catalog-Tag und fügen Sie
+        diese zwischen den im Schritt 3 erstellten Tag <codeph>group</codeph>
+        ein.</cmd>
+
+        <stepresult><codeblock>&lt;group xml:base="schema/v1.2/plugins/net.sourceforge.dita4publishers.doctypes/doctypes/article/dtd/"&gt;
+&lt;public publicId="urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:article" uri="article.dtd"/&gt;
+&lt;system systemId="urn:pubid:dita4publishers.sourceforge.net:doctypes:dita:article.dtd" uri="article.dtd"/&gt;
+&lt;public publicId="urn:pubid:dita4publishers.sourceforge.net:modules:article" uri="article.mod"/&gt;
+&lt;system systemId="urn:pubid::modules:article.mod" uri="article.mod"/&gt;
+&lt;/group&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Wiederholen Sie die Schritte 3 und 4 für alle Domains, die Sie
+        nutzen möchten. Mindestens jedoch noch die für <i>common</i>.</cmd>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei <filepath>topic.xxe</filepath> im
+        XMLMind-Ordner <filepath>addon\config\dita</filepath> und fügen Sie
+        einen Eintrag <codeph>rootElementLocalName</codeph> für
+        <userinput>article</userinput> hinzu. Wiederholen Sie dies für weitere
+        Domains.</cmd>
+
+        <stepresult><fig>
+            <title>topic.xxe editieren</title>
+
+            <image alt="topic.xxe bearbeiten"
+                   href="d4p-topicxxe-editieren.gif" placement="break"/>
+          </fig></stepresult>
+      </step>
+
+      <step>
+        <cmd>Öffnen Sie die Datei <filepath>topic.css</filepath> im
+        XMLMind-Verzeichnis <filepath>\addon\config\dita\css</filepath> und
+        nehmen Sie ähnliche Änderungen vor wie hier angegeben.</cmd>
+
+        <substeps>
+          <substep>
+            <cmd>Um einen Zeilenumbruch bei Subsection und Sidebar zu
+            erhalten, kompletterieren Sie den Eintrag <codeph>display:
+            block</codeph>:</cmd>
+
+            <stepresult><codeblock>example, section, subsection, sidebar
+{
+    display: block;
+    margin: 1.33ex 0;
+}</codeblock></stepresult>
+          </substep>
+
+          <substep>
+            <cmd>Fügen Sie folgenden Eintrag ein, um die Titel bei Subsection
+            und Sidebar zu vergrößern.</cmd>
+
+            <stepresult><codeblock>subsection &gt; title,
+sidebar &gt; title
+{ 
+    font-size: 1.3em;
+    margin: 1ex 0;
+}</codeblock></stepresult>
+          </substep>
+
+          <substep>
+            <cmd>Komplettieren Sie folgenen Eintrag um die article-Notation,
+            um die Schriftgröße des article-Titels einzustellen.</cmd>
+
+            <stepresult><codeblock>/* glossentry has no title */
+glossgroup &gt; title,
+concept &gt; title,
+task &gt; title,
+reference &gt; title,
+article &gt; title,
+topic &gt; title { 
+    font-size: 1.5em;
+    margin: 0.83ex 0;
+    border-width: 1px;
+    border-style: solid;
+    border-top-color: transparent;
+    border-left-color: transparent;
+    border-right-color: transparent;
+}</codeblock></stepresult>
+          </substep>
+
+          <substep>
+            <cmd>Komplettieren Sie folgenden Eintrag um die article-Notation,
+            um die Schriftfarbe des article-Titels einzustellen.</cmd>
+
+            <stepresult><codeblock>body example &gt; title,
+body section &gt; title,
+article &gt; title,
+topic &gt; title
+{
+    color: #6090B0;
+}</codeblock></stepresult>
+          </substep>
+        </substeps>
+      </step>
+    </steps>
+  </taskbody>
+</task>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../../../dtd/technicalContent/dtd/task.dtd">
+<task id="output-manuell-editieren.task" xml:lang="de-de">
+  <title>Output manuell anpassen</title>
+
+  <shortdesc>Bootstrapping Your DITA Teil 3 - Passen Sie den Output des
+  Plugins sourceforge.net.dita-ot.html manuell an, so dass Sie diesen
+  anschließend auf Ihre github-page hochladen können.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <copyright>
+      <copyryear year="2014"/>
+
+      <copyrholder>Andreas Petersell</copyrholder>
+    </copyright>
+
+    <critdates>
+      <created date="31.03.2014"/>
+
+      <!-- <revised modified="13.02.2014"/> -->
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>sourceforge.net.dita-ot.html Output anpassen</indexterm>
+
+        <indexterm>gh-pages</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="2014-02-12" version="1.0"/>
+        </vrmlist>
+
+        <featnum/>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="output-manuell-editieren.task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Eventuell müssen Sie eine vorhandene Doctype Declaration löschen.
+        Bei mir wird in jeder Output-Datei folgende erste Zeile
+        ausgegeben:</cmd>
+
+        <stepresult><codeblock>&lt;!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd"&gt;</codeblock><p>Ich
+        nutze das DITA-OT 1.8.2. Falls Sie jedoch ein Programm wie Oxygen
+        nutzen, ist dies eventuell nicht der Fall. Sie müssen diese
+        Deklaration auf jeden Fall löschen. Jekyll gibt sonst unweigerlich
+        Fehlermeldungen zurück.</p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Eventuell müssen Sie in den Content-Dateien die Pfade für die
+        Navigation anpassen. Bei mir wurde anstelle eines Slash (/) folgende
+        Zeichenreferenz ausgegeben: <filepath>%5C</filepath>. Die Pfade für
+        die Navigation in der Linkfarbe muss also anpepaßt werden:</cmd>
+
+        <stepresult><codeblock>&lt;li&gt;&lt;a href="..%5Cchapters/chap1_con.html"&gt;Innovation immer mit Gewinn?&lt;/a&gt;&lt;/li&gt;</codeblock><p>muss
+        geändert werden in</p><codeblock>&lt;li&gt;&lt;a href="../chapters/chap1_con.html"&gt;Innovation immer mit Gewinn?&lt;/a&gt;&lt;/li&gt;</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Erstellen Sie im Hauptverzeichnis eine Indexdatei
+        <filepath>index.html</filepath>. Ich habe dazu in meinem <xref
+        format="html" href="http://petersell.github.io/petersell-4/"
+        scope="external">Beispielprojekt</xref> die Inhaltsdatei des
+        HTML-Outputs genutzt. Sie können die Indexdatei später mit dem
+        Hero-Unit aus bootstrap.css [2] ausschmücken.</cmd>
+
+        <stepresult><p><fig>
+            <title>Startdatei</title>
+
+            <image href="beispielprojekt-indexdatei_965.gif"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Laden Sie sämtliche Ordner und Dateien aus allen 3
+        Bootstrapping-Kapiteln hoch in <xref
+        href="tools.gh-pages-branch.task.xml">Ihren gh-branch</xref> auf
+        github.com.</cmd>
+      </step>
+    </steps>
+
+    <postreq><msgph>Links zum Artikel</msgph> <ol>
+        <li>Beispielprojekt <i>Baustein oder Puzzle?</i>, Andreas Petersell,
+        <xref format="html" href="http://petersell.github.io/petersell-4/"
+        scope="external">zum Link</xref></li>
+
+        <li>Bootstrap Hero Unit, Twitter, <xref format="html"
+        href="http://getbootstrap.com/2.3.2/components.html#typography"
+        scope="external">zum Link</xref></li>
+      </ol></postreq>
+  </taskbody>
+</task>

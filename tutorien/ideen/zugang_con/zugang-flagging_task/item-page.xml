@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"http://docs.oasis-open.org/dita/v1.1/OS/dtd/task.dtd">
+<task id="zugang-flagging_task" xml:lang="de-de">
+  <title>Zugangsweg in Online-Hilfe darstellen</title>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="04.03.2010"/>
+
+      <revised modified="17.12.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Zugangsweg in Onlinehilfen</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Dokumentationen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="zugang-flagging_task"/>
+  </prolog>
+
+  <taskbody>
+    <context>Anleitung: So koppeln Sie den Zugangspfad zu einem Fenster aus
+    den Handlungsschritten aus und kennzeichnen den Zugang per
+    ditaval-Datei.</context>
+
+    <steps>
+      <step>
+        <cmd>Der Hinweis auf den Zugangsweg zum Fenster soll durch Flagging in
+        der ditaval-Datei mit einem Cursor-Icon gekennzeichnet werden.</cmd>
+
+        <stepresult><p><fig>
+            <title>Cursor-Icon vorm Zugangspfad</title>
+
+            <image alt="Cursor-Icon" href="zugang.gif"
+                   placement="break"/>
+          </fig></p></stepresult>
+      </step>
+
+      <step>
+        <cmd>Schreiben Sie dazu <indexterm>Image in
+        Ditaval-Datei</indexterm>folgenden Eintrag in die <indexterm>Flagging
+        in Ditaval-Datei</indexterm>ditaval-Datei:</cmd>
+
+        <stepresult><codeblock>&lt;prop att="otherprops" val="zugang" action="flag"&gt;
+  &lt;startflag imageref="images/icon_cursor.gif"&gt;&lt;/startflag&gt;
+&lt;/prop&gt;
+</codeblock>Bitte achten Sie auf die Pfadangabe bei
+        <filepath>imageref</filepath>. Diese Pfadangabe bezieht sich auf den
+        HTML-Output. Dort vermuten die HTML-Dateien das Bild.</stepresult>
+      </step>
+
+      <step id="zugang-otherprops">
+        <cmd>Versehen Sie den Absatz, der den Zugangsweg beinhalten soll, mit
+        dem Attribut <userinput>otherprops="zugang"</userinput>. Der obige
+        Screenshot wurde über einen Absatz im prereq-Tag realisiert:</cmd>
+
+        <stepresult><codeblock>&lt;prereq&gt;
+&lt;p otherprops="zugang" outputclass="zugang"&gt;Klicken Sie
+im &lt;wintitle&gt;Hauptmenü&lt;/wintitle&gt; auf
+&lt;menucascade&gt;
+&lt;uicontrol&gt;Systemarbeiten&lt;/uicontrol&gt;
+&lt;uicontrol&gt;Systemverwalung&lt;/uicontrol&gt;
+&lt;uicontrol&gt;Vorlagen&lt;/uicontrol&gt;
+&lt;/menucascade&gt;&lt;/p&gt;
+&lt;/prereq&gt;
+</codeblock></stepresult>
+      </step>
+
+      <step>
+        <cmd>Fügen Sie Ihrer Builddatei für den xhtml-Output einen
+        Kopierbefehl <codeph>copy</codeph> hinzu.</cmd>
+
+        <stepresult><codeblock>&lt;target&gt;
+&lt;ant&gt;
+...
+&lt;/ant&gt;
+&lt;copy todir="${out-dir}${file.separator}${pubname}${file.separator}xhtml${file.separator}images"&gt;
+&lt;fileset dir="D:${file.separator}Ihre-Doku-Quelldateien${file.separator}images"&gt;
+&lt;include name="**/*.gif" /&gt;
+&lt;/fileset&gt;
+&lt;/copy&gt;
+&lt;/target&gt;</codeblock><p>Im Beispiel gibt es innerhalb Ihres
+        Quelldatei-Ordners eine Ordner <filepath>\images</filepath>, in
+        welchem sich die benötigten Bilder, u.a. die Datei
+        <filepath>icon_cursor.gif</filepath>, befinden. Sämtliche gif-Dateien
+        werden in den Outputordner kopiert, welcher nach <codeph>copy
+        todir=</codeph> angegeben wurde.</p></stepresult>
+      </step>
+
+      <step id="zugang-conref" importance="optional">
+        <cmd>Weitere Überlegung sollte sein, diesen Zugangsweg nur einmal zu
+        editieren und dann per conref-Mechanismus in die jeweilige
+        Handlungsanleitung zu ziehen. Falls sich doch mal ein Bildschirm oder
+        Menü ändert, brauchen Sie nur in der Originaldatei den Pfad oder
+        ähnliches ändern und durch Content Referenzierung wird die Änderung in
+        sämtlichen Handlungsanleitungen übernommern.</cmd>
+      </step>
+
+      <step id="zugang-rahmen" importance="optional">
+        <cmd>Falls Sie wie im Beispiel um den Zugangsweg einen Rahmen ziehen
+        möchten, vergeben Sie neben dem
+        <filepath>otherprops</filepath>-Attribut noch ein
+        <filepath>outputclass</filepath>-Attribut und erstellen in der
+        CSS-Datei eine Deklaration gleichen Names.</cmd>
+      </step>
+    </steps>
+  </taskbody>
+</task>

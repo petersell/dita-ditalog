@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"../../dtd/technicalContent/dtd/concept.dtd">
+<concept id="pdf-einzelkapitel_con" xml:lang="de-de">
+  <title>Einzelkapitel in einer Bookmap</title>
+
+  <shortdesc>Es sollen Einzelkapitel und Kapitel mit Unterabschnitten im
+  Inhaltsverzeichnis einer bookmap korrekt dargestellt werden.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.03.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Kapitel in bookmap</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-einzelkapitel_con"/>
+  </prolog>
+
+  <conbody>
+    <section><title>So soll es aussehen</title><p><fig>
+        <title>Einzelkapitel in 2. und 4.</title>
+
+        <image alt="Einzelkapitel und Unterkapitel"
+               href="pdf-einzelkapitel.gif" placement="break"/>
+      </fig></p><p>Damit Kapitel 2 und 4 im Plugin nicht auf der typischen
+    zweigeteilten Startseite eines Kapitels landen, ist einiges in der bookmap
+    zu beachten.</p></section>
+
+    <section><title>Einzelkapitel in der bookmap-Datei</title><p>Für die
+    fettgedruckte Kapitelüberschrift im PDF-Output muss immer eine
+    <indexterm>Einzelkapitel im PDF-Inhaltsverzeichnis</indexterm>Extra-Datei
+    erstellt werden. So existieren für das <i>Kapitel 2</i> zwei Dateien. Die
+    Topic-Datei für die Kapitelüberschrift und eine Concept-Datei für den
+    eigentlichen Kapiteltext. Topic und Concept sind in der Bookmap
+    folgendermaßen eingebunden.</p><codeblock>&lt;chapter href="topics/ddr/chapters/2_ueberblick_topic.xml"
+id="auswahl_topic" locktitle="yes"
+navtitle="Überblick zur DDR-Literatur" scope="local" toc="yes"
+type="topic" xml:lang="de-de"&gt;
+ &lt;topicref href="topics/ddr/chapters/2_ueberblick_con.xml" id="auswahl_con"
+ scope="local" toc="no" type="concept" xml:lang="de-de"/&gt;
+&lt;/chapter&gt;
+</codeblock><p>Wichtig im Tag <codeph>&lt;chapter&gt;</codeph> die Attribute
+    <i>locktitle</i> und <i>navtitle</i> sowie im
+    <codeph>&lt;topicref&gt;</codeph> das Attribut <i>toc</i>.</p></section>
+
+    <section><title>Kapitel mit Unterabschnitten in der
+    bookmap-Datei</title><p>Es muss eine Datei für die Kapitelüberschrift
+    sowie die entsprechende Anzahl an Dateien für die Unterabschnitte erstellt
+    werden.</p><codeblock>&lt;chapter href="topics/ddr/chapters/3_protagonisten_topic.xml"
+id="protagonisten_topic" scope="local" toc="yes" type="topic" xml:lang="de-de"&gt;
+
+ &lt;topicref href="topics/ddr/chapters/3-1_loest_con.xml" id="loest_con"
+ scope="local" toc="yes" type="concept" xml:lang="de-de"/&gt;
+
+ &lt;HIER DIE 3 WEITEREN TOPICREFS&gt;
+
+&lt;/chapter&gt;
+</codeblock><p>Wichtig hier im <codeph>&lt;topicref&gt;</codeph> ist das
+    Attribut <codeph>toc="yes"</codeph>.</p></section>
+  </conbody>
+</concept>

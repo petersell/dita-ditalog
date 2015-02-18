@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/map.dtd">
+<map id="keydef-ideen" scope="local" title="Container Ideen" xml:lang="de-de">
+  <!-- Topics content.navigation file -->
+
+  <keydef href="ideen/item-page.xml" keys="artikel_start_con"
+          scope="local" type="concept" xml:lang="de-de"/>
+
+  <!-- Topics content.standard files-->
+
+  <keydef href="ideen/feedback-mail_con/item-page.xml"
+          keys="feedback-mail_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/font-combinumerals_con/item-page.xml"
+          keys="font-combinumerals_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/kontextsensitive-hilfe-map_con/item-page.xml"
+          keys="kontextsensitive-hilfe-map_con" type="concept"
+          xml:lang="de-de"/>
+
+  <keydef href="ideen/plugin-erstellen_con/item-page.xml"
+          keys="plugin-erstellen_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/plugin-erstellen-bildunterschrift_con/item-page.xml"
+          keys="plugin-erstellen-bildunterschrift_con" type="concept"
+          xml:lang="de-de"/>
+
+  <keydef href="ideen/metadata-output_con/item-page.xml"
+          keys="metadata-output_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/metadata-mailto_con/item-page.xml"
+          keys="metadata-mailto_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/tocofsection_con/item-page.xml"
+          keys="tocofsection_con" type="concept" xml:lang="de-de"/>
+
+  <!-- Topics with sub directories-->
+  <keydef href="ideen/zugang_con/item-page.xml"
+          keys="zugang_con" type="concept" xml:lang="de-de"/>
+          
+  <keydef href="ideen/zugang_con/pdf-zugang_task/item-page.xml"
+          keys="pdf-zugang_task" type="task" xml:lang="de-de"/>
+          
+  <keydef href="ideen/zugang_con/zugang-flagging_task/item-page.xml"
+          keys="zugang-flagging_task" type="task" xml:lang="de-de"/>                
+
+  <keydef href="ideen/favicon-erstellen/item-page.xml"
+          keys="favicon-erstellen" type="topic" xml:lang="de-de"/>
+
+  <keydef href="ideen/favicon-erstellen/icon1-inkscape_task/item-page.xml"
+          keys="icon1-inkscape_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ideen/favicon-erstellen/icon2-iconsushi_task/item-page.xml"
+          keys="icon2-iconsushi_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ideen/faq-plugin_start_con/item-page.xml"
+          keys="faq-plugin_start_con" type="concept" xml:lang="de-de"/>
+
+  <keydef href="ideen/faq-plugin_start_con/faq-plugin-einbinden_task/item-page.xml"
+          keys="faq-plugin-einbinden_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ideen/faq-plugin_start_con/faq-plugin-einbinden-2_task/item-page.xml"
+          keys="faq-plugin-einbinden-2_task" type="task" xml:lang="de-de"/>
+
+  <keydef href="ideen/faq-plugin_start_con/faq-plugin-einbinden-3_task/item-page.xml"
+          keys="faq-plugin-einbinden-3_task" type="task" xml:lang="de-de"/>
+
+  <!--  Images  -->
+
+  <keydef keys="petersell-mail-allgemein">
+    <topicmeta>
+      <keywords>
+        <keyword>mail@petersell.de</keyword>
+      </keywords>
+    </topicmeta>
+  </keydef>
+</map>

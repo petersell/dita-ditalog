@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN"
+"../../dtd/technicalContent/dtd/task.dtd">
+<task id="pdf-fusszeile_task" xml:lang="de-de">
+  <title>Fußzeile ausgeben</title>
+
+  <shortdesc>Anleitung: So geben Sie eine einfache, zentrierte Fußzeile
+  aus.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.07.2010"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Fußzeile ausgeben</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ausgabeformat PDF</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="pdf-fusszeile_task"/>
+  </prolog>
+
+  <taskbody>
+    <steps>
+      <step>
+        <cmd>Fügen Sie in <indexterm>Fußzeile im PDF</indexterm>der Datei
+        <filepath>DITA-OT\demo\fo\Customization\fo\attr\custom.xsl</filepath>
+        folgende <indexterm>FO Plugin</indexterm>zwei
+        <indexterm>custom.xsl</indexterm>Attribut-Sets
+        <indexterm>attribute-set</indexterm>hinzu:</cmd>
+
+        <stepxmp><codeblock>&lt;xsl:attribute-set name="__body__odd__footer"&gt;
+ &lt;xsl:attribute name="text-align"&gt;center&lt;/xsl:attribute&gt;
+ &lt;xsl:attribute name="margin-bottom"&gt;10pt&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;
+</codeblock><codeblock>&lt;xsl:attribute-set name="__body__even__footer"&gt;
+ &lt;xsl:attribute name="text-align"&gt;center&lt;/xsl:attribute&gt;
+ &lt;xsl:attribute name="margin-bottom"&gt;10pt&lt;/xsl:attribute&gt;
+&lt;/xsl:attribute-set&gt;
+</codeblock></stepxmp>
+      </step>
+
+      <step>
+        <cmd>Füllen Sie die Variablen <varname>Body odd footer</varname> und
+        <varname>Body even footer</varname> in der
+        <indexterm>de_DE.xml</indexterm>Datei
+        <filepath>DITA-OT\demo\fo\Customization\common\vars\de_DE.xml</filepath>.
+        So könnte dies beispielhaft aussehen.</cmd>
+
+        <stepxmp><codeblock>&lt;variable id="Body odd footer"&gt;
+&amp;#169;&amp;#160;2010&amp;#160;Andreas&amp;#160;Petersell&amp;#160;-&amp;#160;www.ditalog.com
+&lt;/variable&gt;</codeblock>Füllen Sie bei Bedarf ebenfalls die Variable
+        <varname>Body even footer</varname>.</stepxmp>
+
+        <stepresult><p><fig>
+            <title>Fußzeile - bei Internetdomain wird die Linkfähigkeit
+            erhalten</title>
+
+            <image alt="Fusszeile" href="pdf-fusszeile.gif" placement="break"/>
+          </fig></p><p>Der Vorteil dieser Vorgehensweise ist die Schnelligkeit
+        des Umsetzens. Ein gravierender Nachteil wird offenbar, wenn mehrere
+        Layouts administriert werden müssen: beim Wechsel eines Layouts müssen
+        die Variablen für die footer neu editiert werden.</p></stepresult>
+      </step>
+    </steps>
+  </taskbody>
+</task>

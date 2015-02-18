@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN"
+"http://docs.oasis-open.org/dita/v1.2/os/dtd1.2/technicalContent/dtd/concept.dtd">
+<concept id="metadata-mailto_con" xml:lang="de-de">
+  <title>Metadaten im Text - Name des Topics</title>
+
+  <shortdesc>So nutzen Sie den Namen des Topics aus den Metadaten, um einen
+  E-Mail-Link für Feedback unterhalb des Seitentitels anzeigen zu
+  lassen.</shortdesc>
+
+  <prolog>
+    <author type="creator">Andreas Petersell</author>
+
+    <publisher>petersell.com</publisher>
+
+    <critdates>
+      <created date="01.03.2013"/>
+    </critdates>
+
+    <metadata>
+      <keywords>
+        <indexterm>Link für E-Mail</indexterm>
+
+        <indexterm>Metadaten im Text ausgeben</indexterm>
+
+        <indexterm>E-Maillink im Text</indexterm>
+      </keywords>
+
+      <prodinfo>
+        <prodname>Ditalog</prodname>
+
+        <vrmlist>
+          <vrm release="25.02.2013" version="1"/>
+        </vrmlist>
+
+        <brand>5. Petersilienbuch</brand>
+
+        <component>Ideen für Onlinehilfen</component>
+
+        <featnum/>
+
+        <series>Tutor</series>
+      </prodinfo>
+    </metadata>
+
+    <resourceid id="metadata-mailto_con"/>
+  </prolog>
+
+  <conbody>
+    <p>Im Artikel <i>Metadaten im Text ausgeben</i> (<xref
+    keyref="metadata-output_con">zum Link</xref>) beschreibe ich, wie man die
+    Datumsangaben für das Erstellen und Aktualisieren des Prologs im Text
+    ausgeben kann. Nun auf den Geschmack gekommen, nutzte ich das Template
+    <codeph>gen-user-header</codeph>, um darin ebenfalls ein Mail-Link für
+    Feedback einzubauen. Es wird also das bekannte Template zur Grundlage
+    genommen und erweitert.</p>
+
+    <section><title>So soll es aussehen</title><p>In den Formaten CHM, XHTML
+    und EPUB soll oben rechts immer ein E-Mail-Link zur Seite inklusive des
+    Namens der Seite stehen. Darunter das Datum der Erstellung und der letzten
+    Änderung in grauer Schrift. Dies wiederum rechtsbündig unterhalb des
+    Titels und vor der Kurzbeschreibung
+    (<codeph>shortdesc</codeph>).</p><p><fig>
+        <title>E-Mail-Link mit Seitenname im EPUBReader-Addon des
+        Firefox</title>
+
+        <image alt="E-Mail-Link" href="metadata-mailto_365.gif"
+               placement="break"/>
+      </fig></p></section>
+
+    <section><title>Metaangaben im Topic</title><p>Vorraussetzung ist, dass in
+    jedem Topic, egal ob Task oder Concept etc, folgende Metadaten innerhalb
+    des Tags <codeph>prolog</codeph> gefüllt sind.</p><codeblock>&lt;resourceid id="metadata-output_con"/&gt;</codeblock><p>Bitte
+    fügen Sie Ihren jeweiligen Seitennamen ein.</p></section>
+
+    <section><title>gen-user-header-Template anpassen</title><p>Suchen Sie
+    innerhalb Ihres DITA-Open Toolkits im Ordner
+    <filepath>xsl/xslhtml</filepath> nach der Datei
+    <filepath>dita2htmlImpl.xsl</filepath>. Innerhalb dieser Datei muss das
+    Template <codeph>gen-user-header</codeph> angepasst werden. Es ist das
+    zweite Template im Bereich, der extra für Ihre Modifikationen für den
+    Header, Footer etc angelegt wurde.</p><codeblock>&lt;!-- ========== STUBS FOR USER PROVIDED OVERRIDE EXTENSIONS ========== --&gt;</codeblock><p>Im
+    vorhandenen Template <codeph>gen-user-header</codeph> fügen Sie, wie
+    unterhalb des Kommentars <uicontrol>folgende Zeile ist neu</uicontrol>
+    aufgeführt, eine neue Zeile ein.</p><codeblock>&lt;xsl:template name="gen-user-header"&gt;
+  &lt;xsl:apply-templates select="." mode="gen-user-header"/&gt;
+&lt;/xsl:template&gt;
+&lt;xsl:template match="/|node()|@*" mode="gen-user-header"&gt;
+  &lt;!-- to customize: copy this to your override transform, add the content you want. --&gt;
+  &lt;!-- it will be placed in the running heading section of the XHTML. --&gt;
+  &lt;!-- folgende Zeile ist neu! --&gt;
+  &lt;xsl:apply-templates select="*[contains(@class, ' topic/prolog ')]" mode="gen-user-header"/&gt;
+&lt;/xsl:template&gt;</codeblock><p>Unterhalb dieses angepaßten Templates
+    <codeph>gen-user-header</codeph> fügen Sie ein zweites Template
+    hinzu.</p><codeblock>&lt;xsl:attribute-set name="mailto"&gt;
+  &lt;xsl:attribute name="class"&gt;xref&lt;/xsl:attribute&gt;
+  &lt;xsl:attribute name="href"&gt;mailto:info@IhreDomain.com?subject=Hilfe-Seite:%20
+  &lt;xsl:value-of select="*[contains(@class,' topic/resourceid ')]/@id"/&gt;&lt;/xsl:attribute&gt;
+  &lt;xsl:attribute name="target"&gt;_blank&lt;/xsl:attribute&gt;
+ &lt;/xsl:attribute-set&gt;</codeblock><p>In diesem Attribut-Set werden die
+    Attribute für den Anker <codeph>&lt;a href="...."&gt;</codeph> und weitere
+    Attribute notiert. Bitte tragen Sie statt info@IhreDomain.com Ihre
+    entsprechende E-Mailadresse ein. Für die Betreffzeile können Sie noch den
+    Eintrag <userinput>Hilfe-Seite</userinput> ändern. Im letzten Template
+    wird das Attribut-Set dann eingefügt.</p><codeblock>&lt;xsl:template match="*[contains(@class, ' topic/prolog ')]"&gt;
+  &lt;p class="header-metadata" align="right"&gt;
+    &lt;xsl:if test="*[contains(@class,' topic/resourceid ')]/@id"&gt;
+    &lt;span&gt;Ihre &lt;/span&gt;
+    &lt;xsl:element name="a" use-attribute-sets="mailto"&gt;Mail&lt;/xsl:element&gt;
+    &lt;span&gt; für Fragen und Kommentare zur Seite &lt;xsl:value-of select="*[contains(@class,' topic/resourceid ')]/@id"/&gt;. &lt;/span&gt;&lt;/xsl:if&gt;
+    &lt;xsl:if test="*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/created ')]/@date"&gt;
+      &lt;span&gt;&lt;br/&gt;Erstellt am &lt;xsl:value-of select="*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/created ')]/@date"/&gt;.   &lt;/span&gt;&lt;/xsl:if&gt;
+    &lt;xsl:if test="*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/revised ')]/@modified"&gt;
+    &lt;xsl:for-each select="child::*[contains(@class,' topic/critdates ')]/*[contains(@class,' topic/revised ')]"&gt;
+    &lt;span&gt;Letzte Änderung: &lt;xsl:value-of select="@modified"/&gt;&lt;/span&gt;
+     &lt;/xsl:for-each&gt;
+    &lt;/xsl:if&gt;
+    &lt;/p&gt;
+ &lt;/xsl:template&gt;</codeblock></section>
+
+    <section><title>Formatierung in der CSS-Datei</title><p>Der Absatz
+    <codeph>p</codeph> hat eine <codeph>class="header-metadata"</codeph>
+    erhalten. Diese Klasse müssen Sie noch Ihrer CSS-Datei
+    hinzufügen.</p><codeblock>.header-metadata
+{
+  text-align: right;
+  font-style: italic;
+  color: #C2C2C2;
+  margin-right:10px;
+}</codeblock></section>
+
+    <section><title>Plugin</title><p>Da ich die Metadaten nur für Onlinehilfen
+    und eBooks benöte, die des Öfteren aktualisiert werden, habe ich das
+    Template in ein Plugin ausgelagert.</p></section>
+
+    <section><title>Links</title><ul>
+        <li>Skript für Metadaten im Text für PDF-Dateien im XMetal-Forum,
+        <xref format="html"
+        href="http://forums.xmetal.com/index.php?topic=1041.0"
+        scope="external">zum Link</xref></li>
+      </ul></section>
+  </conbody>
+</concept>
