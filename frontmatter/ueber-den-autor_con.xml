@@ -41,18 +41,8 @@
   </prolog>
 
   <conbody id="ueber-den-autor-std">
-    <p id="kurzbio1">Andreas Petersell wurde 1966 in Berlin geboren. Nach der
-    Schule 1983 erlernte er den Beruf des Elektromonteurs. Ab 1986 holte er
-    das Abitur auf einer Berliner Volkshochschule nach. Da die
-    DDR-Hochschullandschaft keine Magisterstudiengänge kannte, startete er
-    1990 sein Lehramtsstudium für Deutsch und Englisch. Er arbeitet heute in
+    <p id="kurzbio1">Andreas Petersell wurde in Berlin geboren. Er arbeitet heute in
     Berlin als Technischer Redakteur.</p>
 
-    <p id="autor"><image href="images/andreas-petersell.gif"
-    placement="break"/></p>
-
-    <p><cite>Hier stehe ich, kann Haupt- vom Nebensatz trennen und
-    EPUB-Dateien erstellen. Ich kann nicht anders: ich bin ein
-    Epubber!</cite></p>
   </conbody>
 </concept>
